@@ -1,0 +1,254 @@
+[
+    {
+        "schedule": "Main Track",
+        "title": "Registration Check-In/Information Table",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center",
+        "start": "2020-02-14 14:00",
+        "end": "2020-02-14 20:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Opening Session/Plenary #1",
+        "description": "",
+        "type": "keynote",
+        "location": "Miller Auditorium",
+        "start": "2020-02-14 16:30",
+        "end": "2020-02-14 18:30"
+    },
+    {
+        "schedule": "Advisor Track",
+        "title": "Advisor Social",
+        "description": "",
+        "type": "advisor",
+        "location": "TBD",
+        "start": "2020-02-14 19:00",
+        "end": "2020-02-14 21:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Entertainment",
+        "description": "",
+        "type": "entertainment",
+        "location": "TBD",
+        "start": "2020-02-14 20:00",
+        "end": "2020-02-14 22:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Registration Check-In",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 8:00",
+        "end": "2020-02-15 16:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Information Table",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 8:00",
+        "end": "2020-02-15 20:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Featured Speaker #1",
+        "description": "",
+        "type": "featured",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 8:00",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #1",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Featured Speaker #2",
+        "description": "",
+        "type": "featured",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #2",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Resource and Career Fair",
+        "description": "",
+        "type": "general",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 10:00",
+        "end": "2020-02-15 16:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "State Caucuses",
+        "description": "",
+        "type": "general",
+        "location": "TBD",
+        "start": "2020-02-15 11:00",
+        "end": "2020-02-15 12:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Lunch Break",
+        "description": "",
+        "type": "food",
+        "location": "On Your Own",
+        "start": "2020-02-15 12:00",
+        "end": "2020-02-15 13:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "State of the Region",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 13:00",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #3",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Featured Speaker #3",
+        "description": "",
+        "type": "featured",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 14:30",
+        "end": "2020-02-15 15:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #4",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 14:30",
+        "end": "2020-02-15 15:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Featured Speaker #4",
+        "description": "",
+        "type": "featured",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #5",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Plenary #2",
+        "description": "",
+        "type": "keynote",
+        "location": "Miller Auditorium",
+        "start": "2020-02-15 17:00",
+        "end": "2020-02-15 18:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Dinner Break",
+        "description": "",
+        "type": "food",
+        "location": "On Your Own",
+        "start": "2020-02-15 18:00",
+        "end": "2020-02-15 19:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Identity Caucuses",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-15 19:00",
+        "end": "2020-02-15 20:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Drag Show",
+        "description": "",
+        "type": "entertainment",
+        "location": "Bernhard Center",
+        "start": "2020-02-15 20:30",
+        "end": "2020-02-15 22:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Information Table",
+        "description": "",
+        "type": "general",
+        "location": "Bernhard Center",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 12:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #6",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Featured Workshop #5",
+        "description": "",
+        "type": "featured",
+        "location": "TBD",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Workshop Session #7",
+        "description": "",
+        "type": "workshop",
+        "location": "Bernhard Center/Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Closing Session/Plenary #3",
+        "description": "",
+        "type": "keynote",
+        "location": "Miller Auditorium",
+        "start": "2020-02-16 10:30",
+        "end": "2020-02-16 12:00"
+    }
+]
