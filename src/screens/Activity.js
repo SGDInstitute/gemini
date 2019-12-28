@@ -1,5 +1,7 @@
 import React from 'react';
-import { Image, View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+
+import styles from "./styles";
 
 export default class Activity extends React.Component {
     render() {

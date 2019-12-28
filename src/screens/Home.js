@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, StyleSheet, Text } from 'react-native';
+import { Button, View, Text } from 'react-native';
 
 import NavBar from '../components/NavBar';
 import styles from "./styles";
