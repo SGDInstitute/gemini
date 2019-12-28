@@ -1,17 +1,20 @@
 import React from "react";
 import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Home from "./screens/Home";
 import Schedule from "./screens/Schedule";
+import Maps from "./screens/Maps";
+import Evaluations from "./screens/Evaluations";
+import Contact from "./screens/Contact";
 
 const MainNavigator = createDrawerNavigator(
     {
         Home: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
-                    <Ionicons name="md-home" size={28} style={{ color: tintColor }} />
+                    <MaterialCommunityIcons name="home-outline" size={28} style={{ color: tintColor }} />
                 ),
                 drawerLabel: "Home"
             },
@@ -21,11 +24,41 @@ const MainNavigator = createDrawerNavigator(
         Schedule: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
-                    <Ionicons name="md-calendar" size={28} style={{ color: tintColor }} />
+                    <MaterialCommunityIcons name="calendar-multiselect" size={28} style={{ color: tintColor }} />
                 ),
                 drawerLabel: "Schedule"
             },
             screen: Schedule
+        },
+
+        Maps: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="map-marker-outline" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Maps"
+            },
+            screen: Maps
+        },
+
+        Evaluations: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="file-document-outline" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Evaluations"
+            },
+            screen: Evaluations
+        },
+
+        Contact: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="help-circle-outline" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Contact"
+            },
+            screen: Contact
         },
     },
     {
@@ -37,7 +70,16 @@ const MainNavigator = createDrawerNavigator(
             iconContainerStyle: {
                 opacity: 1
             }
-        }
+        },
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
     }
 );
 

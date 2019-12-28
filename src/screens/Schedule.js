@@ -4,7 +4,7 @@ import { Image, Button, View, Text, StyleSheet } from 'react-native';
 export default class Schedule extends React.Component {
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={styles.container}>
                 <Text>Schedule Screen</Text>
                 <Button
                     title="Go to Keynote 1"
@@ -20,8 +20,9 @@ export default class Schedule extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    icon: {
-        width: 24,
-        height: 24,
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
