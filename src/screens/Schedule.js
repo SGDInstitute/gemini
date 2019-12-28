@@ -1,25 +1,18 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
+import { t } from 'react-native-tailwindcss';
 
-import styles from "./styles";
+import ScheduleTabs from '../ScheduleTabs';
 import NavBar from '../components/NavBar';
 
 export default class Schedule extends React.Component {
+    static router = ScheduleTabs.router;
+
     render() {
         return (
-            <View style={styles.flex1}>
+            <View style={t.flex1}>
                 <NavBar title="Schedule" />
-                <View style={styles.container}>
-                    <Text>Schedule Screen</Text>
-                    <Button
-                        title="Go to Keynote 1"
-                        onPress={() => {
-                            this.props.navigation.navigate('Activity', {
-                                activityId: 1,
-                            });
-                        }}
-                    />
-                </View>
+                <ScheduleTabs navigation={this.props.navigation} />
             </View>
         );
     }

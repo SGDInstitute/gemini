@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "schedule": "Main Track",
         "title": "Registration Check-In/Information Table",
         "description": "",
@@ -9,6 +10,7 @@
         "end": "2020-02-14 20:00"
     },
     {
+        "id": "2",
         "schedule": "Main Track",
         "title": "Opening Session/Plenary #1",
         "description": "",
@@ -18,6 +20,7 @@
         "end": "2020-02-14 18:30"
     },
     {
+        "id": "3",
         "schedule": "Advisor Track",
         "title": "Advisor Social",
         "description": "",
@@ -27,6 +30,7 @@
         "end": "2020-02-14 21:00"
     },
     {
+        "id": "4",
         "schedule": "Main Track",
         "title": "Entertainment",
         "description": "",
@@ -36,6 +40,7 @@
         "end": "2020-02-14 22:30"
     },
     {
+        "id": "5",
         "schedule": "Main Track",
         "title": "Registration Check-In",
         "description": "",
@@ -45,6 +50,7 @@
         "end": "2020-02-15 16:00"
     },
     {
+        "id": "6",
         "schedule": "Main Track",
         "title": "Information Table",
         "description": "",
@@ -54,6 +60,7 @@
         "end": "2020-02-15 20:00"
     },
     {
+        "id": "7",
         "schedule": "Main Track",
         "title": "Featured Speaker #1",
         "description": "",
@@ -63,6 +70,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": "8",
         "schedule": "Main Track",
         "title": "Workshop Session #1",
         "description": "",
@@ -72,6 +80,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": "9",
         "schedule": "Main Track",
         "title": "Featured Speaker #2",
         "description": "",
@@ -81,6 +90,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": "10",
         "schedule": "Main Track",
         "title": "Workshop Session #2",
         "description": "",
@@ -90,6 +100,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": "11",
         "schedule": "Main Track",
         "title": "Resource and Career Fair",
         "description": "",
@@ -99,6 +110,7 @@
         "end": "2020-02-15 16:30"
     },
     {
+        "id": "12",
         "schedule": "Main Track",
         "title": "State Caucuses",
         "description": "",
@@ -108,6 +120,7 @@
         "end": "2020-02-15 12:00"
     },
     {
+        "id": "13",
         "schedule": "Main Track",
         "title": "Lunch Break",
         "description": "",
@@ -117,6 +130,7 @@
         "end": "2020-02-15 13:00"
     },
     {
+        "id": "14",
         "schedule": "Main Track",
         "title": "State of the Region",
         "description": "",
@@ -126,6 +140,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": "15",
         "schedule": "Main Track",
         "title": "Workshop Session #3",
         "description": "",
@@ -135,6 +150,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": "16",
         "schedule": "Main Track",
         "title": "Featured Speaker #3",
         "description": "",
@@ -144,6 +160,7 @@
         "end": "2020-02-15 15:30"
     },
     {
+        "id": "17",
         "schedule": "Main Track",
         "title": "Workshop Session #4",
         "description": "",
@@ -153,6 +170,7 @@
         "end": "2020-02-15 15:30"
     },
     {
+        "id": "18",
         "schedule": "Main Track",
         "title": "Featured Speaker #4",
         "description": "",
@@ -162,6 +180,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": "19",
         "schedule": "Main Track",
         "title": "Workshop Session #5",
         "description": "",
@@ -171,6 +190,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": "20",
         "schedule": "Main Track",
         "title": "Plenary #2",
         "description": "",
@@ -180,6 +200,7 @@
         "end": "2020-02-15 18:00"
     },
     {
+        "id": "21",
         "schedule": "Main Track",
         "title": "Dinner Break",
         "description": "",
@@ -189,6 +210,7 @@
         "end": "2020-02-15 19:00"
     },
     {
+        "id": "22",
         "schedule": "Main Track",
         "title": "Identity Caucuses",
         "description": "",
@@ -198,6 +220,7 @@
         "end": "2020-02-15 20:30"
     },
     {
+        "id": "23",
         "schedule": "Main Track",
         "title": "Drag Show",
         "description": "",
@@ -207,6 +230,7 @@
         "end": "2020-02-15 22:30"
     },
     {
+        "id": "24",
         "schedule": "Main Track",
         "title": "Information Table",
         "description": "",
@@ -216,6 +240,7 @@
         "end": "2020-02-16 12:00"
     },
     {
+        "id": "25",
         "schedule": "Main Track",
         "title": "Workshop Session #6",
         "description": "",
@@ -225,6 +250,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": "26",
         "schedule": "Main Track",
         "title": "Featured Workshop #5",
         "description": "",
@@ -234,6 +260,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": "27",
         "schedule": "Main Track",
         "title": "Workshop Session #7",
         "description": "",
@@ -243,6 +270,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": "28",
         "schedule": "Main Track",
         "title": "Closing Session/Plenary #3",
         "description": "",
