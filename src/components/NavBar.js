@@ -1,15 +1,20 @@
 import React from "react";
 import { Header } from 'react-native-elements';
+import { withNavigation } from 'react-navigation';
 
-const NavBar = props => (
-    <Header
-        leftComponent={{ icon: 'menu', color: '#fff', onPress: () => props.navigation.openDrawer(), }}
-        centerComponent={{ text: props.title, style: { color: '#fff', fontSize: 20, fontWeight: "700" } }}
-        rightComponent={{ icon: 'settings', color: '#fff' }}
-        containerStyle={{
-            backgroundColor: '#009999',
-        }}
-    />
-);
+class NavBar extends React.Component {
+    render() {
+        return (
+            <Header
+                leftComponent={{ icon: 'menu', color: '#fff', onPress: () => this.props.navigation.openDrawer(), }}
+                centerComponent={{ text: this.props.title, style: { color: '#fff', fontSize: 20, fontWeight: "700" } }}
+                rightComponent={{ icon: 'settings', color: '#fff' }}
+                containerStyle={{
+                    backgroundColor: '#009999',
+                }}
+            />
+        );
+    }
+}
 
-export default NavBar;
+export default withNavigation(NavBar);
