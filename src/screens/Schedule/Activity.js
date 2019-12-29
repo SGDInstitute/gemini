@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import NavBar from '../components/NavBar';
-import styles from "./styles";
+import NavBar from '../../components/NavBar';
 
 export default class Activity extends React.Component {
     render() {
