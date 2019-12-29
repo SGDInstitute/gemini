@@ -1,8 +1,8 @@
 [
     {
-        "id": "1",
         "schedule": "Main Track",
         "title": "Registration Check-In/Information Table",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center",
@@ -10,9 +10,9 @@
         "end": "2020-02-14 20:00"
     },
     {
-        "id": "2",
         "schedule": "Main Track",
         "title": "Opening Session/Plenary #1",
+        "speaker": "",
         "description": "",
         "type": "keynote",
         "location": "Miller Auditorium",
@@ -20,9 +20,9 @@
         "end": "2020-02-14 18:30"
     },
     {
-        "id": "3",
         "schedule": "Advisor Track",
         "title": "Advisor Social",
+        "speaker": "",
         "description": "",
         "type": "advisor",
         "location": "TBD",
@@ -30,9 +30,9 @@
         "end": "2020-02-14 21:00"
     },
     {
-        "id": "4",
         "schedule": "Main Track",
         "title": "Entertainment",
+        "speaker": "",
         "description": "",
         "type": "entertainment",
         "location": "TBD",
@@ -40,9 +40,9 @@
         "end": "2020-02-14 22:30"
     },
     {
-        "id": "5",
         "schedule": "Main Track",
         "title": "Registration Check-In",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center",
@@ -50,9 +50,9 @@
         "end": "2020-02-15 16:00"
     },
     {
-        "id": "6",
         "schedule": "Main Track",
         "title": "Information Table",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center",
@@ -60,9 +60,9 @@
         "end": "2020-02-15 20:00"
     },
     {
-        "id": "7",
         "schedule": "Main Track",
         "title": "Featured Speaker #1",
+        "speaker": "",
         "description": "",
         "type": "featured",
         "location": "Bernhard Center",
@@ -70,19 +70,19 @@
         "end": "2020-02-15 9:30"
     },
     {
-        "id": "8",
         "schedule": "Main Track",
         "title": "Workshop Session #1",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-15 8:30",
         "end": "2020-02-15 9:30"
     },
     {
-        "id": "9",
         "schedule": "Main Track",
         "title": "Featured Speaker #2",
+        "speaker": "",
         "description": "",
         "type": "featured",
         "location": "Bernhard Center",
@@ -90,19 +90,19 @@
         "end": "2020-02-15 10:45"
     },
     {
-        "id": "10",
         "schedule": "Main Track",
         "title": "Workshop Session #2",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-15 9:45",
         "end": "2020-02-15 10:45"
     },
     {
-        "id": "11",
         "schedule": "Main Track",
         "title": "Resource and Career Fair",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Sangren Hall",
@@ -110,9 +110,9 @@
         "end": "2020-02-15 16:30"
     },
     {
-        "id": "12",
         "schedule": "Main Track",
         "title": "State Caucuses",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "TBD",
@@ -120,9 +120,9 @@
         "end": "2020-02-15 12:00"
     },
     {
-        "id": "13",
         "schedule": "Main Track",
         "title": "Lunch Break",
+        "speaker": "",
         "description": "",
         "type": "food",
         "location": "On Your Own",
@@ -130,9 +130,9 @@
         "end": "2020-02-15 13:00"
     },
     {
-        "id": "14",
         "schedule": "Main Track",
         "title": "State of the Region",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center",
@@ -140,19 +140,19 @@
         "end": "2020-02-15 14:15"
     },
     {
-        "id": "15",
         "schedule": "Main Track",
         "title": "Workshop Session #3",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-15 13:15",
         "end": "2020-02-15 14:15"
     },
     {
-        "id": "16",
         "schedule": "Main Track",
         "title": "Featured Speaker #3",
+        "speaker": "",
         "description": "",
         "type": "featured",
         "location": "Bernhard Center",
@@ -160,19 +160,19 @@
         "end": "2020-02-15 15:30"
     },
     {
-        "id": "17",
         "schedule": "Main Track",
         "title": "Workshop Session #4",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-15 14:30",
         "end": "2020-02-15 15:30"
     },
     {
-        "id": "18",
         "schedule": "Main Track",
         "title": "Featured Speaker #4",
+        "speaker": "",
         "description": "",
         "type": "featured",
         "location": "Bernhard Center",
@@ -180,19 +180,19 @@
         "end": "2020-02-15 16:45"
     },
     {
-        "id": "19",
         "schedule": "Main Track",
         "title": "Workshop Session #5",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-15 15:45",
         "end": "2020-02-15 16:45"
     },
     {
-        "id": "20",
         "schedule": "Main Track",
         "title": "Plenary #2",
+        "speaker": "",
         "description": "",
         "type": "keynote",
         "location": "Miller Auditorium",
@@ -200,9 +200,9 @@
         "end": "2020-02-15 18:00"
     },
     {
-        "id": "21",
         "schedule": "Main Track",
         "title": "Dinner Break",
+        "speaker": "",
         "description": "",
         "type": "food",
         "location": "On Your Own",
@@ -210,9 +210,9 @@
         "end": "2020-02-15 19:00"
     },
     {
-        "id": "22",
         "schedule": "Main Track",
         "title": "Identity Caucuses",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center/Sangren Hall",
@@ -220,9 +220,9 @@
         "end": "2020-02-15 20:30"
     },
     {
-        "id": "23",
         "schedule": "Main Track",
         "title": "Drag Show",
+        "speaker": "",
         "description": "",
         "type": "entertainment",
         "location": "Bernhard Center",
@@ -230,9 +230,9 @@
         "end": "2020-02-15 22:30"
     },
     {
-        "id": "24",
         "schedule": "Main Track",
         "title": "Information Table",
+        "speaker": "",
         "description": "",
         "type": "general",
         "location": "Bernhard Center",
@@ -240,19 +240,19 @@
         "end": "2020-02-16 12:00"
     },
     {
-        "id": "25",
         "schedule": "Main Track",
         "title": "Workshop Session #6",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-16 8:00",
         "end": "2020-02-16 9:00"
     },
     {
-        "id": "26",
         "schedule": "Main Track",
         "title": "Featured Workshop #5",
+        "speaker": "",
         "description": "",
         "type": "featured",
         "location": "TBD",
@@ -260,23 +260,633 @@
         "end": "2020-02-16 10:15"
     },
     {
-        "id": "27",
         "schedule": "Main Track",
         "title": "Workshop Session #7",
+        "speaker": "",
         "description": "",
-        "type": "workshop",
+        "type": "group",
         "location": "Bernhard Center/Sangren Hall",
         "start": "2020-02-16 9:15",
         "end": "2020-02-16 10:15"
     },
     {
-        "id": "28",
         "schedule": "Main Track",
         "title": "Closing Session/Plenary #3",
+        "speaker": "",
         "description": "",
         "type": "keynote",
         "location": "Miller Auditorium",
         "start": "2020-02-16 10:30",
         "end": "2020-02-16 12:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "James Hodges (bruh)",
+        "speaker": "James Hodges",
+        "description": "Using psychological literature and concepts to understand why people of color want people of color with intersecting identities to collapse their other marginalized identities to focus freedom movements on the racial identity, and intersectional identities/experiences of the racial identity (e.g. Black Man vs Queer Black folx).",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Queering the Classroom: Making educational spaces for LGBTQ+ students",
+        "speaker": "Rebecca Sawyer",
+        "description": " Calling all future and current educators of all levels and content areas! Despite increasing resources and role-models for students, the classroom still remains a place where many feel they cannot be their authentic selves. This is due in large part to curriculum and practices that are still cisheteronormative. Luckily, there are steps that you (yes, you!) can take to make the classroom a brave space for your students. We‚Äôll talk about setting norms, troubleshooting behaviors, queering the curriculum, and more! Be ready to be a change-maker at your school.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Asexuals Surviving College Guide",
+        "speaker": "Joan Conte",
+        "description": "Asexual and Aspec people often discover themselves in college. Higher Education is a field of issues for young people. We all know the importance sex has in our society. Most of the LGBT+ community is focused on love and sex. What happens when asexual people are left out of the picture. How can LGBT+ offices on college campuses be more inclusive of aspec people? How can we as a community support aspec people and validate them?",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "The Importance of Queer Resiliency Groups on College Campuses.",
+        "speaker": "Jeff Gibson",
+        "description": " Finding a place to connect and share experiences with others can be challenging for Queer students in campus environments that are not the most inclusive or promote visibility. This presentation shares how OUTreach, a resiliency group at the University of North Dakota allows for the opportunity to connect students with one another and talk about issues and experiences relating to identity and how to build resiliency.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Whatever Happened to Lesbians?",
+        "speaker": "Stephanie Skora",
+        "description": " It‚Äôs often said that ‚Äúlesbian‚Äù is a dying identity: non-heterosexual women have started identifying in other ways, and we lesbians have had a troubling history with the trans community. In many ways, it seems like we‚Äôve lost queer politics in lesbian spaces. A journey through history and the roots of the divide between the lesbian and trans community, this lecture seeks to debunk the notion that transness and lesbianness are at odds, and explore the radical potentialities of new lesbian spaces!",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "No Walls Between Us: An LGBTQ Palestine Solidarity 101",
+        "speaker": "Stephanie Skora",
+        "description": "The movement for justice in Palestine is currently reaching a pivotal point worldwide, and queer and trans people have a vital role to play! Whether advocating for change in our communities, working to quash Islamophobia or anti-Arab racism, or working on the Boycott, Divestment, and Sanctions movement, non-Palestinian queer and trans accomplices can make a huge impact in the push for Palestinian liberation. This lecture makes the case for broad queer and trans solidarity with Palestinians from a variety of social justice and historical perspectives, and introduces attendees to the ins and outs of Palestine solidarity organizing.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "The Water Closet: Ungendering Bathrooms",
+        "speaker": "Leslie Boker",
+        "description": " Using the bathroom while trans is complicated by a history of gender policing and cissexist notions about who deserves to use public spaces. This workshop investigates the history of gendered bathrooms, the cultural narratives maintaining them today, and the machinations behind anti-trans bathroom bills ‚Äî then turns to discussion about queer dreams of an ideal place to do your business.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "It's Not Me, It's You: Building Resiliency as a Practice",
+        "speaker": "Grace Davis",
+        "description": "This workshop is an introduction to the idea of that resiliency is something you have to learn how to do not something you inherently have. We will discover the tools of being resilient, the environments that are not conducive to your resiliency practices, and end with breaking up with a situation that was toxic for you. Together through discussion, you will finally have the ability to tell someone (or something) It‚Äôs Not Me, It‚Äôs you.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Look Who's Talking: Gender, Sexuality, and the Voice",
+        "speaker": "Brandon Merritt",
+        "description": "A person‚Äôs speech and voice convey an immense amount of information about them to others, whether intended or not. Our voices allow others to construct a mental image of us, including age, race and ethnicity, personality, and physical characteristics. Gender is an especially notable feature of the voice to which listeners are sensitive. Gender cues in speech are particularly important for trans and gender non-conforming individuals, whose voices may, at times, feel at odds with their gender orientation and identity. In this workshop we‚Äôll explore the many ways our identity is coded in our voices, how our ideas of ‚Äútypical‚Äù voices develop, strategies for working toward achieving an authentic voice, and the role of trans and non-binary identities in shaping the future of communication technology. After the presentation we will open to a round of discussion on our own experiences with voice and identity.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Navigating Queerness & Disability",
+        "speaker": "Dean Strauss",
+        "description": "Queer spaces are often made inaccessible and unsafe for disabled queer folks. We‚Äôll look at how we organize and interact, how we exclude disabled queers and the resulting trauma, and how we can improve access and support disabled queer folks, focusing on lived experiences. Participants will discuss visibility and its impact on disabled and queer bodies and identity.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Un-Erased: Exploring the Foundation of Modern Queer Identity and Activism",
+        "speaker": "Chris Mattix",
+        "description": "Towards the end of the 19th Century and into the first quarter of the 20th, Germany saw an increase in interest ‚Äúsexual science‚Äù and identity. Activists began to create terms to identify Queer people for the first time, institutes began to study gender and sexuality, and organizations began to gather to fight anti-Queer laws. Un-Erased will explore the foundations of this period of Queer German history, its dramatic end, and its influence on modern American activism and Queer identity. Participants will obtain an understanding of what it means to study Queer history, the daily life of Queer Germans through the rise of the Third Reich, and the lasting effects of this time period on modern Queer life.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Rainbow Capitalism in Higher Education: How Institutions Recruit Us to Make $$$",
+        "speaker": "Bee Taylor",
+        "description": "Has anyone else noticed that recruitment materials from higher education institutions targeting LGBTQ+ students has increased dramatically in the last ten to twenty years? Campus Pride Index has become a common term on campus? Well, you're not alone. Many institutions have begun marketing and recruitment campaigns to bring LGBTQ+ students to their campuses and the number of Campus Pride Index profiles has increased exponentially over the years. However, admissions data for sexual orientation and gender identity has remained consistently nonexistent. Why is there such a disconnect between these two areas? How can we anecdotally notice a push for LGBTQ+ student admission and recruitment at institutions, yet institutions do not choose to collect data about their identities? During this presentation, I will explore how the concepts of rainbow capitalism, academic capitalism, and lack of institutional requirement for admission & recruitment data collection have all interacted within the industry of US higher education to lead us to our current situation... Institutions being able to recruit and admit larger and larger numbers of LGBTQ+ students each year, while simultaneously not being required to report these identity groups in which these students exist, therefore not \"outing\" themselves as supporting or hosting LGBTQ+ students to donors or other institutional supporters who would disagree or disapprove of such.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": " Navigating LGBTQ Civil Rights: A Historical Perspective and Moving Forward",
+        "speaker": "Glenn Miller",
+        "description": " In the 70s and 80s, queer people fought back to secure anti-retrovirals, access to condoms, the right to live and love openly, and we pied Anita Bryant in the face. In the 90s, Ellen came out, but Don't Ask, Don't Tell and Defense of Marriage Act were signed into law. In the 2000s, we saw marriage equality spring up in Democratic states, however we saw state constitutions amended to discriminate. Marriage equality was sought so heavily, not just because it was another plank in the queer movement, but because it conferred many rights with one movement, second-parent adoption, hospital visitation, inheritance, insurance dependency, and power of attorney. But as marriage became law, so did Religious Freedom Restoration Acts, bathroom bills, and adoption limitations. Where are we at now in Trump's America? How will the Supreme Court likely rule on the 3 cases presented on October 8, and what will that mean for us? Join in for a dialogue about where we came from and where we are going.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "The Intersection of Queer Identities and Religious Leadership",
+        "speaker": "Ellen Yope",
+        "description": "A presentation focusing on the intersection of queer identities and religious affiliations and how these intersections interact in individuals' lives and the religious and LGBTQIA+ community. This presentation will address ways allies and queer identifying individuals can be leaders in religious communities to further efforts of acceptance.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "The Campus Gay Agenda: Strategic Planning for LGBTQA+ Initiatives",
+        "speaker": "Danielle Stamper",
+        "description": "Tips, tricks and the logic behind strategic planning for LGBTQA+ Initiatives on your campus. During this session I will talk about how a large public Midwest university leveraged its campus and community resources to develop and implement a LGBTQA+ Strategic Plan for Diversity. Participants will engage in a power mapping exercise to identify campus partners and begin creating an action plan specific to their campus.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Showgirl to Sobriety: A Queen's journey through trauma, mental health and addiction; coming out fabulous!",
+        "speaker": "Ben Hippensteel",
+        "description": "Working as an entertainer for over 20 years, Ben Hippensteel has had his ups and his rock bottoms. From early days of trauma as a young gay man in a small town, Ben escaped to the city. He struggled to find a way to accept his sexuality and lifestyle. ENTER: Candi, Wantsome? Ben's alter ego was not just a drag queen, but a top entertainer in his big city community. But how to hide and cope with his mental health was still looming. After years onstage, he decided to work on his boy life and dove into the corporate world. Unknown to Ben, he had been taught by his own LGBTQ+ community how to celebrate, how to cope with sadness or even just a hectic day at work. He had been entrenched in a habit of using alcohol in excess, regularly. Everyone surrounding him was escaping through drinking. He knew the right people, attended the hottest social scenes, and ran with the hottest crowds but Ben's corporate image began to crack alongside his showgirl side, Candi. His depression was running him into the ground and his drinking was on overload. Life started to fall apart; losing jobs, health problems, and having a serious car accident totaling his car but not remembering. Attempting to get help at his family's request, Ben started to seek treatment only to relapse over and over. Ben packed up everything he could gather in two hours and left. At the age of 36, he traveled back to the small hometown setting and moved in with his parents. Still struggling, back in his small hometown Ben eventually crashed and was arrested, jailed, and things began to shift. Getting sober in the LGBTQ+ community is hard when we are conditioned to be those happy party rainbow people. The real journey began after Ben's sobriety and into his recovery when he asked himself: \"Where do I fit into my LGBTQ+ community anymore? A sober drag queen, does that exist?\" It does now, come hear a tale of glitter, pain, and finding where you fit in even when you're always standing out.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Better Than Normal: Navigating Hookups, Celibacy, and Sexual Self-Worth",
+        "speaker": "Makenzie Marts",
+        "description": "In my experience as a sex educator I‚Äôve noticed that people are, more than anything else, worried about whether or not their sex lives are ‚Äúnormal.‚Äù This workshop seeks to undermine the entire idea of a single, aspirational normalcy by examining the external forces that shape our ideas of what normal looks like and the internal forces that make us fearful of being different. With a quick and lighthearted overview and a sincere interest in participants sharing their thoughts and personal experiences, we‚Äôll start deconstructing sexual norms and explore the messy, vulnerable world outside that rigid box. In this workshop we want to do better than normal and aim for genuine empowerment and positive sexual self-worth.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Recoloring a Colorless Flag: The Rhetoric and Discourse over the Black and Brown Stripe Pride Flag",
+        "speaker": "Rocky Roque",
+        "description": "The pride flag has been a prominent icon for the LGBTQIA+ community. The flag was created to address racism prevalent in the community and give brown and black queers a symbol to protest the discrimination they have experienced. However, the flag received backlash for excluding white gay members of the community. This presentation seeks to inform the pride flag's changing ideology, the use of symbols for protest, the discourse it has created, and implications for the future of the community. The purpose is to examine the rhetoric behind the black and brown flag.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Racialized Gender Roles: How the intersections of racism and sexism impact the LGBT community",
+        "speaker": "Nathan Nguyen",
+        "description": " The riots of Compton's Cafeteria and Stonewall were started by those who were on the margins of race, gender, and sexuality but LGBTQ rights continue to move forward while not having hard discussions about race, gender, and cissexism. Participants will engage in reflection exercises that break down historical and cultural aspects that continue to segment the work and the movement while interrogating their own privileges.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": " Healthcare Coverage: Navigating Insurance for Transgender People",
+        "speaker": "Jordan Carmosino",
+        "description": "Insurance and healthcare can be difficult subject matters to navigate, especially for individuals who do not understand insurance processes. This presentation would review the types of insurance, how insurance works, and how to navigate receiving healthcare as a transgender person, specifically regarding surgical care.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "With These TIPS, Trans Inclusion is Pretty Simple",
+        "speaker": "Micah Morley",
+        "description": "With These TIPS, Trans Inclusion is Pretty Simple",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Validation: A Queer Identity",
+        "speaker": "Annie Titus",
+        "description": "As individuals seeking our identity, we eventually come to express interactions with others as validating, or perhaps, the exact opposite. The workshop is primarily rhetorical questions driven to help us discover what works for us. Many of us wander through life, not realizing what drives our particular engine, and by methodically working through where we have received validating experiences in the past, can help us to make plans for the future, without spending too much time in those experiences that leave us empty, rather than unleashing who we are, and who we want to be. This presentation was given last year in Wichita.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "On the Hook: Queer Coding and Queer Baiting",
+        "speaker": "Cait McReavy",
+        "description": "This presentation will define queer coding and queer baiting, explore the history of queer coding, provide examples of both in modern and historical contexts, teach attendees how to spot queerbaiting, and discuss the complexities of queer identity in the media.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Kink101: Demos & Details",
+        "speaker": "Jessica Ratchford",
+        "description": "Zip up your boots and grab your paddle‚Ä¶ we‚Äôre going on an adventure! This workshop establishes ground rules about safety and consent in kink, with a fun twist: kinky demonstrations! These will feature pre-determined participants, but you‚Äôll be right there for every knot and every wax pour. Bring your questions and rumors ‚Äì we‚Äôre here to educate everyone on how to stay safe, stay consensual, and have a fun, kinky time!",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Thicker than Water: When Queer Existence Overlaps Disabled Life",
+        "speaker": "Rachael McCollum",
+        "description": "With a focus on community ties and a search for support external to the family that raised you, this workshop is meant to provide a place for participants to learn to compare and contrast queer experiences and disabled experiences. Given by a disabled queer person, this talk will showcase the similar situations and emotional responses a disabled person or a queer person may find themselves having, and ways that stereotypes about disabled people and queer people can overlap, with specific examples from the presenter‚Äôs own experiences.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "STEMming from Transphobia: Creating Equity in the Sciences",
+        "speaker": "Skyler Eisert",
+        "description": "STEMming from Transphobia: Creating Equity in the Sciences is a workshop featuring four case studies of transgender scientists. The objective of the workshop is to educate participants about the issues that people who transition in a STEM field face as well as what can be done to break down those barriers on both the individual and societal levels. Attendees will have guided discussions about the case studies in small and large groups, focusing on the obstacles each individual faced as well as the advantages each individual had. The case studies focus on individuals in several STEM disciplines of varying gender identities and ages across different time periods.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "GaySL: A Crash Course in LGBTQ+ American Sign Language and Intersectionality",
+        "speaker": "Hayden Kristal",
+        "description": "This highly-interactive and hilarious workshop led by Deaf queer activist and stand up comedian Hayden Kristal teaches its participants LGBTQ-related American Sign Language signs while fostering a broader group discussion about horizontal marginalization, intersectionality, and what it means to be intersectionally accessible. All levels of experience with ASL and the Deaf community are welcome and encouraged to attend!",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Sharing Stories: Emphasizing LGBTQ+ Perspectives and Experiences",
+        "speaker": "Abigail Starcher",
+        "description": "A workshop sharing my experience working to create a way for LGBTQ+ voices to be shared in my local community through an alternative to the VDAY presentation of The Vagina Monologues. My local Gay-Straight Alliance (GSA) worked together to approach the same topics but endeavored to include various perspectives instead of a primarily cis-gender point of view. Therefore, I want to share the experience I had, explain how to create an individual monologue, offer the opportunity to share some monologues, and to inspire participants to start initiatives in their communities.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "A Colorful Reflection: An overview of QTPOC history from 1920 to 2020",
+        "speaker": "Alan Toussaint",
+        "description": "Can you name one important queer person of color? Specifically one that has shaped the LGBTQ+ community within the past century? This workshop will look at important leaders of color from the past, present and future. The workshop will include popular people like Audre Lorde to Laverne Cox and other individuals, like James Baldwin and Alvin Ailey. We will also have a small portion of time for attendees to discuss their own leaders in their communities and why they're important. Every person in this workshop will have a list of resources to find QTPOC leaders and historical information at their disposal.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "I Know Who You Are, But What Am I? A partners perspective on transgender love",
+        "speaker": "Ali Sands",
+        "description": "What happens to your current relationship if your partner comes out as transgender? Does your identity change with your partner? does it end relationships? Often times, partners are the most important source of validation and support when a transition occurs; yet just as often, they find themselves in the dark, struggling to define their own identity. With limited resources for partner support, it can be a daunting task to carry all the roles as a main caregiver and still find time and energy for self care. Thru her own experience and memoir, Ali Sands will shed some light on the role of partners in transition, and create a dialogue of shared experience and support.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Navigating Yourself out of the Neverending Sea of White Guilt as a Queer POC",
+        "speaker": "Mirm Hurula",
+        "description": "ou're beautiful and you deserve to have a space for yourself. This presentation is geared towards Queer POC as a space where we can discuss the different ways we healthily navigate white spaces-- as we have to do everyday. This space will give the opportunity to find new ways of decolonizing and ending the white narrative in your spaces, which means we need to focus on ourselves and what we need. For many of us, that's new and difficult just in general. We want to provide a space for you to examine yourself, prioritize your needs, and look towards how you can start to develop boundaries with others to fit your own intersections of identity.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Traveling While Trans: What's Your Name, Again?",
+        "speaker": "Arden Tyree Kimme",
+        "description": "Traveling while trans is intimidating, especially if your ID documents still bear an incorrect name! Arden has recently spent several months in southern Argentina and Chile and is here to share their experiences navigating new countries and a new language while trans. They will include advice for traveling prior to a legal name change, with a short section on trans Spanish",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Autistic and Part of the Alphabet Soup - How the Intersection of Autistic Neurodiversity and Being LGBT+ Shapes Our Lives; a Community Conversation",
+        "speaker": "Shane Howe",
+        "description": "A discussion-based workshop run by and for Autistic people identifying as part of the LGBT+ community! Join us to experience a LGBT+ Autistic prioritized space, facilitated by an #ActuallyAutistic neuroqueer trans person. Learn about the prevalence of Autistic LGBT+ people, Autistic-centered Disability Justice, person-first vs identity-first language, and Autistic-specific queer and trans identities. We‚Äôll discuss topics like Autistic asexuality and disability desexualization, ableism in queer spaces, the importance of stimming, Autistic transness and dysphoria, and more! We‚Äôll also touch on why it‚Äôs vital to recognize self-diagnosis, as well as some of the problems with mainstream autism advocacy. There will also be time set aside to discuss how having additional marginalized identities (like race, citizenship, body size, bi+ and nonbinary identities, religion, disabilities other then being Autistic, polyamory, and class) affects our existence as Autistic LGBT+ people.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Let's Get Back To communicating- LGBT Communication 101",
+        "speaker": "Krause",
+        "description": "Let's Get Back To communicating- LGBT Communication 101",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "We‚Äôre Back, Butches: Butch History, Identity, & Community",
+        "speaker": "Krause",
+        "description": "Bull dagger, tough kid, drag king, stone, boi, tomboy, butch; no matter what we call ourselves, our community has existed from the beginning. This session will explore the history of butch identity, how the term has evolved, and what the future could hold. Have you ever wondered- What does butch actually means? Who can identify as butch? What‚Äôs an old school butch and is there a new school? Come explore these questions and more during this guided discussion on identity, history, and community.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Building Bridges Between Queer Academia and D.I.Y. Spaces",
+        "speaker": "Vivian Thompson",
+        "description": "It often seems like there is something of a stratification in lgbtq communities, a divide between those working within the confines of academia and those who engage in art and activism outside of it. This panel will seek to draw connections between those two worlds, building a conversation to explore how methods of media distribution like hand-assembled zines and house shows can be powerful tools of communication, and to generate ideas for how this cross-pollination can lead to stronger communities.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Crushing Conversion Therapy in 2020: The Trevor Project and YOU",
+        "speaker": "Sam Brinton",
+        "description": "In the past few years, laws protecting LGBTQ youth from conversion therapy have been passing at breakneck speed. With thousands of lawmakers in cities, states, and countries recognizing the harms of conversion therapy - the next step is massive public education. From the New York Times op-eds to Playboy Magazine, from the United Nations to testifying before Congress, come learn about the world's largest campaign to end conversion therapy and save lives with The Trevor Project.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "It's Beautful But I Don't Like It: Exploring Queer Representation in Media",
+        "speaker": "Waverly Eubank",
+        "description": "As LGBTQIA+ representation evolves, so must our way of looking at it critically. How are we represented and are we represented authentically? Are some of us represented at all? How are we expected to react to this? This discussion will unpack queer media and queer representation in mainstream media, and will leave the audience asking for more than what we are given with mainly white and gay representation.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Related Histories; Commonalities between Native and Trans Activist Movements",
+        "speaker": "JAC Stringer",
+        "description": "The history of our communities have an impact on who we are today. We carry the pains and joys from those who came before us in our bodies, in our experiences, and in our identities. This is the foundation of historical trauma and it appears in all oppressed communities. The Native activist movement and the trans activist movement are full of commonalities including cultural, institutional, and medicalized violence, segregation, and normalization. This workshop is a space to hold, discuss, and understand how historical trauma takes shape within and around our communities and how we can continue to heal and grow.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Bending Desire: Non-Binary Attraction and Partnering",
+        "speaker": "JAC Stringer",
+        "description": "In a culture where ‚Äúsexy‚Äù is defined through feats of masculine or feminine perfection, how do we recognize desire that embodies all or none of these qualities? Attraction to androgyny is experienced in multiple spectra of sexualities, yet it‚Äôs still debated. Complex partnering dynamics formed by a variance of bodies, identities, and experiences make definitions for attraction difficult, if not impossible within traditional concepts of sexuality. In this workshop, we will discuss desire outside the binary including the language of attraction, gender normalcy‚Äôs influences, and how genderqueer and non-binary trans people continue to carve out spaces for sexual desire.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Queering Your Body: A POC Perspective",
+        "speaker": "Amarri Smallwood",
+        "description": "This presentation will explore the complexities of queer and trans people of color's relationship with mental and physical health. Our workshop will be open-ended discussion with the goal of having our audience critically think about how these issues affect queer and trans people of color's lived experiences.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Femme as F*ck: Femme History, Identity, & Community",
+        "speaker": "Stefani Vargas",
+        "description": "As an identity, femme is not homogenous but it is a thrilling mix of expression and experience. Femme is an exploration of gender identity, which can be a safe haven, a political statement, a way of life, or all of the above. The session will delve into the history of femme identity, how femmes are erased, who can identify as femme, and how femme identity has evolved to present day.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "P.s. I Love You (And You, and You): Exploring Non-Monogamy Inside the LGTBQ Community",
+        "speaker": "Stefani Vargas",
+        "description": "Let‚Äôs dive into non-monogamy and the infinite ways LGBTQ+ peoplecan experience love. In a society where heterosexual monogamy remains the default, we will discuss both the joys and challenges that stem from breaking societal norms of what a relationship ‚Äúshould‚Äù look like. This session will provide practical tools for non-monogamy, models of healthy relationships, and will end with time for facilitated discussion and sharing.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Fat Is Not a Bad Word: Loving Your Body & Exploring Your Identity",
+        "speaker": "Stefani Vargas",
+        "description": "Exploring body positivity and the intersection of LGBT+ and fat identities, this workshop will discuss the history of the fat acceptance movement, fatphobia, and fat queerness. We will share tools for loving ourselves, and our fat bodies, regardless of what mainstream culture defines as ‚Äúnormal‚Äù and work to dispel common misconceptions about fatness. Everyone is welcome to attend; however, this workshop will be centered on fat-identified members of the community.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Get it Together: Inclusive LGBT+ Organizing Inside Higher Education",
+        "speaker": "Stefani Vargas",
+        "description": "This workshop discusses ways in which one can build an effective and long-lasting organization that best serves the needs of LGBT+ students and the campus as a whole. Be it a new organization or one that can use an overhaul this session allows time to focus on both short and long-term goals and how the organization fits into campus culture.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Islam & the LGBTQ+ Community",
+        "speaker": "Genevieve Labe",
+        "description": "Explore what Islamophobia is and how it shows up in the LGBTQ+ community. Understand the experiences Muslim LGBTQ+ individuals in a global context. Learn what you can do to intervene when confronted with Islamophobia, how you can shift the narrative of Islam and LGBTQ+ Muslim people, and create spaces where Muslim LGBTQ+ people are seen and validated within the LGBTQ+ community.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "What if I‚Äôm the Only One? Navigating Trans & Queer Community in Isolated Rural Higher Education",
+        "speaker": "Stefani Vargas",
+        "description": "Small town, small school, small resources. Let‚Äôs address the issues of being an LGBTQ student on a rural campus; from finding each other, to starting an organization from scratch, to battling small-town isolation and administrative kickback. This workshop will present educational components within a facilitated discussion on how trans and queer people experience the challenges of rural higher education while also thriving as students and as people.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Advisor Track",
+        "title": "Retention in Collegiate Organizations",
+        "speaker": "Brooklyn Arizmendi",
+        "description": "For Student Leaders by Student Leaders, Let's talk student retention in LGBTQ+ Organizations! How do you attract students to your organization? How do you keep students invested and even striving for leadership positions? Together we‚Äôll go over inclusion, advertising, creating engaging meetings, while being advocates for all LGBTQ+ students.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Queer Identity and Christian Faith",
+        "speaker": "Jaclyn Brett",
+        "description": "This presentation is a safe space for discussing and understanding queer folks‚Äô experiences with the church and Christian faith, reflecting on how their faith backgrounds influence them, and seperating what in that is of value and what in that is harmful. It will include discussions of personal experiences in faith/religious contexts, reclaiming personal faith, and finding divine value in Jesus. It will contain presentations on shame, identity, and queering the Bible.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Gayming: Personal Advocacy in Online Gaming",
+        "speaker": "Kate Miller",
+        "description": "Do you love online gaming, but not the toxic environment? How do you find supportive communities and communities that are willing to learn? This workshop will include conversations about personal advocacy in gaming, including techniques in connecting with groups that may have room to grow and teaching while still loving your gaming experience. From large groups to one-off, small events in your favorite games, let's make sure you have an awesome experience and be true to you.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Healing Arts for Queer Hearts: An Informational and Interactive Workshop",
+        "speaker": "Abbey Strausbaugh",
+        "description": "This workshop will offer a brief presentation about the healing arts and how they are used for coping with internal struggles including emotional dysregulation and trauma. Following the presentation, there will be time for participants to get involved with a collage making project that will represent their identity, a struggle they are overcoming, or something important to them. During this time, participants will be free to talk softly with other participants and listen to soothing music. This workshop is meant to help relax the participants.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "What‚Äôs solidarity got to do with it? How QTPOC folks navigate divergent communities to create inclusion.",
+        "speaker": "Nathan Nguyen & Romeo Jackson",
+        "description": "Queer and trans people of color (QTPOC) navigate communities at the intersections of identity. From LGBTQ spaces that are predominantly white, to racial and/or ethnic communities that are problematically cis and/or hetero. This workshop will engage in conversations about what it means to identify at the intersections, common issues, and how to create convergence of communities.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "ESAs in LGBT",
+        "speaker": "Beck Nelson",
+        "description": "There has been a rise in the need for emotional support animals in many colleges and they really do make a difference. The presenter himself has an ESA that has helped with his mental illnesses. This workshop will look at what an emotional support animal (ESA) is, including the difference between ESA‚Äôs, therapy animals, and service animals are. We will also go over where an ESA is allowed to be, what the legislation around them is, and how to get one. We will cover major colleges‚Äô ESA policies.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Creating an LGBT Advocacy Plan",
+        "speaker": "Brooke Lindley",
+        "description": "OutFront Kalamazoo's mission is to create a just, inclusive, equitable, and supportive environment in Southwest Michigan for all sexual orienations, gender identities and gender expressions. Throughout the last 32 years, OutFront Kalamazoo has been assisting businesses and individuals on how to create a safe space for the LGBT community. In this presentation, OutFront Kalamazoo will provide participants on how to create an advocacy plan to assist and empower the LGBT community to advocate for change, create change, and how to hold individuals accountable for public change. In this presentation, participants will develop an action plan to assist with marginalized communities. The Presentation does mention stats and stories of individuals that include: sexual assault, domestic violence, suicide rates, homophobia and transphobia, racism, classism and more. Please review the content warning prior to attending.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Dealing With Insurance for HRT",
+        "speaker": "Lilliana Davis",
+        "description": "Insurance companies can seem complex, but follow a basic set of rules. This session will cover some basic terminology, understanding your insurance policy, and understanding the different ways to access HRT through the medical field. This session is built on my experiences, which include both getting an endocrinologist and informed consent. The endocrinologist part will cover getting the referral to an endocrinologist to insurance, ensuring the referral was given fair consideration, and appealing the decision. The informed consent portion will focus on how to get an appointment at Planned Parenthood and what happens at the appointment. There will also be a chance to ask any questions you may have.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 9:15",
+        "end": "2020-02-16 10:15"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Here and Queer: Reclaiming of a Historic Slur",
+        "speaker": "Leslie Zelinski",
+        "description": "This presentation is designed to help people understand the history behind the word queer, the current usage of the word, and how it has been reclaimed by some members of the community. Recognizing that there are mixed feelings about this topic, there will be an open discussion addressing the importance and impact of the language used in LGBTQ+ spaces.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
+    },
+    {
+        "schedule": "Advisor Track",
+        "title": "Gender Inclusive Housing Policy Round Table",
+        "speaker": "Cheyanne Kramer",
+        "description": "This presentation is aimed toward facilitating a discussion about current best practices as it relates to Gender Inclusive Housing (GIH), and whether those best practices meet the needs of transgender, nonbinary, and gender nonconforming students. We will use Oakland University's model as a core example, and facilitate an open discussion about the advantages and disadvantages of the current GIH models which many public universities use.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 8:30",
+        "end": "2020-02-15 9:30"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Let My People Fuck: A Workshop on Transness, Femininity, Sexuality, and Sex",
+        "speaker": "Stephanie Skora",
+        "description": "Sex and sexuality are often cornerstones of the queer and trans experience, but navigating sexuality while trans can be a doozy. Transmisogyny, slut shaming, body shaming, and the complex politics of existing as a human with a sexual or sexualized body are everywhere. This workshop presents a trans and genderqueer perspective on sex-positivity, and seeks to create a sex-positive culture that centers marginalized genders and sexualities, and creates true sexual liberation for all!",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 15:45",
+        "end": "2020-02-15 16:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Beyond Bubble Baths: Self-care for Student Leaders",
+        "speaker": "Hannah Thompson",
+        "description": "‚ÄúCaring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.‚Äù - Audre Lorde Student leaders, especially those who hold marginalized identities, have a unique position on their campuses. They often have to navigate not only the stress of everyday college life, but also face institutional and systemic challenges which can wear them down and burn them out. These students are also often held to higher standards than their peers for everything from essays to event planning. Join a student-advisor team for a workshop on surviving specific challenges of student activism through self-care that goes beyond bubble baths to dig into internalized oppression, navigating power, asking for help, creating support systems that work, and holding institutions accountable. Participants will come away with tools and resources for self-care and also have the opportunity to learn from one another.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 9:45",
+        "end": "2020-02-15 10:45"
+    },
+    {
+        "schedule": "Main Track",
+        "title": "Gettin‚Äô Jiggly With It: Burlesque as Intersectional Solidarity",
+        "speaker": "Kayla Lane Freeman",
+        "description": "In this workshop, participants will learn about the history of burlesque dancing and how it has evolved through the years to become a haven of queer, body positive celebration. The presentation will rely on historical and academic research as well as first-hand testimonies of Chicago burlesque dancers to help participants learn about the body image resilience, sex positive and queer coalition elements of burlesque dancing. Along with the academic presentation and group discussion, participants will have the opportunity to try out a mini-burlesque lesson themselves! All shapes/sizes/races/identities/abilities of bodies are welcome and invited to participate in the dance lesson, but it is not required for attending the presentation.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-15 13:15",
+        "end": "2020-02-15 14:15"
+    },
+    {
+        "schedule": "Advisor Track",
+        "title": "Queering the Boundaries with LGBTQ Advisors",
+        "speaker": "TK Morton",
+        "description": "This session is design to have LGBTQ+ advisors, leaders, and educators to learn more to support more of our community. We will be discussing direct action as an educator, how to support yourself, and how to do you risk ethnically not putting the work on the most marginalized communities. We know that folks have done the work for years and we can always do more.",
+        "type": "workshop",
+        "location": "Sangren Hall",
+        "start": "2020-02-16 8:00",
+        "end": "2020-02-16 9:00"
     }
 ]

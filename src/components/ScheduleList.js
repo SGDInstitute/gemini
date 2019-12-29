@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Text, SectionList } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import dayjs from 'dayjs';
 
@@ -9,61 +9,60 @@ import schedule from '../../assets/data/schedule.json';
 
 export default class ScheduleList extends React.Component {
     scheduleByDate = (schedule) => {
-        const groups = schedule.reduce((groups, activity) => {
+        const days = schedule.reduce((days, activity) => {
             const date = activity.start.split(' ')[0];
 
-            if (!groups[date]) {
-                groups[date] = [];
+            if (!days[date]) {
+                days[date] = [];
             }
 
-            groups[date].push(activity);
+            if (activity.type !== "workshop") {
+                days[date].push(activity);
+            } else {
+                days[date].map((a) => {
+                    if (a.type === 'group' && a.start === activity.start && a.end === activity.end) {
+                        if (!a['children']) {
+                            a['children'] = [];
+                        }
 
-            return groups;
+                        a['children'].push(activity);
+                    }
+
+                    return a;
+                });
+            }
+
+            return days;
         }, {});
 
-        const groupArrays = Object.keys(groups).map((date) => {
+        const sectionList = Object.keys(days).map((date) => {
             return {
                 date,
                 dayOfWeek: dayjs(date).format('dddd'),
-                activities: groups[date]
+                data: days[date]
             };
         });
-        return groupArrays
+
+        return sectionList
     }
 
-    renderActivity = ({ item: { id, schedule, title, description, type, location, start, end } }) => (
+    renderActivity = ({ item }) => (
         <Activity
-            id={id}
-            schedule={schedule}
-            title={title}
-            description={description}
-            type={type}
-            location={location}
-            start={start}
-            start={start}
-            end={end}
+            activity={item}
         />
     );
 
-    renderDayHeader = dayOfWeek => (
-        <Text style={[t.bgGray100, t.p4, t.textLg, t.borderY]}>{dayOfWeek}</Text>
-    );
-
-    renderActivities = ({ item: { date, dayOfWeek, activities } }) => (
-        <FlatList
-            data={activities}
-            renderItem={this.renderActivity}
-            ListHeaderComponent={this.renderDayHeader(dayOfWeek)}
-            keyExtractor={item => item.id}
-        />
+    renderHeader = ({ section: { dayOfWeek } }) => (
+        <Text style={[t.bgGray200, t.p4, t.textLg, t.border, t.borderGray400]}>{dayOfWeek}</Text>
     );
 
     render() {
         return (
-            <FlatList
-                data={this.scheduleByDate(schedule)}
-                renderItem={this.renderActivities}
-                keyExtractor={item => item.date}
+            <SectionList
+                sections={this.scheduleByDate(schedule)}
+                keyExtractor={(item, index) => item + index}
+                renderItem={this.renderActivity}
+                renderSectionHeader={this.renderHeader}
             />
         );
     }
