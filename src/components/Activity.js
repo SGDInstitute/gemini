@@ -54,7 +54,7 @@ export default class Activity extends React.Component {
                         marginBottom: 0
                     }}
                 >
-                    <ActivityModal activity={activity} onClose={this.toggleModal} />
+                    <ActivityModal activity={activity} onAdd={this.handleAdd} onClose={this.toggleModal} />
                 </Modal>
             );
         }

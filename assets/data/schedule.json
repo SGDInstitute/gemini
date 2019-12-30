@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "schedule": "Main Track",
         "title": "Registration Check-In/Information Table",
         "speaker": "",
@@ -10,16 +11,18 @@
         "end": "2020-02-14 20:00"
     },
     {
+        "id": 2,
         "schedule": "Main Track",
         "title": "Opening Session/Plenary #1",
-        "speaker": "",
-        "description": "",
+        "speaker": "Sam Irby",
+        "description": "hi my name is samantha. i write a blog called bitchesgottaeat. your mom loved my book meaty. some dude named \"dave\" gave we are never meeting in real life two stars on goodreads and, okay, he had some valid points. I HAVE ENOUGH HATE IN MY HEART TO START A CAR. in 2008, i started a blog on myspace (do you even know what that is) to convince this hot dude to be my boyfriend. he eventually dumped me and that was pretty terrible, but now i have a book on the new york times bestseller list. thank you, dude.",
         "type": "keynote",
         "location": "Miller Auditorium",
         "start": "2020-02-14 16:30",
         "end": "2020-02-14 18:30"
     },
     {
+        "id": 3,
         "schedule": "Advisor Track",
         "title": "Advisor Social",
         "speaker": "",
@@ -30,6 +33,7 @@
         "end": "2020-02-14 21:00"
     },
     {
+        "id": 4,
         "schedule": "Main Track",
         "title": "Entertainment",
         "speaker": "",
@@ -40,6 +44,7 @@
         "end": "2020-02-14 22:30"
     },
     {
+        "id": 5,
         "schedule": "Main Track",
         "title": "Registration Check-In",
         "speaker": "",
@@ -50,6 +55,7 @@
         "end": "2020-02-15 16:00"
     },
     {
+        "id": 6,
         "schedule": "Main Track",
         "title": "Information Table",
         "speaker": "",
@@ -60,6 +66,7 @@
         "end": "2020-02-15 20:00"
     },
     {
+        "id": 7,
         "schedule": "Main Track",
         "title": "Featured Speaker #1",
         "speaker": "",
@@ -70,6 +77,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 8,
         "schedule": "Main Track",
         "title": "Workshop Session #1",
         "speaker": "",
@@ -80,6 +88,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 9,
         "schedule": "Main Track",
         "title": "Featured Speaker #2",
         "speaker": "",
@@ -90,6 +99,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 10,
         "schedule": "Main Track",
         "title": "Workshop Session #2",
         "speaker": "",
@@ -100,6 +110,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 11,
         "schedule": "Main Track",
         "title": "Resource and Career Fair",
         "speaker": "",
@@ -110,6 +121,7 @@
         "end": "2020-02-15 16:30"
     },
     {
+        "id": 12,
         "schedule": "Main Track",
         "title": "State Caucuses",
         "speaker": "",
@@ -120,6 +132,7 @@
         "end": "2020-02-15 12:00"
     },
     {
+        "id": 13,
         "schedule": "Main Track",
         "title": "Lunch Break",
         "speaker": "",
@@ -130,6 +143,7 @@
         "end": "2020-02-15 13:00"
     },
     {
+        "id": 14,
         "schedule": "Main Track",
         "title": "State of the Region",
         "speaker": "",
@@ -140,6 +154,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 15,
         "schedule": "Main Track",
         "title": "Workshop Session #3",
         "speaker": "",
@@ -150,6 +165,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 16,
         "schedule": "Main Track",
         "title": "Featured Speaker #3",
         "speaker": "",
@@ -160,6 +176,7 @@
         "end": "2020-02-15 15:30"
     },
     {
+        "id": 17,
         "schedule": "Main Track",
         "title": "Workshop Session #4",
         "speaker": "",
@@ -170,6 +187,7 @@
         "end": "2020-02-15 15:30"
     },
     {
+        "id": 18,
         "schedule": "Main Track",
         "title": "Featured Speaker #4",
         "speaker": "",
@@ -180,6 +198,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 19,
         "schedule": "Main Track",
         "title": "Workshop Session #5",
         "speaker": "",
@@ -190,16 +209,18 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 20,
         "schedule": "Main Track",
         "title": "Plenary #2",
-        "speaker": "",
-        "description": "",
+        "speaker": "Kat Blaque",
+        "description": "Kat Blaque is an Animator, Illustrator and Youtuber from Southern California who has been openly blogging about her life for the past 10+ years on Youtube. She playfully refers to herself as “intersectionality salad” as she embodies various identities and experiences. As a black woman, she is invested in starting conversations about white supremacy and how it’s impacted her own life as well as various others. As a Trans woman, she believes that speaking about her growth and acceptance of self is vital in a world where trans people aren’t seen as valid and their possibilities are often seen as limited. She currently contributes to Everyday Feminism, Pride.com, the Huffington Post and has appeared on Buzzfeed, MTV News and MTV’s Decoded.",
         "type": "keynote",
         "location": "Miller Auditorium",
         "start": "2020-02-15 17:00",
         "end": "2020-02-15 18:00"
     },
     {
+        "id": 21,
         "schedule": "Main Track",
         "title": "Dinner Break",
         "speaker": "",
@@ -210,6 +231,7 @@
         "end": "2020-02-15 19:00"
     },
     {
+        "id": 22,
         "schedule": "Main Track",
         "title": "Identity Caucuses",
         "speaker": "",
@@ -220,6 +242,7 @@
         "end": "2020-02-15 20:30"
     },
     {
+        "id": 23,
         "schedule": "Main Track",
         "title": "Drag Show",
         "speaker": "",
@@ -230,6 +253,7 @@
         "end": "2020-02-15 22:30"
     },
     {
+        "id": 24,
         "schedule": "Main Track",
         "title": "Information Table",
         "speaker": "",
@@ -240,6 +264,7 @@
         "end": "2020-02-16 12:00"
     },
     {
+        "id": 25,
         "schedule": "Main Track",
         "title": "Workshop Session #6",
         "speaker": "",
@@ -250,6 +275,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 26,
         "schedule": "Main Track",
         "title": "Featured Workshop #5",
         "speaker": "",
@@ -260,6 +286,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 27,
         "schedule": "Main Track",
         "title": "Workshop Session #7",
         "speaker": "",
@@ -270,16 +297,18 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 28,
         "schedule": "Main Track",
         "title": "Closing Session/Plenary #3",
-        "speaker": "",
-        "description": "",
+        "speaker": "Saeed Jones",
+        "description": "Saeed Jones is an essential author as well as a powerful voice in the world of literary activism, and his writing often takes on questions of identity. Formerly a major contributor at Buzzfeed, he shaped his platform into a tool for social awareness with his no-holds-barred personality. His poems engage themes of intimacy, race and power, and often incorporate elements of mythology. In a 2014 interview for PEN America, Jones stated, “I’m obsessed with manhood as a brutal and artful performance. My mind always finds its way back to the crossroad where sex, race, and power collide. Journeys, transformation as well as dashed attempts to transform, fascinate me as well.”",
         "type": "keynote",
         "location": "Miller Auditorium",
         "start": "2020-02-16 10:30",
         "end": "2020-02-16 12:00"
     },
     {
+        "id": 29,
         "schedule": "Main Track",
         "title": "James Hodges (bruh)",
         "speaker": "James Hodges",
@@ -290,16 +319,18 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 30,
         "schedule": "Main Track",
         "title": "Queering the Classroom: Making educational spaces for LGBTQ+ students",
         "speaker": "Rebecca Sawyer",
-        "description": " Calling all future and current educators of all levels and content areas! Despite increasing resources and role-models for students, the classroom still remains a place where many feel they cannot be their authentic selves. This is due in large part to curriculum and practices that are still cisheteronormative. Luckily, there are steps that you (yes, you!) can take to make the classroom a brave space for your students. We‚Äôll talk about setting norms, troubleshooting behaviors, queering the curriculum, and more! Be ready to be a change-maker at your school.",
+        "description": "Calling all future and current educators of all levels and content areas! Despite increasing resources and role-models for students, the classroom still remains a place where many feel they cannot be their authentic selves. This is due in large part to curriculum and practices that are still cisheteronormative. Luckily, there are steps that you (yes, you!) can take to make the classroom a brave space for your students. We‚Äôll talk about setting norms, troubleshooting behaviors, queering the curriculum, and more! Be ready to be a change-maker at your school.",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 8:30",
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 31,
         "schedule": "Main Track",
         "title": "Asexuals Surviving College Guide",
         "speaker": "Joan Conte",
@@ -310,26 +341,29 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 32,
         "schedule": "Main Track",
         "title": "The Importance of Queer Resiliency Groups on College Campuses.",
         "speaker": "Jeff Gibson",
-        "description": " Finding a place to connect and share experiences with others can be challenging for Queer students in campus environments that are not the most inclusive or promote visibility. This presentation shares how OUTreach, a resiliency group at the University of North Dakota allows for the opportunity to connect students with one another and talk about issues and experiences relating to identity and how to build resiliency.",
+        "description": "Finding a place to connect and share experiences with others can be challenging for Queer students in campus environments that are not the most inclusive or promote visibility. This presentation shares how OUTreach, a resiliency group at the University of North Dakota allows for the opportunity to connect students with one another and talk about issues and experiences relating to identity and how to build resiliency.",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 8:30",
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 33,
         "schedule": "Main Track",
         "title": "Whatever Happened to Lesbians?",
         "speaker": "Stephanie Skora",
-        "description": " It‚Äôs often said that ‚Äúlesbian‚Äù is a dying identity: non-heterosexual women have started identifying in other ways, and we lesbians have had a troubling history with the trans community. In many ways, it seems like we‚Äôve lost queer politics in lesbian spaces. A journey through history and the roots of the divide between the lesbian and trans community, this lecture seeks to debunk the notion that transness and lesbianness are at odds, and explore the radical potentialities of new lesbian spaces!",
+        "description": "It‚Äôs often said that ‚Äúlesbian‚Äù is a dying identity: non-heterosexual women have started identifying in other ways, and we lesbians have had a troubling history with the trans community. In many ways, it seems like we‚Äôve lost queer politics in lesbian spaces. A journey through history and the roots of the divide between the lesbian and trans community, this lecture seeks to debunk the notion that transness and lesbianness are at odds, and explore the radical potentialities of new lesbian spaces!",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 8:30",
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 34,
         "schedule": "Main Track",
         "title": "No Walls Between Us: An LGBTQ Palestine Solidarity 101",
         "speaker": "Stephanie Skora",
@@ -340,16 +374,18 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 35,
         "schedule": "Main Track",
         "title": "The Water Closet: Ungendering Bathrooms",
         "speaker": "Leslie Boker",
-        "description": " Using the bathroom while trans is complicated by a history of gender policing and cissexist notions about who deserves to use public spaces. This workshop investigates the history of gendered bathrooms, the cultural narratives maintaining them today, and the machinations behind anti-trans bathroom bills ‚Äî then turns to discussion about queer dreams of an ideal place to do your business.",
+        "description": "Using the bathroom while trans is complicated by a history of gender policing and cissexist notions about who deserves to use public spaces. This workshop investigates the history of gendered bathrooms, the cultural narratives maintaining them today, and the machinations behind anti-trans bathroom bills ‚Äî then turns to discussion about queer dreams of an ideal place to do your business.",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 8:30",
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 36,
         "schedule": "Main Track",
         "title": "It's Not Me, It's You: Building Resiliency as a Practice",
         "speaker": "Grace Davis",
@@ -360,6 +396,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 37,
         "schedule": "Main Track",
         "title": "Look Who's Talking: Gender, Sexuality, and the Voice",
         "speaker": "Brandon Merritt",
@@ -370,6 +407,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 38,
         "schedule": "Main Track",
         "title": "Navigating Queerness & Disability",
         "speaker": "Dean Strauss",
@@ -380,6 +418,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 39,
         "schedule": "Main Track",
         "title": "Un-Erased: Exploring the Foundation of Modern Queer Identity and Activism",
         "speaker": "Chris Mattix",
@@ -390,6 +429,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 40,
         "schedule": "Main Track",
         "title": "Rainbow Capitalism in Higher Education: How Institutions Recruit Us to Make $$$",
         "speaker": "Bee Taylor",
@@ -400,16 +440,18 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 41,
         "schedule": "Main Track",
-        "title": " Navigating LGBTQ Civil Rights: A Historical Perspective and Moving Forward",
+        "title": "Navigating LGBTQ Civil Rights: A Historical Perspective and Moving Forward",
         "speaker": "Glenn Miller",
-        "description": " In the 70s and 80s, queer people fought back to secure anti-retrovirals, access to condoms, the right to live and love openly, and we pied Anita Bryant in the face. In the 90s, Ellen came out, but Don't Ask, Don't Tell and Defense of Marriage Act were signed into law. In the 2000s, we saw marriage equality spring up in Democratic states, however we saw state constitutions amended to discriminate. Marriage equality was sought so heavily, not just because it was another plank in the queer movement, but because it conferred many rights with one movement, second-parent adoption, hospital visitation, inheritance, insurance dependency, and power of attorney. But as marriage became law, so did Religious Freedom Restoration Acts, bathroom bills, and adoption limitations. Where are we at now in Trump's America? How will the Supreme Court likely rule on the 3 cases presented on October 8, and what will that mean for us? Join in for a dialogue about where we came from and where we are going.",
+        "description": "In the 70s and 80s, queer people fought back to secure anti-retrovirals, access to condoms, the right to live and love openly, and we pied Anita Bryant in the face. In the 90s, Ellen came out, but Don't Ask, Don't Tell and Defense of Marriage Act were signed into law. In the 2000s, we saw marriage equality spring up in Democratic states, however we saw state constitutions amended to discriminate. Marriage equality was sought so heavily, not just because it was another plank in the queer movement, but because it conferred many rights with one movement, second-parent adoption, hospital visitation, inheritance, insurance dependency, and power of attorney. But as marriage became law, so did Religious Freedom Restoration Acts, bathroom bills, and adoption limitations. Where are we at now in Trump's America? How will the Supreme Court likely rule on the 3 cases presented on October 8, and what will that mean for us? Join in for a dialogue about where we came from and where we are going.",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 9:45",
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 42,
         "schedule": "Main Track",
         "title": "The Intersection of Queer Identities and Religious Leadership",
         "speaker": "Ellen Yope",
@@ -420,6 +462,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 43,
         "schedule": "Main Track",
         "title": "The Campus Gay Agenda: Strategic Planning for LGBTQA+ Initiatives",
         "speaker": "Danielle Stamper",
@@ -430,6 +473,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 44,
         "schedule": "Main Track",
         "title": "Showgirl to Sobriety: A Queen's journey through trauma, mental health and addiction; coming out fabulous!",
         "speaker": "Ben Hippensteel",
@@ -440,6 +484,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 45,
         "schedule": "Main Track",
         "title": "Better Than Normal: Navigating Hookups, Celibacy, and Sexual Self-Worth",
         "speaker": "Makenzie Marts",
@@ -450,6 +495,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 46,
         "schedule": "Main Track",
         "title": "Recoloring a Colorless Flag: The Rhetoric and Discourse over the Black and Brown Stripe Pride Flag",
         "speaker": "Rocky Roque",
@@ -460,18 +506,20 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 47,
         "schedule": "Main Track",
         "title": "Racialized Gender Roles: How the intersections of racism and sexism impact the LGBT community",
         "speaker": "Nathan Nguyen",
-        "description": " The riots of Compton's Cafeteria and Stonewall were started by those who were on the margins of race, gender, and sexuality but LGBTQ rights continue to move forward while not having hard discussions about race, gender, and cissexism. Participants will engage in reflection exercises that break down historical and cultural aspects that continue to segment the work and the movement while interrogating their own privileges.",
+        "description": "The riots of Compton's Cafeteria and Stonewall were started by those who were on the margins of race, gender, and sexuality but LGBTQ rights continue to move forward while not having hard discussions about race, gender, and cissexism. Participants will engage in reflection exercises that break down historical and cultural aspects that continue to segment the work and the movement while interrogating their own privileges.",
         "type": "workshop",
         "location": "Sangren Hall",
         "start": "2020-02-15 13:15",
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 48,
         "schedule": "Main Track",
-        "title": " Healthcare Coverage: Navigating Insurance for Transgender People",
+        "title": "Healthcare Coverage: Navigating Insurance for Transgender People",
         "speaker": "Jordan Carmosino",
         "description": "Insurance and healthcare can be difficult subject matters to navigate, especially for individuals who do not understand insurance processes. This presentation would review the types of insurance, how insurance works, and how to navigate receiving healthcare as a transgender person, specifically regarding surgical care.",
         "type": "workshop",
@@ -480,6 +528,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 49,
         "schedule": "Main Track",
         "title": "With These TIPS, Trans Inclusion is Pretty Simple",
         "speaker": "Micah Morley",
@@ -490,6 +539,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 50,
         "schedule": "Main Track",
         "title": "Validation: A Queer Identity",
         "speaker": "Annie Titus",
@@ -500,6 +550,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 51,
         "schedule": "Main Track",
         "title": "On the Hook: Queer Coding and Queer Baiting",
         "speaker": "Cait McReavy",
@@ -510,6 +561,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 52,
         "schedule": "Main Track",
         "title": "Kink101: Demos & Details",
         "speaker": "Jessica Ratchford",
@@ -520,6 +572,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 53,
         "schedule": "Main Track",
         "title": "Thicker than Water: When Queer Existence Overlaps Disabled Life",
         "speaker": "Rachael McCollum",
@@ -530,6 +583,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 54,
         "schedule": "Main Track",
         "title": "STEMming from Transphobia: Creating Equity in the Sciences",
         "speaker": "Skyler Eisert",
@@ -540,6 +594,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 55,
         "schedule": "Main Track",
         "title": "GaySL: A Crash Course in LGBTQ+ American Sign Language and Intersectionality",
         "speaker": "Hayden Kristal",
@@ -550,6 +605,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 56,
         "schedule": "Main Track",
         "title": "Sharing Stories: Emphasizing LGBTQ+ Perspectives and Experiences",
         "speaker": "Abigail Starcher",
@@ -560,6 +616,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 57,
         "schedule": "Main Track",
         "title": "A Colorful Reflection: An overview of QTPOC history from 1920 to 2020",
         "speaker": "Alan Toussaint",
@@ -570,6 +627,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 58,
         "schedule": "Main Track",
         "title": "I Know Who You Are, But What Am I? A partners perspective on transgender love",
         "speaker": "Ali Sands",
@@ -580,6 +638,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 59,
         "schedule": "Main Track",
         "title": "Navigating Yourself out of the Neverending Sea of White Guilt as a Queer POC",
         "speaker": "Mirm Hurula",
@@ -590,6 +649,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 60,
         "schedule": "Main Track",
         "title": "Traveling While Trans: What's Your Name, Again?",
         "speaker": "Arden Tyree Kimme",
@@ -600,6 +660,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 61,
         "schedule": "Main Track",
         "title": "Autistic and Part of the Alphabet Soup - How the Intersection of Autistic Neurodiversity and Being LGBT+ Shapes Our Lives; a Community Conversation",
         "speaker": "Shane Howe",
@@ -610,6 +671,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 62,
         "schedule": "Main Track",
         "title": "Let's Get Back To communicating- LGBT Communication 101",
         "speaker": "Krause",
@@ -620,6 +682,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 63,
         "schedule": "Main Track",
         "title": "We‚Äôre Back, Butches: Butch History, Identity, & Community",
         "speaker": "Krause",
@@ -630,6 +693,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 64,
         "schedule": "Main Track",
         "title": "Building Bridges Between Queer Academia and D.I.Y. Spaces",
         "speaker": "Vivian Thompson",
@@ -640,6 +704,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 65,
         "schedule": "Main Track",
         "title": "Crushing Conversion Therapy in 2020: The Trevor Project and YOU",
         "speaker": "Sam Brinton",
@@ -650,6 +715,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 66,
         "schedule": "Main Track",
         "title": "It's Beautful But I Don't Like It: Exploring Queer Representation in Media",
         "speaker": "Waverly Eubank",
@@ -660,6 +726,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 67,
         "schedule": "Main Track",
         "title": "Related Histories; Commonalities between Native and Trans Activist Movements",
         "speaker": "JAC Stringer",
@@ -670,6 +737,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 68,
         "schedule": "Main Track",
         "title": "Bending Desire: Non-Binary Attraction and Partnering",
         "speaker": "JAC Stringer",
@@ -680,6 +748,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 69,
         "schedule": "Main Track",
         "title": "Queering Your Body: A POC Perspective",
         "speaker": "Amarri Smallwood",
@@ -690,6 +759,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 70,
         "schedule": "Main Track",
         "title": "Femme as F*ck: Femme History, Identity, & Community",
         "speaker": "Stefani Vargas",
@@ -700,6 +770,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 71,
         "schedule": "Main Track",
         "title": "P.s. I Love You (And You, and You): Exploring Non-Monogamy Inside the LGTBQ Community",
         "speaker": "Stefani Vargas",
@@ -710,6 +781,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 72,
         "schedule": "Main Track",
         "title": "Fat Is Not a Bad Word: Loving Your Body & Exploring Your Identity",
         "speaker": "Stefani Vargas",
@@ -720,6 +792,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 73,
         "schedule": "Main Track",
         "title": "Get it Together: Inclusive LGBT+ Organizing Inside Higher Education",
         "speaker": "Stefani Vargas",
@@ -730,6 +803,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 74,
         "schedule": "Main Track",
         "title": "Islam & the LGBTQ+ Community",
         "speaker": "Genevieve Labe",
@@ -740,6 +814,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 75,
         "schedule": "Main Track",
         "title": "What if I‚Äôm the Only One? Navigating Trans & Queer Community in Isolated Rural Higher Education",
         "speaker": "Stefani Vargas",
@@ -750,6 +825,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 76,
         "schedule": "Advisor Track",
         "title": "Retention in Collegiate Organizations",
         "speaker": "Brooklyn Arizmendi",
@@ -760,6 +836,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 77,
         "schedule": "Main Track",
         "title": "Queer Identity and Christian Faith",
         "speaker": "Jaclyn Brett",
@@ -770,6 +847,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 78,
         "schedule": "Main Track",
         "title": "Gayming: Personal Advocacy in Online Gaming",
         "speaker": "Kate Miller",
@@ -780,6 +858,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 79,
         "schedule": "Main Track",
         "title": "Healing Arts for Queer Hearts: An Informational and Interactive Workshop",
         "speaker": "Abbey Strausbaugh",
@@ -790,6 +869,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 80,
         "schedule": "Main Track",
         "title": "What‚Äôs solidarity got to do with it? How QTPOC folks navigate divergent communities to create inclusion.",
         "speaker": "Nathan Nguyen & Romeo Jackson",
@@ -800,6 +880,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 81,
         "schedule": "Main Track",
         "title": "ESAs in LGBT",
         "speaker": "Beck Nelson",
@@ -810,6 +891,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 82,
         "schedule": "Main Track",
         "title": "Creating an LGBT Advocacy Plan",
         "speaker": "Brooke Lindley",
@@ -820,6 +902,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 83,
         "schedule": "Main Track",
         "title": "Dealing With Insurance for HRT",
         "speaker": "Lilliana Davis",
@@ -830,6 +913,7 @@
         "end": "2020-02-16 10:15"
     },
     {
+        "id": 84,
         "schedule": "Main Track",
         "title": "Here and Queer: Reclaiming of a Historic Slur",
         "speaker": "Leslie Zelinski",
@@ -840,6 +924,7 @@
         "end": "2020-02-16 9:00"
     },
     {
+        "id": 85,
         "schedule": "Advisor Track",
         "title": "Gender Inclusive Housing Policy Round Table",
         "speaker": "Cheyanne Kramer",
@@ -850,6 +935,7 @@
         "end": "2020-02-15 9:30"
     },
     {
+        "id": 86,
         "schedule": "Main Track",
         "title": "Let My People Fuck: A Workshop on Transness, Femininity, Sexuality, and Sex",
         "speaker": "Stephanie Skora",
@@ -860,6 +946,7 @@
         "end": "2020-02-15 16:45"
     },
     {
+        "id": 87,
         "schedule": "Main Track",
         "title": "Beyond Bubble Baths: Self-care for Student Leaders",
         "speaker": "Hannah Thompson",
@@ -870,6 +957,7 @@
         "end": "2020-02-15 10:45"
     },
     {
+        "id": 88,
         "schedule": "Main Track",
         "title": "Gettin‚Äô Jiggly With It: Burlesque as Intersectional Solidarity",
         "speaker": "Kayla Lane Freeman",
@@ -880,6 +968,7 @@
         "end": "2020-02-15 14:15"
     },
     {
+        "id": 89,
         "schedule": "Advisor Track",
         "title": "Queering the Boundaries with LGBTQ Advisors",
         "speaker": "TK Morton",

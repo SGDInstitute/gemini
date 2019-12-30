@@ -1,20 +1,19 @@
 import React from 'react';
-import { Text, TouchableOpacity, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, ScrollView, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Button } from 'react-native-elements';
 import dayjs from 'dayjs';
 
 import types from '../../assets/data/types.json';
 
-export default function ActivityModal({ activity, onClose }) {
+export default function ActivityModal({ activity, onClose, onAdd }) {
     const formattedStart = dayjs(activity.start).format('dddd h:mm a');
     const formattedEnd = dayjs(activity.end).format('h:mm a');
     const activityTypeBg = types[activity.type].bgColor;
     const activityTypeText = types[activity.type].textColor;
 
     return (
-        <ScrollView style={[t.flex1, t.bgWhite, t.roundedLg, t.pB12]}>
+        <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
             <View style={{
                 backgroundColor: activityTypeBg,
                 height: 150,
@@ -32,14 +31,47 @@ export default function ActivityModal({ activity, onClose }) {
                 </Text>
                 <Text>{activity.location}</Text>
             </View>
-            <View style={[t.p4,]}>
-                <Button title="Add to My Schedule" onPress={onClose} />
-                <Button title="Add to My Schedule" onPress={onClose} />
+            <View style={t.flex1}>
+                <ScrollView style={t.p4}>
+                    <View style={[t.flexRow, t.mB4]}>
+                        <TouchableOpacity onPress={onAdd}>
+                            <Text style={styles.btn}>Add to My Schedule</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={onClose}>
+                            <MaterialCommunityIcons style={styles.btnSecondary} name="close" />
+                        </TouchableOpacity>
+                    </View>
+                    {activity.speaker !== null && <Text style={[t.textLg, t.mB4]}>{activity.speaker}</Text>}
+                    {activity.description !== null && <Text style={{ lineHeight: 20, paddingBottom: 50 }}>{activity.description}</Text>}
+                </ScrollView>
             </View>
-            <View style={[t.p4,]}>
-                <Text>{activity.speaker}</Text>
-                <Text>{activity.description}</Text>
-            </View>
-        </ScrollView>
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+    btn: {
+        backgroundColor: '#009999',
+        borderRadius: 6,
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+        overflow: 'hidden',
+        padding: 8,
+        textAlign: 'center',
+        height: 32,
+        marginRight: 8
+    },
+    btnSecondary: {
+        backgroundColor: '#aeb3bf',
+        borderRadius: 6,
+        color: 'black',
+        fontSize: 14,
+        fontWeight: 'bold',
+        overflow: 'hidden',
+        padding: 8,
+        textAlign: 'center',
+        height: 32,
+        marginRight: 8
+    },
+});

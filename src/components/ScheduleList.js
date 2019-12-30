@@ -65,7 +65,7 @@ export default class ScheduleList extends React.Component {
         return (
             <SectionList
                 sections={this.scheduleByDate(schedule)}
-                keyExtractor={(item, index) => item + index}
+                keyExtractor={(item, index) => item.id + index}
                 renderItem={this.renderActivity}
                 renderSectionHeader={this.renderHeader}
             />
