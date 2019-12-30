@@ -45,6 +45,7 @@ export default class GroupedActivity extends React.Component {
 
     render() {
         const { title, type, location, speaker } = this.props.activity;
+        const activityTypeBg = types[type].bgColor;
 
         return (
             <View>
@@ -54,7 +55,7 @@ export default class GroupedActivity extends React.Component {
                     justifyContent: 'space-between',
                     margin: 15,
                     borderLeftWidth: 3,
-                    borderLeftColor: types[type],
+                    borderLeftColor: activityTypeBg,
                     paddingLeft: 10
                 }}>
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggleModal}>

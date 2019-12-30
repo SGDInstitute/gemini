@@ -1,9 +1,34 @@
 {
-    "general": "#aeb3bf",
-    "food": "#546163",
-    "keynote": "#f2b716",
-    "featured": "#009999",
-    "workshop": "#1a7796",
-    "group": "#0d3c49",
-    "advisor": "#a13c72"
+    "general": {
+        "bgColor": "#aeb3bf",
+        "textColor": "textWhite"
+    },
+    "food": {
+        "bgColor": "#546163",
+        "textColor": "textWhite"
+    },
+    "keynote": {
+        "bgColor": "#f2b716",
+        "textColor": "textWhite"
+    },
+    "featured": {
+        "bgColor": "#009999",
+        "textColor": "textWhite"
+    },
+    "workshop": {
+        "bgColor": "#1a7796",
+        "textColor": "textWhite"
+    },
+    "group": {
+        "bgColor": "#0d3c49",
+        "textColor": "textWhite"
+    },
+    "advisor": {
+        "bgColor": "#a13c72",
+        "textColor": "textWhite"
+    },
+    "entertainment": {
+        "bgColor": "#f2b716",
+        "textColor": "textWhite"
+    },
 }

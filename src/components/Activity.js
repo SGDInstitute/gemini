@@ -69,6 +69,8 @@ export default class Activity extends React.Component {
 
         const formattedStart = dayjs(start).format('h:mm a');
         const formattedEnd = dayjs(end).format('h:mm a');
+        const activityTypeBg = types[type].bgColor;
+
         let openCloseButton;
 
         if (isOpen) {
@@ -85,7 +87,7 @@ export default class Activity extends React.Component {
                     justifyContent: 'space-between',
                     margin: 15,
                     borderLeftWidth: 3,
-                    borderLeftColor: types[type],
+                    borderLeftColor: activityTypeBg,
                     paddingLeft: 10
                 }}>
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggle}>
