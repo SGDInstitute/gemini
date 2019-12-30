@@ -21,7 +21,7 @@ export default class GroupedActivity extends React.Component {
         this.setState({ isModalVisible: !this.state.isModalVisible });
     };
 
-    renderModal() {
+    renderModal = () => {
         if (this.props.activity.type !== 'group') {
             const { activity } = this.props;
 
