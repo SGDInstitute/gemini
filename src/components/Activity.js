@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Children from './ActivityChildren';
+import ActivityModal from './ActivityModal';
 
 import types from '../../assets/data/types.json';
 
@@ -27,6 +28,14 @@ export default class Activity extends React.Component {
         alert('Added to your Schedule! (Not Really)');
     }
 
+    toggle = () => {
+        if (this.props.activity.type === 'group') {
+            this.setState({ isOpen: !this.state.isOpen });
+        }
+
+        this.setState({ isModalVisible: !this.state.isModalVisible });
+    }
+
     toggleModal = () => {
         this.setState({ isModalVisible: !this.state.isModalVisible });
     };
@@ -38,24 +47,20 @@ export default class Activity extends React.Component {
             return (
                 <Modal
                     isVisible={this.state.isModalVisible}
+                    style={{
+                        marginTop: 80,
+                        marginLeft: 0,
+                        marginRight: 0,
+                        marginBottom: 0
+                    }}
                 >
-                    <View style={[t.flex1, t.bgWhite, t.rounded, t.mT8, t.p4, t._mY2]}>
-                        <Text>{activity.title}</Text>
-                        <Text>{activity.schedule}</Text>
-                        <Text>{activity.type}</Text>
-                        <Text>{activity.start}</Text>
-                        <Text>{activity.end}</Text>
-                        <Text>{activity.speaker}</Text>
-                        <Text>{activity.description}</Text>
-                        <Button title="Hide" onPress={this.toggleModal} />
-                    </View>
+                    <ActivityModal activity={activity} onClose={this.toggleModal} />
                 </Modal>
             );
         }
 
         return null;
     }
-
 
     render() {
         const { title, type, location, start, end, children } = this.props.activity;
@@ -83,7 +88,7 @@ export default class Activity extends React.Component {
                     borderLeftColor: types[type],
                     paddingLeft: 10
                 }}>
-                    <TouchableOpacity style={{ width: '90%', }} onPress={this.toggleModal}>
+                    <TouchableOpacity style={{ width: '90%', }} onPress={this.toggle}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
                             <Text style={[t.textLg, t.mB2]}>{title}</Text>
                             {!hideTime && <Text><Text style={t.textGray700}>{formattedStart}</Text> - <Text style={t.textGray700}>{formattedEnd}</Text></Text>}
