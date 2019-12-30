@@ -1,9 +1,7 @@
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
-import { createStackNavigator } from 'react-navigation'
 
 import PersonalSchedule from "./screens/Schedule/PersonalSchedule";
 import EntireSchedule from "./screens/Schedule/EntireSchedule";
-import EntireScheduleStack from './ScheduleStack';
 
 const ScheduleTabNavigator = createMaterialTopTabNavigator(
     {
@@ -11,7 +9,7 @@ const ScheduleTabNavigator = createMaterialTopTabNavigator(
             navigationOptions: {
                 tabBarLabel: "All"
             },
-            screen: EntireScheduleStack
+            screen: EntireSchedule
         },
         PersonalSchedule: {
             navigationOptions: {
