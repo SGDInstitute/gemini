@@ -1,16 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import NavBar from '../../components/NavBar';
-
 export default class Activity extends React.Component {
     render() {
+        const activity = JSON.parse(this.props.navigation.getParam('activity', {}));
+
         return (
-            <View style={styles.flex1}>
-                <NavBar title="Activity" />
-                <View style={styles.container}>
-                    <Text>Activity Screen</Text>
-                </View>
+            <View>
+                <Text>{activity.title}</Text>
+                <Text>{activity.schedule}</Text>
+                <Text>{activity.type}</Text>
+                <Text>{activity.start}</Text>
+                <Text>{activity.end}</Text>
+                <Text>{activity.speaker}</Text>
             </View>
         );
     }

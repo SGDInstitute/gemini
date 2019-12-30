@@ -51,13 +51,13 @@ export default class Activity extends React.Component {
                     borderLeftColor: types[type],
                     paddingLeft: 10
                 }}>
-                    <View style={{ width: '90%', }}>
+                    <TouchableOpacity style={{ width: '90%', }} onPress={this.props.onPress}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
                             <Text style={[t.textLg, t.mB2]}>{title}</Text>
                             {!hideTime && <Text><Text style={t.textGray700}>{formattedStart}</Text> - <Text style={t.textGray700}>{formattedEnd}</Text></Text>}
                             <Text style={t.textGray700}>{location}</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                     <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         {
                             children
