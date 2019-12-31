@@ -8,6 +8,7 @@ import Schedule from "./screens/Schedule";
 import Maps from "./screens/Maps";
 import Evaluations from "./screens/Evaluations";
 import Contact from "./screens/Contact";
+import Settings from "./screens/Settings";
 
 const MainNavigator = createDrawerNavigator(
     {
@@ -54,11 +55,21 @@ const MainNavigator = createDrawerNavigator(
         Contact: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
-                    <MaterialCommunityIcons name="help-circle-outline" size={28} style={{ color: tintColor }} />
+                    <MaterialCommunityIcons name="help" size={28} style={{ color: tintColor }} />
                 ),
-                drawerLabel: "Contact"
+                drawerLabel: "Contact & FAQ"
             },
             screen: Contact
+        },
+
+        Settings: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="settings" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Settings"
+            },
+            screen: Settings
         },
     },
     {
