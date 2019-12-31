@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Miller Auditorium",
+        "description": "Used for Keynote sessions",
+        "latlng": {
+            "latitude": 42.279269,
+            "longitude": -85.615730
+        }
+    },
+    {
+        "id": 2,
+        "title": "Sangren Hall",
+        "description": "Used for Workshop sessions",
+        "latlng": {
+            "latitude": 42.284182,
+            "longitude": -85.614550
+        }
+    },
+    {
+        "id": 3,
+        "title": "John T. Bernhard Center",
+        "description": "used for Workshop sessions",
+        "latlng": {
+            "latitude": 42.285060,
+            "longitude": -85.612166
+        }
+    }
+]
