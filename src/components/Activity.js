@@ -63,7 +63,7 @@ export default class Activity extends React.Component {
     }
 
     render() {
-        const { title, type, location, start, end, children } = this.props.activity;
+        const { title, type, location, speaker, start, end, children } = this.props.activity;
         const { hideTime } = this.props;
         const { isOpen } = this.state;
 
@@ -92,8 +92,9 @@ export default class Activity extends React.Component {
                 }}>
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggle}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
-                            <Text style={[t.textLg, t.mB2]}>{title}</Text>
-                            {!hideTime && <Text><Text style={t.textGray700}>{formattedStart}</Text> - <Text style={t.textGray700}>{formattedEnd}</Text></Text>}
+                            <Text style={[t.textLg]}>{title}</Text>
+                            {speaker !== '' && <Text style={t.textGray700}>{speaker}</Text>}
+                            {!hideTime && <Text style={t.mT2}><Text style={t.textGray700}>{formattedStart}</Text> - <Text style={t.textGray700}>{formattedEnd}</Text></Text>}
                             <Text style={t.textGray700}>{location}</Text>
                         </View>
                     </TouchableOpacity>
