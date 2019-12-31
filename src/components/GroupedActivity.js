@@ -35,7 +35,7 @@ export default class GroupedActivity extends React.Component {
                         marginBottom: 0
                     }}
                 >
-                    <ActivityModal activity={activity} onClose={this.toggleModal} />
+                    <ActivityModal activity={activity} onClose={this.toggleModal} onAdd={this.handleAdd} />
                 </Modal>
             );
         }
