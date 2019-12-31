@@ -8,7 +8,7 @@ import Schedule from "./screens/Schedule";
 import Maps from "./screens/Maps";
 import Evaluations from "./screens/Evaluations";
 import Contact from "./screens/Contact";
-import Settings from "./screens/Settings";
+import SettingsStack from "./SettingsStack";
 
 const MainNavigator = createDrawerNavigator(
     {
@@ -69,7 +69,7 @@ const MainNavigator = createDrawerNavigator(
                 ),
                 drawerLabel: "Settings"
             },
-            screen: Settings
+            screen: SettingsStack
         },
     },
     {

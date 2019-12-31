@@ -36,6 +36,29 @@ const styles = StyleSheet.create({
         height: 32,
         marginRight: 8
     },
+    attributeContainer: {
+        marginVertical: 8,
+    },
+    textInputContainer: {
+        borderColor: '#D6D7DA',
+        borderRadius: 2,
+        borderWidth: 1,
+        marginBottom: 5,
+    },
+    textInput: {
+        height: 30,
+        padding: 5,
+        fontSize: 12,
+    },
+    textInputTitle: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    buttonGroup: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
 });
 
 export default styles;
