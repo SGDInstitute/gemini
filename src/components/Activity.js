@@ -76,7 +76,7 @@ export default class Activity extends React.Component {
         if (isOpen) {
             openCloseButton = <TouchableOpacity onPress={this.handleClose}><MaterialCommunityIcons name="chevron-down" size={32} /></TouchableOpacity>;
         } else {
-            openCloseButton = <TouchableOpacity onPress={this.handleOpen}><MaterialCommunityIcons name="chevron-left" size={32} /></TouchableOpacity>;
+            openCloseButton = <TouchableOpacity onPress={this.handleOpen}><MaterialCommunityIcons name="chevron-right" size={32} /></TouchableOpacity>;
         }
 
         return (
