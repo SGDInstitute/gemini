@@ -47,6 +47,11 @@ export default class Activity extends React.Component {
             return (
                 <Modal
                     isVisible={this.state.isModalVisible}
+                    onBackdropPress={this.toggleModal}
+                    onBackButtonPress={this.toggleModal}
+                    onSwipeComplete={this.toggleModal}
+                    swipeDirection="down"
+                    swipeThreshold={40}
                     style={{
                         marginTop: 80,
                         marginLeft: 0,

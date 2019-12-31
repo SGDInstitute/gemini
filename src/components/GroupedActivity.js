@@ -28,6 +28,11 @@ export default class GroupedActivity extends React.Component {
             return (
                 <Modal
                     isVisible={this.state.isModalVisible}
+                    onBackButtonPress={this.toggleModal}
+                    onBackdropPress={this.toggleModal}
+                    onSwipeComplete={this.toggleModal}
+                    swipeDirection={["right", "down"]}
+                    swipeThreshold={40}
                     style={{
                         marginTop: 80,
                         marginLeft: 0,
