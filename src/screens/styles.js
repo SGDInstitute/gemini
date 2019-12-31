@@ -55,6 +55,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 5,
     },
+    inputGroup: {
+        paddingHorizontal: 15,
+        paddingBottom: 20,
+    },
+    label: {
+        marginBottom: 4,
+        fontWeight: 'bold',
+    },
+    input: {
+        height: 34,
+        borderRadius: 4,
+        borderColor: '#ccc',
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        fontSize: 16,
+        marginBottom: 5,
+    },
     buttonGroup: {
         flexDirection: 'row',
         justifyContent: 'space-between',
