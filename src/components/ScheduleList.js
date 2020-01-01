@@ -47,14 +47,7 @@ export default class ScheduleList extends React.Component {
     }
 
     renderActivity = ({ item }) => (
-        <Activity
-            activity={item}
-            onPress={() =>
-                this.props.navigation.push('Activity', {
-                    activity: JSON.stringify(item)
-                })
-            }
-        />
+        <Activity activity={item} />
     );
 
     renderHeader = ({ section: { dayOfWeek } }) => (
