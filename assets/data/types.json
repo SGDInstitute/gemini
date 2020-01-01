@@ -29,6 +29,14 @@
     },
     "entertainment": {
         "bgColor": "#f2b716",
+        "textColor": "textBlack"
+    },
+    "conference": {
+        "bgColor": "#009999",
         "textColor": "textWhite"
     },
+    "hotel": {
+        "bgColor": "#f2b716",
+        "textColor": "textBlack"
+    }
 }
