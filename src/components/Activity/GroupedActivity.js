@@ -14,7 +14,7 @@ export default class GroupedActivity extends React.Component {
     };
 
     handleAdd = () => {
-        alert('Added to your Schedule! (Not Really)');
+        alert('Add to personal schedule - TODO');
     }
 
     toggleModal = () => {
