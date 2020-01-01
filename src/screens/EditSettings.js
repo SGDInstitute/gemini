@@ -96,7 +96,7 @@ export default class EditSettings extends React.Component {
                         />
                     </View>
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => alert('Save changes and go back - TODO')}>
                             <Button title="Save Changes" />
                         </TouchableOpacity>
                     </View>

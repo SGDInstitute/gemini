@@ -25,7 +25,7 @@ export default class Activity extends React.Component {
     }
 
     handleAdd = () => {
-        alert('Added to your Schedule! (Not Really)');
+        alert('Add to personal schedule - TODO');
     }
 
     toggle = () => {

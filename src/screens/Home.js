@@ -21,7 +21,7 @@ export default class Home extends React.Component {
                                 <Text style={styles.btn} onPress={() => this.props.navigation.navigate('Schedule')}>View Schedule</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={[t.flex1]}>
-                                <Text style={styles.btn} onPress={() => this.props.navigation.navigate('Schedule')}>Check In</Text>
+                                <Text style={styles.btn} onPress={() => alert('Navigate to Check-in Page - TODO')}>Check In</Text>
                             </TouchableOpacity>
                         </View>
                     </ImageCard>
