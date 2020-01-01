@@ -13,8 +13,8 @@ import types from '../../../assets/data/types.json';
 export default class Activity extends React.Component {
     state = {
         isOpen: false,
-        isModalVisible: false
-    };
+        isModalVisible: false,
+    }
 
     handleOpen = () => {
         this.setState({ isOpen: true });
@@ -82,12 +82,11 @@ export default class Activity extends React.Component {
         }
 
         return (
-            <View>
+            <View style={t.p4}>
                 <View style={{
                     flex: 1,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    margin: 15,
                     borderLeftWidth: 3,
                     borderLeftColor: activityTypeBg,
                     paddingLeft: 10

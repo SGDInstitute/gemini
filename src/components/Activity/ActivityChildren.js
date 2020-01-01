@@ -9,7 +9,7 @@ export default class ActivityChildren extends React.Component {
         const { children } = this.props;
 
         return (
-            <View style={[t.bgGray200, t.p4, t._m4]}>
+            <View style={[t.bgGray200, t.mT4, t.p4, t._m4]}>
                 {children.map(
                     (activity) => (
                         <GroupedActivity
