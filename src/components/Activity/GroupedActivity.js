@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import ActivityModal from './ActivityModal';
 
-import types from '../../assets/data/types.json';
+import types from '../../../assets/data/types.json';
 
 export default class GroupedActivity extends React.Component {
     state = {

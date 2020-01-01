@@ -4,7 +4,7 @@ import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import dayjs from 'dayjs';
 
-import types from '../../assets/data/types.json';
+import types from '../../../assets/data/types.json';
 
 export default function ActivityModal({ activity, onClose, onAdd }) {
     const formattedStart = dayjs(activity.start).format('dddd h:mm a');

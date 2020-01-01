@@ -3,7 +3,7 @@ import { FlatList, Text, SectionList } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import dayjs from 'dayjs';
 
-import Activity from './Activity';
+import Activity from './Activity/Activity';
 
 import schedule from '../../assets/data/schedule.json';
 

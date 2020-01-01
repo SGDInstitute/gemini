@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
 
-import types from '../../assets/data/types.json';
+import types from '../../../assets/data/types.json';
 
 export default class Activity extends React.Component {
     state = {
