@@ -1,12 +1,15 @@
 import React from 'react';
-
 import { StyleSheet, View, Text } from 'react-native';
+import Modal from 'react-native-modal';
+
+import LocationModal from './LocationModal';
 
 export default class BuildingMarker extends React.Component {
   render() {
     const { title } = this.props;
+
     return (
-      <View style={styles.container}>
+      <View style={styles.container} onPress={() => this.toggleModal()}>
         <View style={styles.bubble}>
           <Text style={[styles.amount]}>{title}</Text>
         </View>
