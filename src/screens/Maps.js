@@ -1,15 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import MapView from 'react-native-maps';
-import { Marker } from 'react-native-maps';
+import { StyleSheet, Text, TextInput, View, Dimensions } from 'react-native';
+import MapView, { Marker, Callout } from 'react-native-maps';
 
 import NavBar from '../components/NavBar'
+import BuildingMarker from '../components/Maps/BuildingMarker';
+import BuildingCallout from '../components/Maps/BuildingCallout';
 
 import markers from '../../assets/data/locations.json';
 
 export default class Maps extends React.Component {
-    onRegionChange = () => { }
-
     renderMarkers = () => {
         return markers.map(marker => (
             <Marker
@@ -17,7 +16,14 @@ export default class Maps extends React.Component {
                 coordinate={marker.latlng}
                 title={marker.title}
                 description={marker.description}
-            />
+                calloutOffset={{ x: 0, y: 33 }}
+                calloutAnchor={{ x: 0, y: 0 }}
+            >
+                <BuildingMarker title={marker.title} />
+                <Callout tooltip={true}>
+                    <BuildingCallout {...marker} />
+                </Callout>
+            </Marker>
         ));
     }
 
@@ -27,12 +33,15 @@ export default class Maps extends React.Component {
                 <NavBar title="Maps" />
                 <MapView
                     initialRegion={{
-                        latitude: 42.384190,
-                        longitude: -85.614535,
-                        latitudeDelta: 0.001,
-                        longitudeDelta: 0.009,
+                        "latitude": 42.28173741591952,
+                        "latitudeDelta": 0.0100883020294944,
+                        "longitude": -85.6138107423251,
+                        "longitudeDelta": 0.006572470806446518,
                     }}
                     style={styles.mapStyle}
+                    onRegionChange={this.onRegionChange}
+                    showsIndoors
+                    showsIndoorLevelPicker
                 >
                     {this.renderMarkers()}
                 </MapView>

@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "type": "conference",
         "title": "Miller Auditorium",
         "description": "Used for Keynote sessions",
         "latlng": {
@@ -10,6 +11,7 @@
     },
     {
         "id": 2,
+        "type": "conference",
         "title": "Sangren Hall",
         "description": "Used for Workshop sessions",
         "latlng": {
@@ -19,11 +21,48 @@
     },
     {
         "id": 3,
-        "title": "John T. Bernhard Center",
+        "type": "conference",
+        "title": "Bernhard Center",
         "description": "used for Workshop sessions",
         "latlng": {
             "latitude": 42.285060,
             "longitude": -85.612166
+        }
+    },
+    {
+        "id": 4,
+        "type": "hotel",
+        "title": "Delta Hotel",
+        "latlng": {
+            "latitude": 42.264216,
+            "longitude": -85.653924
+        }
+    },
+    {
+        "id": 5,
+        "type": "hotel",
+        "title": "Holiday Inn & Suites",
+        "latlng": {
+            "latitude": 42.300190,
+            "longitude": -85.662131
+        }
+    },
+    {
+        "id": 6,
+        "type": "hotel",
+        "title": "Holiday Inn Express & Suites",
+        "latlng": {
+            "latitude": 42.301230,
+            "longitude": -85.661731
+        }
+    },
+    {
+        "id": 7,
+        "type": "hotel",
+        "title": "Radisson Plaza Hotel",
+        "latlng": {
+            "latitude": 42.292172,
+            "longitude": -85.583849
         }
     }
 ]
