@@ -6,9 +6,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Home from "./screens/Home";
 import Schedule from "./screens/Schedule";
 import Maps from "./screens/Maps";
-import Evaluations from "./screens/Evaluations";
 import Contact from "./screens/Contact";
 import SettingsStack from "./SettingsStack";
+import EvaluationsStack from "./EvaluationsStack";
 
 const MainNavigator = createDrawerNavigator(
     {
@@ -49,7 +49,7 @@ const MainNavigator = createDrawerNavigator(
                 ),
                 drawerLabel: "Evaluations"
             },
-            screen: Evaluations
+            screen: EvaluationsStack
         },
 
         Contact: {
