@@ -80,6 +80,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         fontSize: 16,
         marginBottom: 5,
+        textAlignVertical: "top"
+    },
+    helpText: {
+        fontSize: 14,
+        fontStyle: 'italic',
+        color: 'gray',
     },
     buttonGroup: {
         flexDirection: 'row',

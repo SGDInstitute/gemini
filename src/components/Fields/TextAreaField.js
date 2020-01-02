@@ -15,6 +15,7 @@ export default class TextAreaField extends React.Component {
                     value={input}
                     style={styles.textarea}
                 />
+                {field.description !== null && <Text style={styles.helpText}>{field.description}</Text>}
             </View>
         );
     }

@@ -32,7 +32,7 @@
                 "choices": [
                     "Definitely not",
                     "Could be better",
-                    "Itu2019s fine enough!",
+                    "It's fine enough!",
                     "I love it!"
                 ]
             },
@@ -40,7 +40,6 @@
                 "question": "What are you most looking forward to this weekend?",
                 "id": "forward",
                 "type": "textarea",
-                "form": [],
                 "rules": "required"
             },
             {
@@ -48,7 +47,7 @@
                 "id": "problem",
                 "type": "textarea",
                 "rules": "",
-                "description": "This will send us an email, any we will be in touch shortly."
+                "description": "This will send us an email, and we will be in touch shortly."
             }
         ],
         "created_at": "2020-01-02 18:36:51",
@@ -73,13 +72,13 @@
                 "type": "list",
                 "rules": "required",
                 "choices": [
-                    "No u2013 the workshops did not meet my needs",
-                    "So-So u2013 some of the workshops were great, some were not",
-                    "Yes u2013 I loved what I saw today!"
+                    "No - the workshops did not meet my needs",
+                    "So-So - some of the workshops were great, some were not",
+                    "Yes - I loved what I saw today!"
                 ]
             },
             {
-                "question": "What were you looking for content-wise and did todayu2019s content meet your expectations? ",
+                "question": "What were you looking for content-wise and did today's content meet your expectations?",
                 "id": "content",
                 "description": "This question is also your opportunity to elaborate on your answer above.",
                 "type": "textarea",
@@ -90,7 +89,7 @@
                 "id": "problem",
                 "type": "textarea",
                 "rules": "",
-                "description": "This will send us an email, any we will be in touch shortly."
+                "description": "This will send us an email, and we will be in touch shortly."
             }
         ],
         "created_at": "2020-01-02 18:41:31",
@@ -115,10 +114,10 @@
                 "type": "list",
                 "rules": "required",
                 "choices": [
-                    "Poor u2013 I was unhappy with my entire experience",
-                    "A mixed bag u2013 some parts were okay, some parts were not",
-                    "Pretty good u2013 Most of the conference was great, but I have some thoughts",
-                    "Amazing u2013 I am leaving this weekend feeling refreshed and excited"
+                    "Poor - I was unhappy with my entire experience",
+                    "A mixed bag - some parts were okay, some parts were not",
+                    "Pretty good - Most of the conference was great, but I have some thoughts",
+                    "Amazing - I am leaving this weekend feeling refreshed and excited"
                 ]
             },
             {
