@@ -3,7 +3,7 @@
         "id": 1,
         "type": "conference",
         "title": "Miller Auditorium",
-        "description": "Used for Keynote sessions",
+        "description": "plenery sessions",
         "latlng": {
             "latitude": 42.279269,
             "longitude": -85.615730
@@ -13,7 +13,7 @@
         "id": 2,
         "type": "conference",
         "title": "Sangren Hall",
-        "description": "Used for Workshop sessions",
+        "description": "workshops, vendor fair, quiet room, volunteer check-in",
         "latlng": {
             "latitude": 42.284182,
             "longitude": -85.614550
@@ -23,7 +23,7 @@
         "id": 3,
         "type": "conference",
         "title": "Bernhard Center",
-        "description": "used for Workshop sessions",
+        "description": "workshops, featured voices, advisor programming",
         "latlng": {
             "latitude": 42.285060,
             "longitude": -85.612166

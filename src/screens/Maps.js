@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, TextInput, View, Dimensions, TouchableOpacity } from 'react-native';
-import MapView, { Marker, Callout } from 'react-native-maps';
+import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { t } from 'react-native-tailwindcss';
 
 import NavBar from '../components/NavBar'
@@ -9,6 +9,7 @@ import BuildingCallout from '../components/Maps/BuildingCallout';
 import Location from '../components/Maps/Location';
 
 import markers from '../../assets/data/locations.json';
+import mapStyle from '../../assets/data/mapstyle.json';
 
 const { width, height } = Dimensions.get('window');
 
@@ -18,7 +19,6 @@ export default class Maps extends React.Component {
     }
 
     handleCenterPress = (marker) => {
-        // console.log('center press from maps', marker, this.map);
         this.map.animateCamera({
             center: marker.latlng
         });
@@ -73,6 +73,8 @@ export default class Maps extends React.Component {
             <View style={styles.flex1}>
                 <View style={styles.container}>
                     <MapView
+                        provider={PROVIDER_GOOGLE}
+                        customMapStyle={mapStyle}
                         ref={ref => {
                             this.map = ref;
                         }}
@@ -83,9 +85,6 @@ export default class Maps extends React.Component {
                             "longitudeDelta": 0.006572470806446518,
                         }}
                         style={styles.map}
-                        onRegionChange={this.onRegionChange}
-                        showsIndoors
-                        showsIndoorLevelPicker
                     >
                         {this.renderMarkers()}
                     </MapView>
