@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, KeyboardAvoidingView, ScrollView, TextInput, Text, View } from 'react-native';
+import { Button, KeyboardAvoidingView, ScrollView, TextInput, Text, View, Platform } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import BackNavBar from '../components/BackNavBar';
@@ -24,7 +24,10 @@ export default class EditSettings extends React.Component {
         return (
             <View style={styles.flex1}>
                 <BackNavBar title="Edit Information" back="Settings" />
-                <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
+                <KeyboardAvoidingView
+                    behavior={Platform.OS === "ios" ? "padding" : "height"}
+                    style={styles.flex1}
+                >
                     <ScrollView>
                         <View style={styles.inputGroup}>
                             <Text style={styles.label}>Name</Text>
