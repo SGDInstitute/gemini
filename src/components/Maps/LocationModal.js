@@ -3,7 +3,31 @@ import { StyleSheet, Text, TouchableOpacity, ScrollView, View } from 'react-nati
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import ScheduleList from '../ScheduleList.js';
+import { scheduleByDate } from '../../utils/schedule';
+
 import types from '../../../assets/data/types.json';
+import schedule from '../../../assets/data/schedule.json';
+
+const scheduleByLocation = location => {
+    const filteredActivities = schedule.filter(activity => {
+        if (activity.location.includes('/')) {
+            const splitLocation = activity.location.split('/');
+
+            let flag = false;
+            splitLocation.forEach(element => {
+                if (location.title === element) {
+                    flag = true;
+                }
+            });
+
+            return flag;
+        }
+        return activity.location === location.title;
+    });
+
+    return scheduleByDate(filteredActivities);
+}
 
 export default function LocationModal({ location, onClose }) {
     const locationTypeBg = types[location.type].bgColor;
@@ -23,17 +47,15 @@ export default function LocationModal({ location, onClose }) {
                 <Text style={[t.textXl, t[locationTypeText]]}>{location.title}</Text>
             </View>
             <View style={t.flex1}>
-                <ScrollView style={t.p4}>
-                    <View style={[t.flexRow, t.mB4]}>
-                        <TouchableOpacity onPress={() => alert('Open in Maps Application - TODO')}>
-                            <Text style={styles.btn}>Open in Maps</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={onClose}>
-                            <MaterialCommunityIcons style={styles.btnSecondary} name="close" />
-                        </TouchableOpacity>
-                    </View>
-                    <Text>Location's Schedule either Workshop or Shuttle times</Text>
-                </ScrollView>
+                <View style={[t.p4, t.flexRow]}>
+                    <TouchableOpacity onPress={() => alert('Open in Maps Application - TODO')}>
+                        <Text style={styles.btn}>Open in Maps</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={onClose}>
+                        <MaterialCommunityIcons style={styles.btnSecondary} name="close" />
+                    </TouchableOpacity>
+                </View>
+                <ScheduleList style={[t.flex1]} schedule={scheduleByLocation(location)} />
             </View>
         </View>
     );
