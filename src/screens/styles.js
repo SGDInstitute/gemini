@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+
     flex1: {
         flex: 1,
     },
@@ -91,6 +92,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    transparentBg: {
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    }
 });
 
 export default styles;

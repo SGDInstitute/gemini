@@ -7,8 +7,10 @@ import Home from "./screens/Home";
 import Schedule from "./screens/Schedule";
 import Maps from "./screens/Maps";
 import Contact from "./screens/Contact";
-import SettingsStack from "./SettingsStack";
-import EvaluationsStack from "./EvaluationsStack";
+
+import EvaluationsStack from "./navigation/EvaluationsStack";
+import MapsStack from "./navigation/MapsStack";
+import SettingsStack from "./navigation/SettingsStack";
 
 const MainNavigator = createDrawerNavigator(
     {
@@ -39,7 +41,7 @@ const MainNavigator = createDrawerNavigator(
                 ),
                 drawerLabel: "Maps"
             },
-            screen: Maps
+            screen: MapsStack
         },
 
         Evaluations: {

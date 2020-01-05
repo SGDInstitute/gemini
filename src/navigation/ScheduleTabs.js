@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 
-import PersonalSchedule from "./screens/Schedule/PersonalSchedule";
-import EntireSchedule from "./screens/Schedule/EntireSchedule";
+import PersonalSchedule from "../screens/Schedule/PersonalSchedule";
+import EntireSchedule from "../screens/Schedule/EntireSchedule";
 
 const ScheduleTabNavigator = createMaterialTopTabNavigator(
     {

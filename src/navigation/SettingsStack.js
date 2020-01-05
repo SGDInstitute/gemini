@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 
-import Settings from "./screens/Settings";
-import EditSettings from "./screens/EditSettings";
+import Settings from "../screens/Settings";
+import EditSettings from "../screens/EditSettings";
 
 const SettingsStack = createStackNavigator(
     {

@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 
-import Evaluations from "./screens/Evaluations";
-import CreateEvaluation from "./screens/CreateEvaluation";
+import Evaluations from "../screens/Evaluations";
+import CreateEvaluation from "../screens/CreateEvaluation";
 
 const EvaluationsStack = createStackNavigator(
     {

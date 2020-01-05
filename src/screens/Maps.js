@@ -58,7 +58,9 @@ export default class Maps extends React.Component {
                 description={marker.description}
                 calloutOffset={{ x: 0, y: 33 }}
                 calloutAnchor={{ x: 0, y: 0 }}
-                onPress={() => this.handleMarkerPress(marker.id)}
+                onPress={() => this.props.navigation.navigate('Location', {
+                    location: JSON.stringify(marker),
+                })}
             >
                 <BuildingMarker title={marker.title} />
                 <Callout tooltip={true}>
@@ -99,7 +101,7 @@ export default class Maps extends React.Component {
                         </View>
                         <ScrollView>
                             {markers.map(marker => (
-                                <Location key={marker.id} location={marker} onCenterPress={this.handleCenterPress} />
+                                <Location key={marker.id} navigation={this.props.navigation} location={marker} onCenterPress={this.handleCenterPress} />
                             ))}
                         </ScrollView>
                     </View>

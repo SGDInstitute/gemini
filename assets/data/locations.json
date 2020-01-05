@@ -3,6 +3,7 @@
         "id": 1,
         "type": "conference",
         "title": "Miller Auditorium",
+        "background": "https://pbs.twimg.com/profile_banners/16224226/1469212986/1500x500",
         "description": "plenery sessions",
         "latlng": {
             "latitude": 42.279269,
@@ -13,6 +14,7 @@
         "id": 2,
         "type": "conference",
         "title": "Sangren Hall",
+        "background": "https://mblgtacc.org/assets/2020/sangren-hall-sm.jpg",
         "description": "workshops, vendor fair, quiet room, volunteer check-in",
         "latlng": {
             "latitude": 42.284182,
@@ -20,7 +22,7 @@
         },
         "floors": [
             {
-                "floorPlan": "assets/locations/sangren-floor1.png",
+                "floorPlan": "https://mblgtacc.org/assets/2020/floorplans/sangren-floor1.png",
                 "level": 1,
                 "rooms": [
                     {
@@ -51,7 +53,7 @@
                 ]
             },
             {
-                "floorPlan": "assets/locations/sangren-floor2.png",
+                "floorPlan": "https://mblgtacc.org/assets/2020/floorplans/sangren-floor2.png",
                 "level": 2,
                 "rooms": [
                     {
@@ -75,7 +77,7 @@
                 ]
             },
             {
-                "floorPlan": "assets/locations/sangren-floor3.png",
+                "floorPlan": "https://mblgtacc.org/assets/2020/floorplans/sangren-floor3.png",
                 "level": 3,
                 "rooms": [
                     {
@@ -96,7 +98,7 @@
                 ]
             },
             {
-                "floorPlan": "assets/locations/sangren-floor4.png",
+                "floorPlan": "https://mblgtacc.org/assets/2020/floorplans/sangren-floor4.png",
                 "level": 4,
                 "rooms": [
                     {
@@ -119,7 +121,7 @@
         "id": 3,
         "type": "conference",
         "title": "Bernhard Center",
-        "description": "workshops, featured voices, advisor programming",
+        "description": "workshops, featured voices, quiet room, advisor programming",
         "latlng": {
             "latitude": 42.285060,
             "longitude": -85.612166

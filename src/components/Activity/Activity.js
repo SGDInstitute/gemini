@@ -4,6 +4,7 @@ import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import dayjs from 'dayjs';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Constants from 'expo-constants';
 
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
@@ -50,7 +51,7 @@ export default class Activity extends React.Component {
                     onBackdropPress={this.toggleModal}
                     onBackButtonPress={this.toggleModal}
                     style={{
-                        marginTop: 80,
+                        marginTop: Constants.statusBarHeight,
                         marginLeft: 0,
                         marginRight: 0,
                         marginBottom: 0
