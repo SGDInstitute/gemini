@@ -17,7 +17,103 @@
         "latlng": {
             "latitude": 42.284182,
             "longitude": -85.614550
-        }
+        },
+        "floors": [
+            {
+                "floorPlan": "assets/locations/sangren-floor1.png",
+                "level": 1,
+                "rooms": [
+                    {
+                        "number": 1910
+                    },
+                    {
+                        "number": 1920
+                    },
+                    {
+                        "number": 1710
+                    },
+                    {
+                        "number": 1930
+                    },
+                    {
+                        "number": 1940
+                    },
+                    {
+                        "number": 1750
+                    },
+                    {
+                        "number": 1320
+                    },
+                    {
+                        "number": 1440,
+                        "name": "Lobby"
+                    }
+                ]
+            },
+            {
+                "floorPlan": "assets/locations/sangren-floor2.png",
+                "level": 2,
+                "rooms": [
+                    {
+                        "number": 2710
+                    },
+                    {
+                        "number": 2720
+                    },
+                    {
+                        "number": 2730
+                    },
+                    {
+                        "number": 2110
+                    },
+                    {
+                        "number": 2120
+                    },
+                    {
+                        "number": 2130
+                    }
+                ]
+            },
+            {
+                "floorPlan": "assets/locations/sangren-floor3.png",
+                "level": 3,
+                "rooms": [
+                    {
+                        "number": 3310
+                    },
+                    {
+                        "number": 3110
+                    },
+                    {
+                        "number": 3130
+                    },
+                    {
+                        "number": 3140
+                    },
+                    {
+                        "number": 3510
+                    }
+                ]
+            },
+            {
+                "floorPlan": "assets/locations/sangren-floor4.png",
+                "level": 4,
+                "rooms": [
+                    {
+                        "number": 4705
+                    },
+                    {
+                        "number": 4715
+                    },
+                    {
+                        "number": 4510
+                    },
+                    {
+                        "number": 4520
+                    }
+                ]
+            }
+        ]
     },
     {
         "id": 3,
@@ -27,7 +123,76 @@
         "latlng": {
             "latitude": 42.285060,
             "longitude": -85.612166
-        }
+        },
+        "floors": [
+            {
+                "floorPlan": "assets/locations/bc-basement.png",
+                "level": "B"
+            },
+            {
+                "floorPlan": "assets/locations/bc-floor1.png",
+                "level": 1,
+                "rooms": [
+                    {
+                        "number": 105
+                    },
+                    {
+                        "number": 106
+                    },
+                    {
+                        "number": 107
+                    },
+                    {
+                        "number": 157
+                    },
+                    {
+                        "number": 158
+                    },
+                    {
+                        "number": 159
+                    }
+                ]
+            },
+            {
+                "floorPlan": "assets/locations/bc-floor2.png",
+                "level": 2,
+                "rooms": [
+                    {
+                        "number": 204,
+                        "name": "Martin Luther King Room"
+                    },
+                    {
+                        "number": 205,
+                        "name": "International Room"
+                    },
+                    {
+                        "number": 208,
+                        "name": "West Suite"
+                    },
+                    {
+                        "number": 211
+                    },
+                    {
+                        "number": 212
+                    },
+                    {
+                        "number": 213
+                    },
+                    {
+                        "number": 227,
+                        "name": "East Ballroom"
+                    },
+                    {
+                        "number": 244,
+                        "name": "Faculty Lounge"
+                    },
+                    {
+                        "number": 244,
+                        "name": "Brown and Gold Room"
+                    }
+                ]
+            }
+        ]
     },
     {
         "id": 4,
