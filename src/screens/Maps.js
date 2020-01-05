@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     },
     map: {
         position: 'absolute',
-        top: 0,
+        top: 80,
         left: 0,
         right: 0,
         bottom: height / 2,
