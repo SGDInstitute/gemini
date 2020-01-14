@@ -1,24 +1,54 @@
 import React from 'react';
-import { Button, KeyboardAvoidingView, ScrollView, TextInput, Text, View, Platform } from 'react-native';
+import { AsyncStorage, Button, KeyboardAvoidingView, ScrollView, TextInput, Text, TouchableOpacity, View, Platform } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import BackNavBar from '../components/BackNavBar';
 import styles from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { updateUser } from "../utils/api";
 
 export default class EditSettings extends React.Component {
     state = {
-        name: 'Andy Swick',
-        email: 'andymswick@gmail.com',
-        pronouns: 'They/Them',
-        sexuality: 'Lesbian',
-        gender: 'Non-binary',
-        race: 'white',
-        college: 'Midwest Institute for Sexuality and Gender Diversity',
-        tshirt: 'M',
+        name: '',
+        email: '',
+        pronouns: '',
+        sexuality: '',
+        gender: '',
+        race: '',
+        college: '',
+        tshirt: '',
     }
 
-    handleSubmit = () => { }
+    componentDidMount = async () => {
+        let user = await AsyncStorage.getItem('user');
+
+        if (user) {
+            user = JSON.parse(user);
+        } else {
+            user = (await getUser()).payload;
+        }
+        this.setState({
+            name: user.name,
+            email: user.email,
+            pronouns: user.pronouns,
+            sexuality: user.sexuality,
+            gender: user.gender,
+            race: user.race,
+            college: user.college,
+            tshirt: user.tshirt,
+        });
+    }
+
+    handleSubmit = () => {
+        const self = this;
+        updateUser(this.state)
+            .then(function (result) {
+                if (result.type === 'success') {
+                    self.props.navigation.navigate('Settings');
+                } else {
+                    console.log(result);
+                }
+            });
+    }
 
     render() {
         return (
@@ -29,25 +59,13 @@ export default class EditSettings extends React.Component {
                     style={styles.flex1}
                 >
                     <ScrollView>
-                        <View style={styles.inputGroup}>
+                        <View style={[styles.inputGroup, styles.pT8]}>
                             <Text style={styles.label}>Name</Text>
                             <TextInput
                                 style={styles.input}
                                 value={this.state.name}
                                 onChangeText={name => this.setState({ name })}
                                 placeholder="Harry Potter"
-                            />
-                        </View>
-                        <View style={styles.inputGroup}>
-                            <Text style={styles.label}>Email</Text>
-                            <TextInput
-                                style={styles.input}
-                                value={this.state.email}
-                                onChangeText={email => this.setState({ email })}
-                                placeholder="email@example.com"
-                                autoCapitalize="none"
-                                autoCorrect={false}
-                                keyboardType="email-address"
                             />
                         </View>
                         <View style={styles.inputGroup}>
@@ -92,12 +110,12 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.college}
                                 onChangeText={college => this.setState({ college })}
-                                placeholder="Queer"
+                                placeholder="Hogwarts"
                             />
                         </View>
                         <View>
-                            <TouchableOpacity onPress={() => alert('Save changes and go back - TODO')}>
-                                <Button title="Save Changes" />
+                            <TouchableOpacity >
+                                <Button title="Save Changes" onPress={this.handleSubmit} />
                             </TouchableOpacity>
                         </View>
                     </ScrollView>

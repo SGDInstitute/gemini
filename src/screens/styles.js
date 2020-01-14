@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
     p4: {
         padding: 15
     },
+    pT8: {
+        paddingTop: 30
+    },
+    mX4: {
+        margin: 15
+    },
     btn: {
         backgroundColor: '#009999',
         borderRadius: 6,
@@ -23,7 +29,6 @@ const styles = StyleSheet.create({
         padding: 8,
         textAlign: 'center',
         height: 32,
-        marginRight: 8
     },
     btnSecondary: {
         backgroundColor: '#aeb3bf',
@@ -36,6 +41,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         height: 32,
         marginRight: 8
+    },
+    btnYellow: {
+        backgroundColor: '#f2b716',
+        borderRadius: 22,
+        color: 'black',
+        fontSize: 20,
+        fontWeight: 'bold',
+        overflow: 'hidden',
+        padding: 10,
+        textAlign: 'center',
+        height: 45,
     },
     attributeContainer: {
         marginVertical: 8,
@@ -68,6 +84,7 @@ const styles = StyleSheet.create({
         height: 34,
         borderRadius: 4,
         borderColor: '#ccc',
+        backgroundColor: '#eee',
         paddingHorizontal: 10,
         borderWidth: 1,
         fontSize: 16,
@@ -94,6 +111,33 @@ const styles = StyleSheet.create({
     },
     transparentBg: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
+    justifyCenter: {
+        justifyContent: 'center',
+    },
+    cover: {
+        resizeMode: 'cover'
+    },
+    wFull: {
+        width: '100%'
+    },
+    hFull: {
+        height: '100%'
+    },
+    bgMint: {
+        backgroundColor: '#009999',
+    },
+    textWhite: {
+        color: '#fff',
+    },
+    textBlack: {
+        color: '#000',
+    },
+    pX8: {
+        paddingHorizontal: 50
+    },
+    rounded: {
+        borderRadius: 6,
     }
 });
 

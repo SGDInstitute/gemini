@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Button } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import dayjs from 'dayjs';
