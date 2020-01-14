@@ -27,6 +27,7 @@ export const scheduleByDate = (schedule) => {
 
         }
 
+        console.log(days);
         return days;
     }, {});
 

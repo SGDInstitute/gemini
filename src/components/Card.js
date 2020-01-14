@@ -5,7 +5,7 @@ import { t } from 'react-native-tailwindcss';
 export default class Card extends React.Component {
     render() {
         return (
-            <View style={[t.m4, t.roundedLg, t.bgGray200, t.border, t.borderGray400]}>
+            <View style={[t.mX4, t.mB4, t.roundedLg, t.bgGray200, t.border, t.borderGray400]}>
                 <View style={[t.p4]}>
                     {this.props.children}
                 </View>

@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
     pT8: {
         paddingTop: 30
     },
+    pY8: {
+        paddingVertical: 30
+    },
     mX4: {
         margin: 15
     },

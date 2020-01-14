@@ -16,7 +16,7 @@ export default class ImageCard extends React.Component {
         const { loading } = this.state;
 
         return (
-            <View style={[t.m4, t.roundedLg, t.overflowHidden, t.bgGray200, t.border, t.borderGray400]}>
+            <View style={[t.mX4, t.mB4, t.roundedLg, t.overflowHidden, t.bgGray200, t.border, t.borderGray400]}>
                 <View style={styles.image}>
                     {loading && (
                         <ActivityIndicator

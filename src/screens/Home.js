@@ -103,13 +103,16 @@ export default class Home extends React.Component {
     renderBulletins = () => {
         const { bulletins } = this.state;
 
-        return bulletins.map(bulletin => {
-            if (bulletin.image !== null) {
-                return this.renderImageBulletin(bulletin);
-            }
+        if (bulletins.length > 0) {
+            return bulletins.map(bulletin => {
+                if (bulletin.image !== null) {
+                    return this.renderImageBulletin(bulletin);
+                }
 
-            return this.renderCardBulletin(bulletin);
-        });
+                return this.renderCardBulletin(bulletin);
+            });
+        }
+
     }
 
     render() {
@@ -119,6 +122,7 @@ export default class Home extends React.Component {
             <View style={styles.flex1}>
                 <NavBar title="Home" />
                 <ScrollView
+                    contentContainerStyle={[styles.pY8]}
                     refreshControl={
                         <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} />
                     }>
