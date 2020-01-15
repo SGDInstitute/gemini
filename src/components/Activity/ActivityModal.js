@@ -9,8 +9,8 @@ import types from '../../../assets/data/types.json';
 export default function ActivityModal({ activity, onClose, onAdd }) {
     const formattedStart = dayjs(activity.start).format('dddd h:mm a');
     const formattedEnd = dayjs(activity.end).format('h:mm a');
-    const activityTypeBg = types[activity.type].bgColor;
-    const activityTypeText = types[activity.type].textColor;
+    const activityTypeBg = activity.color;
+    const activityTypeText = activity.text_color;
 
     return (
         <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
@@ -23,7 +23,7 @@ export default function ActivityModal({ activity, onClose, onAdd }) {
                 <TouchableOpacity onPress={onClose} style={[t.absolute, t.top0, t.right0, t.m4]}>
                     <MaterialCommunityIcons name="close-circle" size={32} />
                 </TouchableOpacity>
-                <Text style={[t.textXl, t[activityTypeText]]}>{activity.title}</Text>
+                <Text style={{ color: activityTypeText, fontSize: 24 }}>{activity.title}</Text>
             </View>
             <View style={[t.p4, t.justifyBetween, t.flexRow, t.bgGray200]}>
                 <Text>

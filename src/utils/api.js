@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { BULLETINS_URL, LOGIN_URL, USER_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -120,3 +120,89 @@ export const getBulletins = async () => {
     }
 };
 
+export const getActivities = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(ACTIVITIES_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('schedule', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
+export const getUserActivities = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(USER_ACTIVITIES_URL + '?event=' + EVENT_ID, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('my-schedule', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
+export const storeUserActivities = async (id) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(`${USER_ACTIVITIES_URL}/${id}?event=${EVENT_ID}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('my-schedule', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+}

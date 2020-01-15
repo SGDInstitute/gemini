@@ -9,8 +9,6 @@ import Constants from 'expo-constants';
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
 
-import types from '../../../assets/data/types.json';
-
 export default class Activity extends React.Component {
     state = {
         isOpen: false,
@@ -66,13 +64,12 @@ export default class Activity extends React.Component {
     }
 
     render() {
-        const { title, type, location, speaker, start, end, children } = this.props.activity;
+        const { title, color, location, speaker, start, end, workshops } = this.props.activity;
         const { hideTime } = this.props;
         const { isOpen } = this.state;
 
         const formattedStart = dayjs(start).format('h:mm a');
         const formattedEnd = dayjs(end).format('h:mm a');
-        const activityTypeBg = types[type].bgColor;
 
         let openCloseButton;
 
@@ -89,7 +86,7 @@ export default class Activity extends React.Component {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     borderLeftWidth: 3,
-                    borderLeftColor: activityTypeBg,
+                    borderLeftColor: color,
                     paddingLeft: 10
                 }}>
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggle}>
@@ -102,13 +99,13 @@ export default class Activity extends React.Component {
                     </TouchableOpacity>
                     <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         {
-                            children
+                            workshops
                                 ? openCloseButton
                                 : <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>
                         }
                     </View>
                 </View>
-                {(isOpen && children) && <Children children={children} />}
+                {(isOpen && workshops) && <Children children={workshops} />}
                 {this.renderModal()}
             </View>
         );

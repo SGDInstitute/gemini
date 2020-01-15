@@ -15,19 +15,17 @@ export const scheduleByDate = (schedule) => {
                 return a.type === 'group' && a.start === activity.start && a.end === activity.end;
             });
 
-            if (!group['children']) {
-                group['children'] = [];
+            if (!group['workshops']) {
+                group['workshops'] = [];
             }
 
-            if (group['children'].find(x => x.id === activity.id)) {
+            if (group['workshops'].find(x => x.id === activity.id)) {
                 // don't add?
             } else {
-                group['children'].push(activity);
+                group['workshops'].push(activity);
             }
-
         }
 
-        console.log(days);
         return days;
     }, {});
 

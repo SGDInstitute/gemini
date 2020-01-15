@@ -3,10 +3,9 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Constants from 'expo-constants';
 
 import ActivityModal from './ActivityModal';
-
-import types from '../../../assets/data/types.json';
 
 export default class GroupedActivity extends React.Component {
     state = {
@@ -31,7 +30,7 @@ export default class GroupedActivity extends React.Component {
                     onBackButtonPress={this.toggleModal}
                     onBackdropPress={this.toggleModal}
                     style={{
-                        marginTop: 80,
+                        marginTop: Constants.statusBarHeight,
                         marginLeft: 0,
                         marginRight: 0,
                         marginBottom: 0
@@ -46,8 +45,8 @@ export default class GroupedActivity extends React.Component {
     }
 
     render() {
-        const { title, type, location, speaker } = this.props.activity;
-        const activityTypeBg = types[type].bgColor;
+        const { title, type, location, speaker, color } = this.props.activity;
+        const activityTypeBg = color;
 
         return (
             <View>

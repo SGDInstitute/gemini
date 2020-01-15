@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text, SectionList } from 'react-native';
+import { RefreshControl, Text, SectionList } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
 import Activity from './Activity/Activity';
@@ -14,12 +14,15 @@ export default class ScheduleList extends React.Component {
     );
 
     render() {
-        const { schedule } = this.props;
+        const { refreshing, onRefresh, schedule } = this.props;
 
         return (
             <SectionList
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }
                 sections={schedule}
-                keyExtractor={(item, index) => item.id + index}
+                keyExtractor={item => item.id}
                 renderItem={this.renderActivity}
                 renderSectionHeader={this.renderHeader}
             />
