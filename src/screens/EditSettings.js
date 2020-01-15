@@ -4,7 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import BackNavBar from '../components/BackNavBar';
 import styles from './styles';
-import { updateUser } from "../utils/api";
+import { getUser, updateUser } from "../utils/api";
 
 export default class EditSettings extends React.Component {
     state = {

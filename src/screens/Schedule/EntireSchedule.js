@@ -1,10 +1,11 @@
 import React from 'react';
 import { AsyncStorage, View } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 import { t } from 'react-native-tailwindcss';
 
 import ScheduleList from '../../components/ScheduleList';
 import { scheduleByDate } from '../../utils/schedule';
-import { getActivities } from "../../utils/api";
+import { getActivities, storeUserActivities } from "../../utils/api";
 
 export default class EntireSchedule extends React.Component {
     state = {
@@ -14,6 +15,12 @@ export default class EntireSchedule extends React.Component {
 
     componentDidMount = async () => {
         this.getSchedule();
+    }
+
+    onAdd = (id) => {
+        storeUserActivities(id).then(() => {
+            this.refreshSchedule();
+        });
     }
 
     onRefresh = () => {
@@ -43,11 +50,15 @@ export default class EntireSchedule extends React.Component {
 
         return (
             <View style={t.flex1}>
+                <NavigationEvents
+                    onWillFocus={payload => this.refreshSchedule()}
+                />
                 <ScheduleList
                     schedule={scheduleByDate(schedule)}
                     navigation={this.props.navigation}
                     refreshing={this.state.refreshing}
                     onRefresh={this.onRefresh}
+                    onAdd={this.onAdd}
                 />
             </View>
         );

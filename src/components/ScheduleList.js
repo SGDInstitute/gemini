@@ -5,9 +5,12 @@ import { t } from 'react-native-tailwindcss';
 import Activity from './Activity/Activity';
 
 export default class ScheduleList extends React.Component {
-    renderActivity = ({ item }) => (
-        <Activity activity={item} />
-    );
+    renderActivity = ({ item }) => {
+        const { onAdd } = this.props;
+        return (
+            <Activity activity={item} onAdd={onAdd} />
+        );
+    }
 
     renderHeader = ({ section: { dayOfWeek } }) => (
         <Text style={[t.bgGray200, t.p4, t.textLg, t.border, t.borderGray400]}>{dayOfWeek}</Text>

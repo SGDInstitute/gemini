@@ -31,10 +31,10 @@ export default class Activity extends React.Component {
     }
 
     handleAdd = () => {
-        const { id } = this.props.activity;
-        storeUserActivities(id).then(() => {
-            this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
-        });
+        const { activity, onAdd } = this.props;
+
+        onAdd(activity.id);
+        this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
     }
 
     checkIfInPersonalSchedule = async (id) => {
@@ -87,7 +87,7 @@ export default class Activity extends React.Component {
 
     render() {
         const { title, color, location, speaker, start, end, workshops, id } = this.props.activity;
-        const { hideTime } = this.props;
+        const { hideTime, onAdd } = this.props;
         const { isOpen, isInPersonalSchedule } = this.state;
 
         const formattedStart = dayjs(start).format('h:mm a');
@@ -108,7 +108,6 @@ export default class Activity extends React.Component {
         } else {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>;
         }
-
 
         return (
             <View style={t.p4}>
@@ -136,7 +135,7 @@ export default class Activity extends React.Component {
                         }
                     </View>
                 </View>
-                {(isOpen && workshops) && <Children children={workshops} />}
+                {(isOpen && workshops) && <Children children={workshops} onAdd={onAdd} />}
                 {this.renderModal()}
             </View>
         );
