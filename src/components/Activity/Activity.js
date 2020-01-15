@@ -32,7 +32,9 @@ export default class Activity extends React.Component {
 
     handleAdd = () => {
         const { id } = this.props.activity;
-        storeUserActivities(id);
+        storeUserActivities(id).then(() => {
+            this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
+        });
     }
 
     checkIfInPersonalSchedule = async (id) => {
