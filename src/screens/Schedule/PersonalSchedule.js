@@ -44,11 +44,10 @@ export default class PersonalSchedule extends React.Component {
         const { mySchedule } = this.state;
 
         if (mySchedule.length > 0) {
-            console.log(mySchedule);
             return (
                 <View style={t.flex1}>
                     <ScheduleList
-                        schedule={scheduleByDate(mySchedule)}
+                        schedule={scheduleByDate(mySchedule, false)}
                         navigation={this.props.navigation}
                         refreshing={this.state.refreshing}
                         onRefresh={this.onRefresh}

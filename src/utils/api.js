@@ -182,7 +182,7 @@ export const storeUserActivities = async (id) => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
     const response = await fetch(`${USER_ACTIVITIES_URL}/${id}?event=${EVENT_ID}`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

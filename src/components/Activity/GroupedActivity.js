@@ -7,13 +7,16 @@ import Constants from 'expo-constants';
 
 import ActivityModal from './ActivityModal';
 
+import { storeUserActivities } from "../../utils/api";
+
 export default class GroupedActivity extends React.Component {
     state = {
         isModalVisible: false
     };
 
     handleAdd = () => {
-        alert('Add to personal schedule - TODO');
+        const { id } = this.props.activity;
+        storeUserActivities(id);
     }
 
     toggleModal = () => {
