@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-export const scheduleByDate = (schedule, groupWorkshops = true) => {
+export const scheduleByDate = (schedule, includeWorkshops = false) => {
     const days = schedule.reduce((days, activity) => {
         const date = activity.start.split(' ')[0];
 
@@ -8,23 +8,9 @@ export const scheduleByDate = (schedule, groupWorkshops = true) => {
             days[date] = [];
         }
 
-        if (groupWorkshops === true) {
+        if (!includeWorkshops) {
             if (activity.type !== "workshop") {
                 days[date].push(activity);
-            } else {
-                const group = days[date].find(a => {
-                    return a.type === 'group' && a.start === activity.start && a.end === activity.end;
-                });
-
-                if (!group['workshops']) {
-                    group['workshops'] = [];
-                }
-
-                if (group['workshops'].find(x => x.id === activity.id)) {
-                    // don't add?
-                } else {
-                    group['workshops'].push(activity);
-                }
             }
         } else {
             days[date].push(activity);
