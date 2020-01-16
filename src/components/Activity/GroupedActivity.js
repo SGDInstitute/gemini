@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { AsyncStorage, View, Text, TouchableOpacity } from 'react-native';
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -9,14 +9,35 @@ import ActivityModal from './ActivityModal';
 
 export default class GroupedActivity extends React.Component {
     state = {
-        isModalVisible: false
-    };
+        isModalVisible: false,
+        isInPersonalSchedule: false,
+    }
+
+    componentDidMount = async () => {
+        this.checkIfInPersonalSchedule(this.props.activity.id);
+    }
 
     handleAdd = () => {
         const { activity, onAdd } = this.props;
 
         onAdd(activity.id);
         this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
+    }
+
+    checkIfInPersonalSchedule = async (id) => {
+        let mySchedule = await AsyncStorage.getItem('my-schedule');
+
+        if (mySchedule) {
+            mySchedule = JSON.parse(mySchedule);
+            const found = mySchedule.find(x => x.id === id);
+            if (typeof found !== 'undefined') {
+                this.setState({ isInPersonalSchedule: true });
+                return true;
+            }
+        }
+
+        this.setState({ isInPersonalSchedule: false });
+        return false;
     }
 
     toggleModal = () => {
@@ -48,8 +69,17 @@ export default class GroupedActivity extends React.Component {
     }
 
     render() {
-        const { title, type, location, speaker, color } = this.props.activity;
+        const { title, location, speaker, color } = this.props.activity;
+        const { isInPersonalSchedule } = this.state;
         const activityTypeBg = color;
+
+        let plusMinusButton;
+
+        if (isInPersonalSchedule) {
+            plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="minus-circle-outline" size={28} /></TouchableOpacity>;
+        } else {
+            plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>;
+        }
 
         return (
             <View>
@@ -70,7 +100,7 @@ export default class GroupedActivity extends React.Component {
                         </View>
                     </TouchableOpacity>
                     <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                        <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>
+                        {plusMinusButton}
                     </View>
                 </View>
                 {this.renderModal()}

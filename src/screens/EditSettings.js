@@ -1,6 +1,5 @@
 import React from 'react';
 import { AsyncStorage, Button, KeyboardAvoidingView, ScrollView, TextInput, Text, TouchableOpacity, View, Platform } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import BackNavBar from '../components/BackNavBar';
 import styles from './styles';

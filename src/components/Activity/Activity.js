@@ -9,8 +9,6 @@ import Constants from 'expo-constants';
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
 
-import { storeUserActivities } from "../../utils/api";
-
 export default class Activity extends React.Component {
     state = {
         isOpen: false,
@@ -45,8 +43,12 @@ export default class Activity extends React.Component {
             const found = mySchedule.find(x => x.id === id);
             if (typeof found !== 'undefined') {
                 this.setState({ isInPersonalSchedule: true });
+                return true;
             }
         }
+
+        this.setState({ isInPersonalSchedule: false });
+        return false;
     }
 
     toggle = () => {
@@ -86,7 +88,7 @@ export default class Activity extends React.Component {
     }
 
     render() {
-        const { title, color, location, speaker, start, end, workshops, id } = this.props.activity;
+        const { title, color, location, speaker, start, end, workshops } = this.props.activity;
         const { hideTime, onAdd } = this.props;
         const { isOpen, isInPersonalSchedule } = this.state;
 
