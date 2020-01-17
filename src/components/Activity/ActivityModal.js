@@ -6,11 +6,18 @@ import dayjs from 'dayjs';
 
 import types from '../../../assets/data/types.json';
 
-export default function ActivityModal({ activity, onClose, onAdd }) {
+export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck }) {
     const formattedStart = dayjs(activity.start).format('dddd h:mm a');
     const formattedEnd = dayjs(activity.end).format('h:mm a');
     const activityTypeBg = activity.color;
     const activityTypeText = activity.text_color;
+    let plusMinusButton;
+
+    if (plusMinusCheck(activity.id)) {
+        plusMinusButton = <TouchableOpacity onPress={onAdd}><Text style={styles.btn}>Remove from My Schedule</Text></TouchableOpacity>;
+    } else {
+        plusMinusButton = <TouchableOpacity onPress={onAdd}><Text style={styles.btn}>Add to My Schedule</Text></TouchableOpacity>;
+    }
 
     return (
         <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
@@ -34,9 +41,7 @@ export default function ActivityModal({ activity, onClose, onAdd }) {
             <View style={t.flex1}>
                 <ScrollView style={t.p4}>
                     <View style={[t.flexRow, t.mB4]}>
-                        <TouchableOpacity onPress={onAdd}>
-                            <Text style={styles.btn}>Add to My Schedule</Text>
-                        </TouchableOpacity>
+                        {plusMinusButton}
                         <TouchableOpacity onPress={onClose}>
                             <MaterialCommunityIcons style={styles.btnSecondary} name="close" />
                         </TouchableOpacity>

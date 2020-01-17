@@ -45,7 +45,7 @@ export default class Activity extends React.Component {
 
     renderModal = () => {
         if (this.props.activity.type !== 'group') {
-            const { activity } = this.props;
+            const { activity, plusMinusCheck } = this.props;
 
             return (
                 <Modal
@@ -59,7 +59,7 @@ export default class Activity extends React.Component {
                         marginBottom: 0
                     }}
                 >
-                    <ActivityModal activity={activity} onAdd={this.handleAdd} onClose={this.toggleModal} />
+                    <ActivityModal activity={activity} plusMinusCheck={plusMinusCheck} onAdd={this.handleAdd} onClose={this.toggleModal} />
                 </Modal>
             );
         }
