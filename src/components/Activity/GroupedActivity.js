@@ -13,31 +13,11 @@ export default class GroupedActivity extends React.Component {
         isInPersonalSchedule: false,
     }
 
-    componentDidMount = async () => {
-        this.checkIfInPersonalSchedule(this.props.activity.id);
-    }
-
     handleAdd = () => {
         const { activity, onAdd } = this.props;
 
         onAdd(activity.id);
         this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
-    }
-
-    checkIfInPersonalSchedule = async (id) => {
-        let mySchedule = await AsyncStorage.getItem('my-schedule');
-
-        if (mySchedule) {
-            mySchedule = JSON.parse(mySchedule);
-            const found = mySchedule.find(x => x.id === id);
-            if (typeof found !== 'undefined') {
-                this.setState({ isInPersonalSchedule: true });
-                return true;
-            }
-        }
-
-        this.setState({ isInPersonalSchedule: false });
-        return false;
     }
 
     toggleModal = () => {
@@ -69,13 +49,13 @@ export default class GroupedActivity extends React.Component {
     }
 
     render() {
-        const { title, location, speaker, color } = this.props.activity;
-        const { isInPersonalSchedule } = this.state;
+        const { title, location, speaker, color, id } = this.props.activity;
+        const { plusMinusCheck } = this.props;
         const activityTypeBg = color;
 
         let plusMinusButton;
 
-        if (isInPersonalSchedule) {
+        if (plusMinusCheck(id)) {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="minus-circle-outline" size={28} /></TouchableOpacity>;
         } else {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>;

@@ -6,9 +6,22 @@ import NavBar from '../components/NavBar';
 import ScheduleList from '../components/ScheduleList';
 import { storeUserActivities, getActivities, getUserActivities } from '../utils/api';
 import { scheduleByDate } from '../utils/schedule';
+import Filters from '../components/Activity/Filters';
 
 export default class Schedule extends React.Component {
     state = {
+        filters: {
+            entire: true,
+            workshop: false,
+            keynote: false,
+            entertainment: false,
+            featured: false,
+            advisor: false,
+            general: false,
+            milner: false,
+            sangren: false,
+            bernhard: false,
+        },
         schedule: [],
         mySchedule: [],
         myScheduleFilter: false,
@@ -21,10 +34,32 @@ export default class Schedule extends React.Component {
         });
     }
 
+    checkIfInPersonalSchedule = (id) => {
+        const { mySchedule } = this.state;
+
+        if (mySchedule) {
+            const found = mySchedule.find(x => x.id === id);
+            if (typeof found !== 'undefined') {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    handleScheduleToggle = () => {
+        const { myScheduleFilter } = this.state;
+        this.setState({ myScheduleFilter: !myScheduleFilter });
+    }
+
     onAdd = (id) => {
         storeUserActivities(id).then(() => {
             this.refreshMySchedule();
         });
+    }
+
+    onFiltersClose = (filters) => {
+        this.setState({ filters: filters });
     }
 
     onRefresh = () => {
@@ -76,14 +111,25 @@ export default class Schedule extends React.Component {
     }
 
     renderContent() {
-        const { schedule, mySchedule, myScheduleFilter, refreshing } = this.state;
+        const { schedule, mySchedule, myScheduleFilter, refreshing, filters } = this.state;
 
-        let filteredSchedule = schedule;
+        let filteredSchedule = JSON.parse(JSON.stringify(schedule));
 
         if (myScheduleFilter) {
             const ids = mySchedule.map(activity => { return activity.id; });
             filteredSchedule = filteredSchedule.filter(activity => {
-                return ids.includes(activity.id)
+                return ids.includes(activity.id);
+            });
+        }
+
+        if (!filters.entire) {
+            let filteredKeys = Object.keys(filters).filter(x => filters[x]);
+            if (filteredKeys.includes('workshop') && myScheduleFilter === false) {
+                filteredKeys[filteredKeys.indexOf('workshop')] = 'group';
+            }
+
+            filteredSchedule = filteredSchedule.filter(activity => {
+                return filteredKeys.includes(activity.type);
             });
         }
 
@@ -97,16 +143,22 @@ export default class Schedule extends React.Component {
                     refreshing={refreshing}
                     onRefresh={this.onRefresh}
                     onAdd={this.onAdd}
+                    plusMinusCheck={this.checkIfInPersonalSchedule}
                 />
-                {myScheduleFilter ?
-                    <TouchableOpacity style={[t.pB8, t.pT1, t.bgGray300]}>
-                        <Button title="Entire Schedule" onPress={() => this.setState({ myScheduleFilter: !myScheduleFilter })} />
-                    </TouchableOpacity>
-                    :
-                    <TouchableOpacity style={[t.pB8, t.pT1, t.bgGray300]}>
-                        <Button title="My Schedule" onPress={() => this.setState({ myScheduleFilter: !myScheduleFilter })} />
-                    </TouchableOpacity>
-                }
+                <View style={[t.flexRow]}>
+                    <View style={[t.flex1]}>
+                        {myScheduleFilter ?
+                            <TouchableOpacity style={[t.borderR, t.borderT, t.borderGray400, t.pB8, t.pT1, t.bgGray300]}>
+                                <Button title="Entire Schedule" onPress={this.handleScheduleToggle} />
+                            </TouchableOpacity>
+                            :
+                            <TouchableOpacity style={[t.borderR, t.borderT, t.borderGray400, t.pB8, t.pT1, t.bgGray300]}>
+                                <Button title="My Schedule" onPress={this.handleScheduleToggle} />
+                            </TouchableOpacity>
+                        }
+                    </View>
+                    <Filters filters={filters} onClose={this.onFiltersClose} />
+                </View>
             </View>
         );
     }
@@ -115,7 +167,6 @@ export default class Schedule extends React.Component {
         const { schedule, mySchedule } = this.state;
 
         AsyncStorage.removeItem('schedule');
-        AsyncStorage.removeItem('my-schedule');
 
         if (schedule.length === 0 && mySchedule.length === 0) { //make better
             return this.renderLoading();

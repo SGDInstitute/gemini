@@ -6,7 +6,7 @@ import GroupedActivity from './GroupedActivity';
 
 export default class ActivityChildren extends React.Component {
     render() {
-        const { children, onAdd } = this.props;
+        const { children, onAdd, plusMinusCheck } = this.props;
 
         return (
             <View style={[t.bgGray200, t.mT4, t.p4, t._m4]}>
@@ -16,6 +16,7 @@ export default class ActivityChildren extends React.Component {
                             key={activity.id}
                             activity={activity}
                             onAdd={onAdd}
+                            plusMinusCheck={plusMinusCheck}
                         />
                     ))
                 }
