@@ -16,10 +16,6 @@ export default class Activity extends React.Component {
         isInPersonalSchedule: false,
     }
 
-    componentDidMount = async () => {
-        this.checkIfInPersonalSchedule(this.props.activity.id);
-    }
-
     handleOpen = () => {
         this.setState({ isOpen: true });
     }
@@ -33,22 +29,6 @@ export default class Activity extends React.Component {
 
         onAdd(activity.id);
         this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
-    }
-
-    checkIfInPersonalSchedule = async (id) => {
-        let mySchedule = await AsyncStorage.getItem('my-schedule');
-
-        if (mySchedule) {
-            mySchedule = JSON.parse(mySchedule);
-            const found = mySchedule.find(x => x.id === id);
-            if (typeof found !== 'undefined') {
-                this.setState({ isInPersonalSchedule: true });
-                return true;
-            }
-        }
-
-        this.setState({ isInPersonalSchedule: false });
-        return false;
     }
 
     toggle = () => {
@@ -88,8 +68,8 @@ export default class Activity extends React.Component {
     }
 
     render() {
-        const { title, color, location, speaker, start, end, workshops } = this.props.activity;
-        const { hideTime, onAdd } = this.props;
+        const { title, color, location, speaker, start, end, workshops, id } = this.props.activity;
+        const { hideTime, onAdd, plusMinusCheck } = this.props;
         const { isOpen, isInPersonalSchedule } = this.state;
 
         const formattedStart = dayjs(start).format('h:mm a');
@@ -105,7 +85,7 @@ export default class Activity extends React.Component {
 
         let plusMinusButton;
 
-        if (isInPersonalSchedule) {
+        if (plusMinusCheck(id)) {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="minus-circle-outline" size={28} /></TouchableOpacity>;
         } else {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>;
@@ -137,7 +117,7 @@ export default class Activity extends React.Component {
                         }
                     </View>
                 </View>
-                {(isOpen && workshops) && <Children children={workshops} onAdd={onAdd} />}
+                {(isOpen && workshops) && <Children children={workshops} onAdd={onAdd} plusMinusCheck={plusMinusCheck} />}
                 {this.renderModal()}
             </View>
         );

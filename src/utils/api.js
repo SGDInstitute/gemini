@@ -164,7 +164,7 @@ export const getUserActivities = async () => {
     const json = await response.json();
 
     if (json.data) {
-        AsyncStorage.setItem('my-schedule', JSON.stringify(json.data));
+        await AsyncStorage.setItem('my-schedule', JSON.stringify(json.data));
 
         return {
             type: 'success',

@@ -6,9 +6,9 @@ import Activity from './Activity/Activity';
 
 export default class ScheduleList extends React.Component {
     renderActivity = ({ item }) => {
-        const { onAdd } = this.props;
+        const { onAdd, plusMinusCheck } = this.props;
         return (
-            <Activity activity={item} onAdd={onAdd} />
+            <Activity activity={item} onAdd={onAdd} plusMinusCheck={plusMinusCheck} />
         );
     }
 
