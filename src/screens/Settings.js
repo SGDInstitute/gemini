@@ -79,15 +79,15 @@ export default class Settings extends React.Component {
                         <Text style={[t.mB2]}><Text style={[t.fontBold]}>T-shirt Size:</Text> {user.tshirt}</Text>
                     </View>
                 </View>
-                <View style={[t.flexRow, t.p4]}>
+                <View style={[t.flexRow, t.p4, t._mX2]}>
                     <TouchableOpacity style={t.flex1} onPress={() => this.props.navigation.navigate('Contact')}>
-                        <Text style={styles.btn}>Help</Text>
+                        <Text style={[styles.btn, t.mX2]}>Help</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('EditSettings')}>
-                        <Text style={styles.btn}>Edit Information</Text>
+                        <Text style={[styles.btn, t.mX2]}>Edit Information</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={t.flex1} onPress={this.signOut}>
-                        <Text style={styles.btn}>Log Out</Text>
+                        <Text style={[styles.btn, t.mX2]}>Log Out</Text>
                     </TouchableOpacity>
                 </View>
             </View>

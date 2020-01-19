@@ -9,7 +9,7 @@ export default class TextField extends React.Component {
 
         return (
             <View style={styles.inputGroup}>
-                <Text style={styles.label}>{field.question}</Text>
+                <Text style={styles.label}>{field.question || field.label}</Text>
                 <TextInput
                     style={styles.input}
                     value={input}

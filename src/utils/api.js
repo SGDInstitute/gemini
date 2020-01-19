@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -18,7 +18,7 @@ export const getUser = async () => {
     const json = await response.json();
 
     if (json.data) {
-        AsyncStorage.setItem('bulletins', JSON.stringify(json.data));
+        AsyncStorage.setItem('user', JSON.stringify(json.data));
 
         return {
             type: 'success',
@@ -91,6 +91,35 @@ export const getAccessToken = async (email, password) => {
     }
 };
 
+export const getActivities = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(ACTIVITIES_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('schedule', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
 export const getBulletins = async () => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
@@ -120,10 +149,10 @@ export const getBulletins = async () => {
     }
 };
 
-export const getActivities = async () => {
+export const getContent = async (type) => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
-    const response = await fetch(ACTIVITIES_URL, {
+    const response = await fetch(`${CONTENT_URL}?type=${type}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -135,7 +164,36 @@ export const getActivities = async () => {
     const json = await response.json();
 
     if (json.data) {
-        AsyncStorage.setItem('schedule', JSON.stringify(json.data));
+        AsyncStorage.setItem(type, JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
+export const getEvaluations = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(EVALUATIONS_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('evaluations', JSON.stringify(json.data));
 
         return {
             type: 'success',
@@ -198,6 +256,34 @@ export const storeUserActivities = async (id) => {
         return {
             type: 'success',
             payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+}
+
+export const storeTicket = async (form) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(TICKETS_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+        body: JSON.stringify(form),
+    });
+
+    const json = await response.json();
+    const status = response.status;
+
+    if (status === 200) {
+        return {
+            type: 'success',
         };
     } else {
         return {

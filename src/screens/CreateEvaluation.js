@@ -18,7 +18,7 @@ export default class CreateEvaluation extends React.Component {
                 <BackNavBar title={form.name} back="Evaluations" />
                 <KeyboardAvoidingView
                     behavior={Platform.OS === "ios" ? "padding" : "height"}
-                    style={styles.flex1}
+                    style={[styles.flex1, styles.pT8]}
                 >
                     <ScrollView>
                         <Form form={form.form} />
