@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -284,6 +284,36 @@ export const storeTicket = async (form) => {
     if (status === 200) {
         return {
             type: 'success',
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+}
+
+export const storeEvaluationResponse = async (evaluation, data) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(`${GEMINI_URL}/evaluations/${evaluation.id}/responses`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+        body: JSON.stringify(data),
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('responses' + evaluation.id, JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
         };
     } else {
         return {

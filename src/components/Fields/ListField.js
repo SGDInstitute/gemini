@@ -6,8 +6,12 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from '../../screens/styles';
 
 export default class ListField extends React.Component {
+    handleValueChange = (value) => {
+        this.props.onValueChange(this.props.field.id, value);
+    }
+
     render() {
-        const { field, input } = this.props;
+        const { field, input, onValueChange } = this.props;
 
         const choices = field.choices.map(choice => {
             return { label: choice, value: choice };
@@ -17,7 +21,7 @@ export default class ListField extends React.Component {
             <View style={styles.inputGroup}>
                 <Text style={styles.label}>{field.question}</Text>
                 <RNPickerSelect
-                    onValueChange={(value) => console.log(value)}
+                    onValueChange={this.handleValueChange}
                     style={{
                         ...pickerSelectStyles,
                         iconContainer: {
