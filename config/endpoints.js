@@ -1,7 +1,7 @@
-// export const EVENT_ID = 4
-// const BASE_URL = 'https://apps.sgdinstitute.org'
-export const EVENT_ID = 1
-const BASE_URL = 'http://enterprise.test'
+export const EVENT_ID = 4
+const BASE_URL = 'https://apps.sgdinstitute.org'
+// export const EVENT_ID = 1
+// const BASE_URL = 'http://enterprise.test'
 const API_URL = '/api/gemini'
 export const GEMINI_URL = BASE_URL + API_URL
 export const LOGIN_URL = BASE_URL + '/oauth/token'
