@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
 
-export default class BuildingCallout extends React.Component {
+export default class BuildingCallout extends React.PureComponent {
     render() {
         const { title, description } = this.props;
         return (

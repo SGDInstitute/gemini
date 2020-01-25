@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Home from "../screens/Home";
 import Schedule from "../screens/Schedule";
 import Contact from "../screens/Contact";
+import Checkin from "../screens/Checkin";
 
 import EvaluationsStack from "./EvaluationsStack";
 import MapsStack from "./MapsStack";
@@ -55,7 +56,7 @@ const AppNavigator = createDrawerNavigator(
         Contact: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
-                    <MaterialCommunityIcons name="help" size={28} style={{ color: tintColor }} />
+                    <MaterialCommunityIcons name="clippy" size={28} style={{ color: tintColor }} />
                 ),
                 drawerLabel: "Contact & FAQ"
             },
@@ -70,6 +71,16 @@ const AppNavigator = createDrawerNavigator(
                 drawerLabel: "Settings"
             },
             screen: SettingsStack
+        },
+
+        Checkin: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="checkbox-multiple-marked-circle" size={26} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Check-in"
+            },
+            screen: Checkin
         },
     },
     {

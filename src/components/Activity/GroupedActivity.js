@@ -7,7 +7,7 @@ import Constants from 'expo-constants';
 
 import ActivityModal from './ActivityModal';
 
-export default class GroupedActivity extends React.Component {
+export default class GroupedActivity extends React.PureComponent {
     state = {
         isModalVisible: false,
         isInPersonalSchedule: false,

@@ -4,7 +4,7 @@ import { t } from 'react-native-tailwindcss';
 
 import GroupedActivity from './GroupedActivity';
 
-export default class ActivityChildren extends React.Component {
+export default class ActivityChildren extends React.PureComponent {
     render() {
         const { children, onAdd, plusMinusCheck } = this.props;
 

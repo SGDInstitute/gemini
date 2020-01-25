@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, ORDERS_URL, QUEUE_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL, TICKETS_UPDATE_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -28,36 +28,6 @@ export const getUser = async () => {
         return {
             type: 'failure',
             payload: json.message
-        }
-    }
-};
-
-export const updateUser = async (data) => {
-    const accessToken = await AsyncStorage.getItem('accessToken');
-
-    const response = await fetch(USER_URL, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        },
-        body: JSON.stringify(data),
-    });
-
-    const json = await response.json();
-
-    if (json.data) {
-        AsyncStorage.setItem('user', JSON.stringify(json.data));
-
-        return {
-            type: 'success',
-            payload: json.data
-        };
-    } else {
-        return {
-            type: 'failure',
-            payload: json
         }
     }
 };
@@ -207,6 +177,35 @@ export const getEvaluations = async () => {
     }
 };
 
+export const getOrders = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(ORDERS_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('orders', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
 export const getUserActivities = async () => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
@@ -263,7 +262,7 @@ export const storeUserActivities = async (id) => {
             payload: json.message
         }
     }
-}
+};
 
 export const storeTicket = async (form) => {
     const accessToken = await AsyncStorage.getItem('accessToken');
@@ -291,7 +290,7 @@ export const storeTicket = async (form) => {
             payload: json.message
         }
     }
-}
+};
 
 export const storeEvaluationResponse = async (evaluation, data) => {
     const accessToken = await AsyncStorage.getItem('accessToken');
@@ -321,4 +320,85 @@ export const storeEvaluationResponse = async (evaluation, data) => {
             payload: json.message
         }
     }
+};
+
+export const storeTicketsInQueue = async (tickets) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(`${QUEUE_URL}/${tickets.join()}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+    });
+
+    if (response.status === 201) {
+        return {
+            type: 'success',
+        };
+    } else {
+        const json = await response.json();
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
 }
+
+export const updateUser = async (data) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(USER_URL, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+        body: JSON.stringify(data),
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('user', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json
+        }
+    }
+};
+
+export const updateTicket = async (hash, data) => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(`${TICKETS_UPDATE_URL}/${hash}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (response.status === 200) {
+        return {
+            type: 'success',
+        };
+    } else {
+        const json = await response.json();
+        return {
+            type: 'failure',
+            payload: json
+        }
+    }
+};

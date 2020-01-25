@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Image, StyleSheet, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
-export default class Card extends React.Component {
+export default class Card extends React.PureComponent {
     render() {
         return (
             <View style={[t.mX4, t.mB4, t.roundedLg, t.bgGray200, t.border, t.borderGray400]}>

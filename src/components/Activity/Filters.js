@@ -4,7 +4,7 @@ import { t } from 'react-native-tailwindcss';
 import Modal from "react-native-modal";
 import SwitchField from '../Fields/SwitchField';
 
-export default class Filters extends React.Component {
+export default class Filters extends React.PureComponent {
     constructor(props) {
         super(props);
 

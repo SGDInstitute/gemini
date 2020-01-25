@@ -7,7 +7,7 @@ import Constants from 'expo-constants';
 
 import types from '../../../assets/data/types.json';
 
-export default class Location extends React.Component {
+export default class Location extends React.PureComponent {
     handleCenterPress = () => {
         this.props.onCenterPress(this.props.location);
     }
@@ -19,7 +19,7 @@ export default class Location extends React.Component {
     }
 
     render() {
-        const { type, title, description, onCenterPress } = this.props.location;
+        const { type, title, description } = this.props.location;
 
         const locationTypeBg = types[type].bgColor;
 

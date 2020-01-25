@@ -4,6 +4,7 @@ import Image from 'react-native-scalable-image';
 
 import styles from "../styles";
 import { getAccessToken } from "../../utils/api";
+import registerForPushNotifications from '../../utils/notifications';
 
 export default class Login extends React.Component {
     state = {
@@ -17,6 +18,7 @@ export default class Login extends React.Component {
             const response = await getAccessToken(this.state.email, this.state.password);
             if (response.type === 'success') {
                 await AsyncStorage.setItem('accessToken', response.payload);
+                registerForPushNotifications(response.payload);
                 this.props.navigation.navigate('App');
             } else {
                 this.setState({ message: response.payload });

@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, Image, StyleSheet, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
-export default class ImageCard extends React.Component {
+export default class ImageCard extends React.PureComponent {
     state = {
         loading: true,
     };

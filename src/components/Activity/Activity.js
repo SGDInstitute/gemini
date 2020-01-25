@@ -9,7 +9,7 @@ import Constants from 'expo-constants';
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
 
-export default class Activity extends React.Component {
+export default class Activity extends React.PureComponent {
     state = {
         isOpen: false,
         isModalVisible: false,
