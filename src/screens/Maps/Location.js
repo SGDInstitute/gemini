@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, Image, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ImageBackground, Text, TouchableOpacity, View, AsyncStorage } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
 import BackNavBar from '../../components/BackNavBar';
@@ -7,9 +7,6 @@ import ScheduleList from '../../components/ScheduleList';
 import styles from '../styles';
 
 import { scheduleByDate } from '../../utils/schedule';
-
-import types from '../../../assets/data/types.json';
-import schedule from '../../../assets/data/schedule.json';
 
 const { width, height } = Dimensions.get('window');
 

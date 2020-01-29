@@ -4,7 +4,7 @@ import { t } from 'react-native-tailwindcss';
 import Modal from "react-native-modal";
 import SwitchField from '../Fields/SwitchField';
 
-export default class Filters extends React.PureComponent {
+export default class Filters extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,6 +25,14 @@ export default class Filters extends React.PureComponent {
         if (key !== 'entire') {
             filters.entire = false;
             filters[key] = !filters[key];
+
+            const distinct = Object.values(filters).filter((value, index, self) => {
+                return self.indexOf(value) === index;
+            });
+
+            if (distinct.length === 1) {
+                filters.entire = true;
+            }
         } else {
             Object.keys(filters).forEach(key => {
                 filters[key] = false;

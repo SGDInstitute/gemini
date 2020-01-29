@@ -55,9 +55,10 @@ export default class Contact extends React.Component {
         if (form.subject !== '' && form.message !== '') {
             let result = await storeTicket(form);
             if (result.type === 'success') {
-                this.setState({ showSuccess: true });
+                this.setState({ form: { subject: '', message: '' }, showSuccess: true });
             } else {
                 errors.push(result.payload);
+                this.setState({ errors: errors });
             }
         } else {
             if (form.subject === '') {
@@ -98,7 +99,7 @@ export default class Contact extends React.Component {
 
     render() {
         const { name, pronouns, email } = this.state.user;
-        const { errors, showSuccess } = this.state;
+        const { errors, showSuccess, form } = this.state;
 
         return (
             <View style={styles.flex1}>
@@ -124,6 +125,7 @@ export default class Contact extends React.Component {
                                         <Text style={styles.label}>Subject</Text>
                                         <TextInput
                                             style={styles.input}
+                                            value={form.subject}
                                             onChangeText={subject => this.setForm('subject', subject)}
                                         />
                                     </View>
@@ -133,6 +135,7 @@ export default class Contact extends React.Component {
                                         <TextInput
                                             multiline
                                             style={styles.textarea}
+                                            value={form.message}
                                             onChangeText={message => this.setForm('message', message)}
                                         />
                                     </View>

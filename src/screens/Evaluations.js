@@ -1,5 +1,6 @@
 import React from 'react';
-import { AsyncStorage, Button, Text, TouchableOpacity, ScrollView, View } from 'react-native';
+import { AsyncStorage, RefreshControl, Text, TouchableOpacity, ScrollView, View } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -14,12 +15,19 @@ export default class Evaluations extends React.Component {
     state = {
         evaluations: [],
         responses: [],
+        refreshing: false,
     }
 
     componentDidMount = async () => {
         await this.getEvaluations().then(() => {
             this.getResponses();
         });
+    }
+
+    onRefresh = () => {
+        this.setState({ refreshing: true });
+
+        this.refreshEvaluations().then(() => this.setState({ refreshing: false }));
     }
 
     getEvaluations = async () => {
@@ -53,6 +61,13 @@ export default class Evaluations extends React.Component {
         });
     }
 
+    refreshEvaluations = async () => {
+        let evaluations = (await getEvaluations()).payload;
+        this.setState({ evaluations: evaluations });
+
+        this.getResponses();
+    }
+
     handlePress = (evaluation) => {
         const response = this.state.responses.find(x => x.id === evaluation.id);
         const start = dayjs(evaluation.start);
@@ -62,14 +77,14 @@ export default class Evaluations extends React.Component {
         if (start.isAfter(now) && end.isAfter(now)) {
             return alert('This evaluation will open on ' + start.format('dddd MMMM D, h:mm A'));
         } else if (start.isBefore(now) && end.isAfter(now)) {
-            if (typeof response === 'undefined' || response.value === null) {
-                this.props.navigation.navigate('CreateEvaluation', {
-                    formId: evaluation.id,
-                    form: JSON.stringify(evaluation),
-                });
-            } else {
-                return alert('Thank you for submitting this evaluation!');
-            }
+            // if (typeof response === 'undefined' || response.value === null) {
+            this.props.navigation.navigate('CreateEvaluation', {
+                formId: evaluation.id,
+                form: JSON.stringify(evaluation),
+            });
+            // } else {
+            // return alert('Thank you for submitting this evaluation!');
+            // }
         } else if (start.isBefore(now) && end.isBefore(now)) {
             if (typeof response === 'undefined' || response.value === null) {
                 return alert('This evaluation closed on ' + end.format('dddd MMMM D, h:mm A'));
@@ -142,10 +157,19 @@ export default class Evaluations extends React.Component {
     }
 
     render() {
+        const { refreshing } = this.state;
+
         return (
             <View style={styles.flex1}>
+                <NavigationEvents
+                    onWillFocus={payload => this.onRefresh()}
+                />
                 <NavBar title="Evaluations" />
-                <ScrollView style={[t.pT4]}>
+                <ScrollView
+                    contentContainerStyle={[styles.pY8]}
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} />
+                    }>
                     {this.renderEvaluations()}
                 </ScrollView>
             </View>

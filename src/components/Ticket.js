@@ -54,14 +54,22 @@ export default class Ticket extends React.Component {
             checked = true;
         }
 
+        let title = '';
+        if (ticket.user !== null && ticket.user.name !== null && ticket.user.pronouns !== null) {
+            title = <Text>{ticket.user.name} <Text style={[t.italic]}>({ticket.user.pronouns})</Text></Text>;
+        } else if (ticket.user !== null && ticket.user.name !== null) {
+            title = <Text>{ticket.user.name}</Text>;
+        } else if (ticket.user !== null) {
+            title = <Text>{ticket.user.email}</Text>;
+        } else {
+            title = <Text style={[t.italic]}>No user added to ticket</Text>
+        }
+
         return (
             <View style={[t.p2, t.borderB, t.borderGray400]}>
                 <View style={[t.flexRow, t.justifyBetween, t.itemsCenter]}>
                     <CheckBox
-                        title={ticket.user !== null ?
-                            <Text>{ticket.user.name} <Text style={[t.italic]}>({ticket.user.pronouns})</Text></Text> :
-                            <Text style={[t.italic]}>No user added to ticket</Text>
-                        }
+                        title={title}
                         checked={checked}
                         checkedColor={checkedColor}
                         containerStyle={{ backgroundColor: 'transparent', padding: 0, shadowOpacity: 0, borderColor: 'transparent' }}

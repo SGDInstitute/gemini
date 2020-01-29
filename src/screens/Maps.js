@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, TextInput, View, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Text, AsyncStorage, View, Dimensions, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { t } from 'react-native-tailwindcss';
 
@@ -8,14 +8,29 @@ import BuildingMarker from '../components/Maps/BuildingMarker';
 import BuildingCallout from '../components/Maps/BuildingCallout';
 import Location from '../components/Maps/Location';
 
-import markers from '../../assets/data/locations.json';
+import { getLocations } from '../utils/api';
 import mapStyle from '../../assets/data/mapstyle.json';
 
 const { width, height } = Dimensions.get('window');
 
 export default class Maps extends React.Component {
     state = {
-        openMarker: null
+        openMarker: null,
+        markers: [],
+    }
+
+    componentDidMount = async () => {
+        this.getLocations();
+    }
+
+    getLocations = async () => {
+        const markers = await AsyncStorage.getItem('locations');
+
+        if (markers) {
+            this.setState({ markers: JSON.parse(markers) });
+        } else {
+            this.refreshLocations()
+        }
     }
 
     handleCenterPress = (marker) => {
@@ -49,11 +64,16 @@ export default class Maps extends React.Component {
         this.setState({ openMarker: id });
     }
 
+    refreshLocations = async () => {
+        let locations = (await getLocations()).payload;
+        this.setState({ locaitons: locations });
+    }
+
     renderMarkers = () => {
-        return markers.map(marker => (
+        return this.state.markers.map(marker => (
             <Marker
                 key={marker.id}
-                coordinate={marker.latlng}
+                coordinate={marker.coordinates}
                 title={marker.title}
                 description={marker.description}
                 calloutOffset={{ x: 0, y: 33 }}
@@ -100,7 +120,7 @@ export default class Maps extends React.Component {
                             </TouchableOpacity>
                         </View>
                         <ScrollView>
-                            {markers.map(marker => (
+                            {this.state.markers.map(marker => (
                                 <Location key={marker.id} navigation={this.props.navigation} location={marker} onCenterPress={this.handleCenterPress} />
                             ))}
                         </ScrollView>

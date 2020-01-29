@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, ORDERS_URL, QUEUE_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL, TICKETS_UPDATE_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, ORDERS_URL, QUEUE_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL, TICKETS_UPDATE_URL, LOCATIONS_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -64,7 +64,7 @@ export const getAccessToken = async (email, password) => {
 export const getActivities = async () => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
-    const response = await fetch(ACTIVITIES_URL, {
+    const response = await fetch(`${ACTIVITIES_URL}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -164,6 +164,35 @@ export const getEvaluations = async () => {
 
     if (json.data) {
         AsyncStorage.setItem('evaluations', JSON.stringify(json.data));
+
+        return {
+            type: 'success',
+            payload: json.data
+        };
+    } else {
+        return {
+            type: 'failure',
+            payload: json.message
+        }
+    }
+};
+
+export const getLocations = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    const response = await fetch(LOCATIONS_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    });
+
+    const json = await response.json();
+
+    if (json.data) {
+        AsyncStorage.setItem('locations', JSON.stringify(json.data));
 
         return {
             type: 'success',
@@ -315,9 +344,15 @@ export const storeEvaluationResponse = async (evaluation, data) => {
             payload: json.data
         };
     } else {
+        const errors = Object.keys(json.errors).map(x => {
+            const question = evaluation.form.find(y => y.id === x).question;
+            return `"${question}" is required`;
+        });
+
         return {
             type: 'failure',
-            payload: json.message
+            payload: json.message,
+            errors: errors,
         }
     }
 };

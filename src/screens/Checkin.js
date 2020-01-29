@@ -91,7 +91,7 @@ export default class Checkin extends React.Component {
                 >
                     {this.renderOrders()}
 
-                    <TouchableOpacity>
+                    <TouchableOpacity style={[t.pB16]}>
                         <Button title="Print" onPress={this.handlePrint} />
                     </TouchableOpacity>
                 </ScrollView>

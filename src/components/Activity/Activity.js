@@ -67,8 +67,20 @@ export default class Activity extends React.PureComponent {
         return null;
     }
 
+    renderSpeakers = () => {
+        const { speakers } = this.props.activity;
+
+        return speakers.map((speaker) => {
+            if (speaker.pronouns) {
+                return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name} <Text style={[t.italic]}>({speaker.pronouns})</Text></Text>
+            } else {
+                return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name}</Text>
+            }
+        })
+    }
+
     render() {
-        const { title, color, location, speaker, start, end, workshops, id } = this.props.activity;
+        const { title, color, location, room, start, end, workshops, id } = this.props.activity;
         const { hideTime, onAdd, plusMinusCheck } = this.props;
         const { isOpen, isInPersonalSchedule } = this.state;
 
@@ -104,9 +116,9 @@ export default class Activity extends React.PureComponent {
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggle}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
                             <Text style={[t.textLg]}>{title}</Text>
-                            {speaker !== '' && <Text style={t.textGray700}>{speaker}</Text>}
+                            {this.renderSpeakers()}
                             {!hideTime && <Text style={t.mT2}><Text style={t.textGray700}>{formattedStart}</Text> - <Text style={t.textGray700}>{formattedEnd}</Text></Text>}
-                            <Text style={t.textGray700}>{location}</Text>
+                            {location !== null && <Text style={t.textGray700}>{location}{room !== null && <Text> - {room}</Text>}</Text>}
                         </View>
                     </TouchableOpacity>
                     <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>

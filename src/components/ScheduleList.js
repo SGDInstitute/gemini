@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshControl, Text, SectionList } from 'react-native';
+import { RefreshControl, Text, SectionList, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
 import Activity from './Activity/Activity';
@@ -10,6 +10,10 @@ export default class ScheduleList extends React.Component {
         return (
             <Activity activity={item} onAdd={onAdd} plusMinusCheck={plusMinusCheck} />
         );
+    }
+
+    renderEmpty = () => {
+        return <View style={[t.flex1, t.itemsCenter, t.mT8, t.mX8]}><Text style={[t.textXl, t.textCenter]}>No items in the schedule, refresh or add some.</Text></View>
     }
 
     renderHeader = ({ section: { dayOfWeek } }) => (
@@ -28,6 +32,7 @@ export default class ScheduleList extends React.Component {
                 keyExtractor={item => item.id}
                 renderItem={this.renderActivity}
                 renderSectionHeader={this.renderHeader}
+                ListEmptyComponent={this.renderEmpty}
             />
         );
     }

@@ -19,6 +19,14 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
         plusMinusButton = <TouchableOpacity onPress={onAdd}><Text style={styles.btn}>Add to My Schedule</Text></TouchableOpacity>;
     }
 
+    let speakers = activity.speakers.map((speaker) => {
+        if (speaker.pronouns) {
+            return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name} <Text style={[t.italic]}>({speaker.pronouns})</Text></Text>
+        } else {
+            return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name}</Text>
+        }
+    });
+
     return (
         <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
             <View style={{
@@ -46,7 +54,7 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
                             <MaterialCommunityIcons style={styles.btnSecondary} name="close" />
                         </TouchableOpacity>
                     </View>
-                    {activity.speaker !== null && <Text style={[t.textLg, t.mB4]}>{activity.speaker}</Text>}
+                    {speakers}
                     {activity.description !== null && <Text style={{ lineHeight: 20, paddingBottom: 50 }}>{activity.description}</Text>}
                 </ScrollView>
             </View>
