@@ -48,8 +48,20 @@ export default class GroupedActivity extends React.PureComponent {
         return null;
     }
 
+    renderSpeakers = () => {
+        const { speakers } = this.props.activity;
+
+        return speakers.map((speaker) => {
+            if (speaker.pronouns) {
+                return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name} <Text style={[t.italic]}>({speaker.pronouns})</Text></Text>
+            } else {
+                return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name}</Text>
+            }
+        })
+    }
+
     render() {
-        const { title, location, speaker, color, id } = this.props.activity;
+        const { title, location, room, speaker, color, id } = this.props.activity;
         const { plusMinusCheck } = this.props;
         const activityTypeBg = color;
 
@@ -75,8 +87,8 @@ export default class GroupedActivity extends React.PureComponent {
                     <TouchableOpacity style={{ width: '90%', }} onPress={this.toggleModal}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
                             <Text style={[t.textLg, t.mB2]}>{title}</Text>
-                            {speaker && <Text>{speaker}</Text>}
-                            <Text style={t.textGray700}>{location}</Text>
+                            {this.renderSpeakers()}
+                            {location !== null && <Text style={t.textGray700}>{location}{room !== null && <Text> - {room}</Text>}</Text>}
                         </View>
                     </TouchableOpacity>
                     <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
