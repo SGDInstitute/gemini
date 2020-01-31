@@ -21,24 +21,7 @@ export default class Filters extends React.Component {
 
     toggle = (key) => {
         let { filters } = this.state;
-
-        if (key !== 'entire') {
-            filters.entire = false;
-            filters[key] = !filters[key];
-
-            const distinct = Object.values(filters).filter((value, index, self) => {
-                return self.indexOf(value) === index;
-            });
-
-            if (distinct.length === 1) {
-                filters.entire = true;
-            }
-        } else {
-            Object.keys(filters).forEach(key => {
-                filters[key] = false;
-            });
-            filters.entire = true;
-        }
+        filters[key] = !filters[key];
         this.setState({ filters });
     }
 
@@ -57,7 +40,6 @@ export default class Filters extends React.Component {
                     onBackdropPress={this.handleClose}
                 >
                     <View style={[t.bgWhite, t.p4, t.justifyCenter, t.itemsCenter, t.rounded]}>
-                        <SwitchField field='entire' value={entire} label="All Items" onToggle={this.toggle} />
                         <SwitchField field='workshop' value={workshop} onToggle={this.toggle} />
                         <SwitchField field='keynote' value={keynote} onToggle={this.toggle} />
                         <SwitchField field='entertainment' value={entertainment} onToggle={this.toggle} />

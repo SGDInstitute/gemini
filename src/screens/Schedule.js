@@ -11,16 +11,15 @@ import Filters from '../components/Activity/Filters';
 export default class Schedule extends React.Component {
     state = {
         filters: {
-            entire: true,
-            workshop: false,
-            keynote: false,
-            entertainment: false,
-            featured: false,
-            advisor: false,
-            general: false,
-            milner: false,
-            sangren: false,
-            bernhard: false,
+            workshop: true,
+            keynote: true,
+            entertainment: true,
+            featured: true,
+            advisor: true,
+            general: true,
+            milner: true,
+            sangren: true,
+            bernhard: true,
         },
         schedule: [],
         mySchedule: [],
@@ -113,9 +112,12 @@ export default class Schedule extends React.Component {
     renderContent() {
         const { schedule, mySchedule, myScheduleFilter, refreshing, filters } = this.state;
 
+        let navLabel = 'Schedule';
+
         let filteredSchedule = JSON.parse(JSON.stringify(schedule));
 
         if (myScheduleFilter) {
+            navLabel = 'My Schedule';
             const ids = mySchedule.map(activity => { return activity.id; });
             filteredSchedule = filteredSchedule.filter(activity => {
                 return ids.includes(activity.id);
@@ -133,11 +135,12 @@ export default class Schedule extends React.Component {
             });
         }
 
+
         const scheduleDates = scheduleByDate(filteredSchedule, myScheduleFilter);
 
         return (
             <View style={t.flex1}>
-                <NavBar title="Schedule" />
+                <NavBar title={navLabel} />
                 <ScheduleList
                     schedule={scheduleDates}
                     refreshing={refreshing}
