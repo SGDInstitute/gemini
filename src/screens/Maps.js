@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, AsyncStorage, View, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Text, RefreshControl, AsyncStorage, View, Dimensions, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { t } from 'react-native-tailwindcss';
 
@@ -17,10 +17,16 @@ export default class Maps extends React.Component {
     state = {
         openMarker: null,
         markers: [],
+        refreshing: false,
     }
 
     componentDidMount = async () => {
         this.getLocations();
+    }
+
+    onRefresh = async () => {
+        this.setState({ refreshing: true });
+        this.refreshLocations().then(() => this.setState({ refreshing: false }));
     }
 
     getLocations = async () => {
@@ -40,20 +46,24 @@ export default class Maps extends React.Component {
     }
 
     handleFitAll = () => {
+        const { markers } = this.state;
+
         this.map.fitToCoordinates(markers.map((marker) => {
-            return marker.latlng;
+            return marker.coordinates;
         }), {
             edgePadding: { top: 100, right: 100, bottom: 100, left: 100 },
             animated: true,
-        })
+        });
     }
 
     handleFitConference = () => {
+        const { markers } = this.state;
+
         this.map.fitToCoordinates(
             markers.filter((marker) => {
                 return marker.type === 'conference';
             }).map((marker) => {
-                return marker.latlng;
+                return marker.coordinates;
             }), {
             edgePadding: { top: 100, right: 100, bottom: 100, left: 100 },
             animated: true,
@@ -65,8 +75,8 @@ export default class Maps extends React.Component {
     }
 
     refreshLocations = async () => {
-        let locations = (await getLocations()).payload;
-        this.setState({ locaitons: locations });
+        let markers = (await getLocations()).payload;
+        this.setState({ markers: markers });
     }
 
     renderMarkers = () => {
@@ -91,6 +101,8 @@ export default class Maps extends React.Component {
     }
 
     render() {
+        const { markers, refreshing } = this.state;
+
         return (
             <View style={styles.flex1}>
                 <View style={styles.container}>
@@ -119,8 +131,12 @@ export default class Maps extends React.Component {
                                 <Text style={styles.btn}>Fit All Locations</Text>
                             </TouchableOpacity>
                         </View>
-                        <ScrollView>
-                            {this.state.markers.map(marker => (
+                        <ScrollView
+                            refreshControl={
+                                <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} />
+                            }
+                        >
+                            {markers.map(marker => (
                                 <Location key={marker.id} navigation={this.props.navigation} location={marker} onCenterPress={this.handleCenterPress} />
                             ))}
                         </ScrollView>

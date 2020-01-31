@@ -7,28 +7,89 @@ import ScheduleList from '../../components/ScheduleList';
 import styles from '../styles';
 
 import { scheduleByDate } from '../../utils/schedule';
+import { storeUserActivities, getActivities, getUserActivities } from '../../utils/api';
 
 const { width, height } = Dimensions.get('window');
 
 export default class Location extends React.Component {
-    scheduleByLocation = location => {
-        const filteredActivities = schedule.filter(activity => {
-            if (activity.location.includes('/')) {
-                const splitLocation = activity.location.split('/');
+    constructor(props) {
+        super(props);
 
-                let flag = false;
-                splitLocation.forEach(element => {
-                    if (location.title === element) {
-                        flag = true;
-                    }
-                });
+        this.state = {
+            location: JSON.parse(props.navigation.getParam('location', {})),
+            schedule: [],
+            mySchedule: [],
+            refreshing: false,
+        };
+    }
 
-                return flag;
+    componentDidMount = async () => {
+        this.getMySchedule().then(() => {
+            this.getSchedule();
+        });
+    }
+
+    checkIfInPersonalSchedule = (id) => {
+        const { mySchedule } = this.state;
+
+        if (mySchedule) {
+            const found = mySchedule.find(x => x.id === id);
+            if (typeof found !== 'undefined') {
+                return true;
             }
+        } else {
+            return false;
+        }
+    }
+
+    onAdd = (id) => {
+        storeUserActivities(id).then(() => {
+            this.refreshMySchedule();
+        });
+    }
+
+    onRefresh = () => {
+        this.setState({ refreshing: true });
+
+        this.refreshSchedule().then(() => this.setState({ refreshing: false }));
+    }
+
+    getSchedule = async () => {
+        const schedule = await AsyncStorage.getItem('schedule');
+
+        if (schedule) {
+            this.setState({ schedule: JSON.parse(schedule) });
+        } else {
+            this.refreshSchedule()
+        }
+    }
+
+    getMySchedule = async () => {
+        const mySchedule = await AsyncStorage.getItem('my-schedule');
+
+        if (mySchedule) {
+            this.setState({ mySchedule: JSON.parse(mySchedule) });
+        } else {
+            this.refreshMySchedule();
+        }
+    }
+
+    refreshSchedule = async () => {
+        let schedule = (await getActivities()).payload;
+        this.setState({ schedule: schedule });
+    }
+
+    refreshMySchedule = async () => {
+        let mySchedule = (await getUserActivities()).payload;
+        this.setState({ mySchedule: mySchedule });
+    }
+
+    scheduleByLocation = location => {
+        const filteredActivities = this.state.schedule.filter(activity => {
             return activity.location === location.title;
         });
 
-        return scheduleByDate(filteredActivities);
+        return scheduleByDate(filteredActivities, true);
     }
 
     renderFloorplans = location => {
@@ -47,7 +108,7 @@ export default class Location extends React.Component {
                             <Text style={[t.textGray600, t.textCenter]}>{floor.level === 'B' ? 'Basement' : 'Floor ' + floor.level}</Text>
                             <Image
                                 style={{ width: '100%', height: 50 }}
-                                source={{ uri: floor.floorPlan }}
+                                source={{ uri: floor.floor_plan }}
                             />
                         </TouchableOpacity>
                     )
@@ -57,8 +118,8 @@ export default class Location extends React.Component {
     }
 
     renderHeader = location => {
-        const locationTypeBg = types[location.type].bgColor;
-        const locationTypeText = types[location.type].textColor;
+        const locationTypeBg = location.color;
+        const locationTypeText = location.text_color;
 
         if (location.background) {
             return (
@@ -71,7 +132,7 @@ export default class Location extends React.Component {
                     }}
                     imageStyle={{ resizeMode: 'cover' }}
                 >
-                    <Text style={[t.textXl, t[locationTypeText], t.p4, styles.transparentBg]}>{location.title}</Text>
+                    <Text style={[t.textXl, t.textWhite, t.p4, styles.transparentBg]}>{location.title}</Text>
                 </ImageBackground >
             );
         }
@@ -89,17 +150,22 @@ export default class Location extends React.Component {
     }
 
     render() {
-        const { navigation } = this.props;
-        const location = JSON.parse(navigation.getParam('location', {}));
+        const { location, refreshing } = this.state;
 
         return (
             <View style={styles.flex1}>
                 <BackNavBar title={location.title} back="Maps" />
                 <View style={[t.flex1]}>
                     {this.renderHeader(location)}
-                    {location.floors && this.renderFloorplans(location)}
+                    {location.floors.length > 0 && this.renderFloorplans(location)}
                     <View style={t.flex1}>
-                        <ScheduleList style={[t.flex1]} schedule={this.scheduleByLocation(location)} />
+                        <ScheduleList
+                            schedule={this.scheduleByLocation(location)}
+                            refreshing={refreshing}
+                            onRefresh={this.onRefresh}
+                            onAdd={this.onAdd}
+                            plusMinusCheck={this.checkIfInPersonalSchedule}
+                        />
                     </View>
                 </View>
             </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, FlatList, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, FlatList, ScrollView, Text, TouchableOpacity, View, AsyncStorage } from 'react-native';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import Modal from "react-native-modal";
 import ScaledImage from 'react-native-scalable-image';
@@ -12,17 +12,84 @@ import ScheduleList from '../../components/ScheduleList';
 import styles from '../styles';
 
 import { scheduleByDate } from '../../utils/schedule';
-
-import types from '../../../assets/data/types.json';
-import schedule from '../../../assets/data/schedule.json';
-import PinchableBox from '../../components/PinchableBox';
+import { storeUserActivities, getActivities, getUserActivities } from '../../utils/api';
 
 const { width, height } = Dimensions.get('window');
 
 export default class Floor extends React.Component {
-    state = {
-        isModalVisible: false,
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            location: JSON.parse(props.navigation.getParam('location', {})),
+            floor: JSON.parse(props.navigation.getParam('floor', {})),
+            schedule: [],
+            mySchedule: [],
+            refreshing: false,
+            isModalVisible: false
+        };
+    }
+
+    componentDidMount = async () => {
+        this.getMySchedule().then(() => {
+            this.getSchedule();
+        });
+    }
+
+    checkIfInPersonalSchedule = (id) => {
+        const { mySchedule } = this.state;
+
+        if (mySchedule) {
+            const found = mySchedule.find(x => x.id === id);
+            if (typeof found !== 'undefined') {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    onAdd = (id) => {
+        storeUserActivities(id).then(() => {
+            this.refreshMySchedule();
+        });
+    }
+
+    onRefresh = () => {
+        this.setState({ refreshing: true });
+
+        this.refreshSchedule().then(() => this.setState({ refreshing: false }));
+    }
+
+    getSchedule = async () => {
+        const schedule = await AsyncStorage.getItem('schedule');
+
+        if (schedule) {
+            this.setState({ schedule: JSON.parse(schedule) });
+        } else {
+            this.refreshSchedule()
+        }
+    }
+
+    getMySchedule = async () => {
+        const mySchedule = await AsyncStorage.getItem('my-schedule');
+
+        if (mySchedule) {
+            this.setState({ mySchedule: JSON.parse(mySchedule) });
+        } else {
+            this.refreshMySchedule();
+        }
+    }
+
+    refreshSchedule = async () => {
+        let schedule = (await getActivities()).payload;
+        this.setState({ schedule: schedule });
+    }
+
+    refreshMySchedule = async () => {
+        let mySchedule = (await getUserActivities()).payload;
+        this.setState({ mySchedule: mySchedule });
+    }
 
     openModal = () => {
         this.setState({ isModalVisible: true });
@@ -32,24 +99,14 @@ export default class Floor extends React.Component {
         this.setState({ isModalVisible: false });
     }
 
-    scheduleByLocation = location => {
+    scheduleByLocation = () => {
+        const { schedule, location, floor } = this.state;
+
         const filteredActivities = schedule.filter(activity => {
-            if (activity.location.includes('/')) {
-                const splitLocation = activity.location.split('/');
-
-                let flag = false;
-                splitLocation.forEach(element => {
-                    if (location.title === element) {
-                        flag = true;
-                    }
-                });
-
-                return flag;
-            }
-            return activity.location === location.title;
+            return activity.location_id === location.id && floor.rooms.find(r => r.number === activity.room || r.name === activity.room);
         });
 
-        return scheduleByDate(filteredActivities);
+        return scheduleByDate(filteredActivities, true);
     }
 
     renderItem({ item }) {
@@ -61,11 +118,11 @@ export default class Floor extends React.Component {
     }
 
     renderModal = () => {
-        const floor = JSON.parse(this.props.navigation.getParam('floor', {}));
+        const { floor, isModalVisible } = this.state;
 
         return (
             <Modal
-                isVisible={this.state.isModalVisible}
+                isVisible={isModalVisible}
                 onBackdropPress={this.closeModal}
                 onBackButtonPress={this.closeModal}
                 style={{
@@ -76,7 +133,7 @@ export default class Floor extends React.Component {
                 }}
             >
                 <ImageViewer
-                    imageUrls={[{ url: floor.floorPlan }]}
+                    imageUrls={[{ url: floor.floor_plan }]}
                     backgroundColor="transparent"
                     renderIndicator={() => null}
                 />
@@ -88,9 +145,7 @@ export default class Floor extends React.Component {
     }
 
     render() {
-        const { navigation } = this.props;
-        const location = JSON.parse(navigation.getParam('location', {}));
-        const floor = JSON.parse(navigation.getParam('floor', {}));
+        const { location, floor, refreshing } = this.state;
 
         const label = `${location.title} - ${floor.level === 'B' ? 'Basement' : 'Floor ' + floor.level}`;
 
@@ -99,7 +154,7 @@ export default class Floor extends React.Component {
                 <BackNavBar title={label} back="Maps" />
                 <View style={{ height: height / 3 }}>
                     <ScrollView horizontal>
-                        <ScaledImage height={height / 3} source={{ uri: floor.floorPlan }} onPress={this.openModal} />
+                        <ScaledImage height={height / 3} source={{ uri: floor.floor_plan }} onPress={this.openModal} />
                     </ScrollView>
                 </View>
                 <View style={[t.flex1]}>
@@ -115,7 +170,13 @@ export default class Floor extends React.Component {
                         </View>
                     )}
                     <View style={t.flex1}>
-                        <ScheduleList style={[t.flex1]} schedule={this.scheduleByLocation(location)} />
+                        <ScheduleList
+                            schedule={this.scheduleByLocation(location)}
+                            refreshing={refreshing}
+                            onRefresh={this.onRefresh}
+                            onAdd={this.onAdd}
+                            plusMinusCheck={this.checkIfInPersonalSchedule}
+                        />
                     </View>
                 </View>
                 {this.renderModal()}
