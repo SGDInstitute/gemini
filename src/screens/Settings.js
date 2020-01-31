@@ -3,7 +3,6 @@ import { AsyncStorage, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import { NavigationEvents } from 'react-navigation';
-import gravatar from 'gravatar';
 
 import { getUser } from "../utils/api";
 
@@ -46,8 +45,6 @@ export default class Settings extends React.Component {
     renderUser() {
         const { user } = this.state;
 
-        const url = gravatar.url(user.email, { protocol: 'https', s: '100', d: 'retro' });
-
         return (
             <View>
                 <NavigationEvents
@@ -56,14 +53,6 @@ export default class Settings extends React.Component {
                 <View>
                     <View style={styles.p4}>
                         <View style={[t.flexRow, t.itemsCenter]}>
-                            <Avatar
-                                size={70}
-                                rounded
-                                source={{
-                                    uri: url,
-                                }}
-                                containerStyle={[t.mR4]}
-                            />
                             <View>
                                 <Text style={[t.textXl, t.mB1]}>{user.name}</Text>
                                 <Text style={[t.italic]}>{user.pronouns}</Text>
