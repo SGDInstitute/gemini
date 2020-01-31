@@ -9,7 +9,7 @@ import Constants from 'expo-constants';
 import Children from './ActivityChildren';
 import ActivityModal from './ActivityModal';
 
-export default class Activity extends React.PureComponent {
+export default class Activity extends React.Component {
     state = {
         isOpen: false,
         isModalVisible: false,
@@ -25,10 +25,10 @@ export default class Activity extends React.PureComponent {
     }
 
     handleAdd = () => {
+        this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
         const { activity, onAdd } = this.props;
 
         onAdd(activity.id);
-        this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
     }
 
     toggle = () => {
