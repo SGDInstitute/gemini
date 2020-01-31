@@ -4,8 +4,6 @@ import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import dayjs from 'dayjs';
 
-import types from '../../../assets/data/types.json';
-
 export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck }) {
     const formattedStart = dayjs(activity.start).format('dddd h:mm a');
     const formattedEnd = dayjs(activity.end).format('h:mm a');
@@ -44,7 +42,7 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
                 <Text>
                     <Text>{formattedStart}</Text> - <Text>{formattedEnd}</Text>
                 </Text>
-                <Text>{activity.location}</Text>
+                <Text>{activity.location} {activity.room}</Text>
             </View>
             <View style={t.flex1}>
                 <ScrollView style={t.p4}>
