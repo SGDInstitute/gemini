@@ -1,10 +1,11 @@
 import React from 'react';
-import { AsyncStorage, Dimensions, ImageBackground, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { AsyncStorage, Dimensions, ImageBackground, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View, Linking } from 'react-native';
 import Image from 'react-native-scalable-image';
 
 import styles from "../styles";
 import { getAccessToken } from "../../utils/api";
 import registerForPushNotifications from '../../utils/notifications';
+import { t } from 'react-native-tailwindcss';
 
 export default class Login extends React.Component {
     state = {
@@ -60,7 +61,11 @@ export default class Login extends React.Component {
                             </View>
                             {this.state.message !== '' && <Text style={[styles.p4, styles.textWhite]}>{this.state.message}</Text>}
                             <TouchableOpacity style={styles.pX8} onPress={this.signIn}>
-                                <Text style={styles.btnYellow}>Sign In!</Text>
+                                <Text style={styles.btnYellow}>Sign In</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/register')}>
+                                <Text style={[t.textWhite, t.textLg, t.textCenter]}>Create an Account</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
