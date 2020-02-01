@@ -67,6 +67,10 @@ export default class Login extends React.Component {
                             <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/register')}>
                                 <Text style={[t.textWhite, t.textLg, t.textCenter]}>Create an Account</Text>
                             </TouchableOpacity>
+
+                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/password/reset')}>
+                                <Text style={[t.textWhite, t.textLg, t.textCenter]}>Forgot Password?</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ImageBackground>
