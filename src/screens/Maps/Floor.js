@@ -151,7 +151,7 @@ export default class Floor extends React.Component {
 
         return (
             <View style={styles.flex1}>
-                <BackNavBar title={label} back="Maps" />
+                <BackNavBar title={label} back="Location" data={location} />
                 <View style={{ height: height / 3 }}>
                     <ScrollView horizontal>
                         <ScaledImage height={height / 3} source={{ uri: floor.floor_plan }} onPress={this.openModal} />
