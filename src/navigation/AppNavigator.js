@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Schedule from "../screens/Schedule";
 import Contact from "../screens/Contact";
 import Checkin from "../screens/Checkin";
+import About from "../screens/About";
 
 import EvaluationsStack from "./EvaluationsStack";
 import MapsStack from "./MapsStack";
@@ -81,6 +82,16 @@ const AppNavigator = createDrawerNavigator(
                 drawerLabel: "Check-in"
             },
             screen: Checkin
+        },
+
+        About: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="information-outline" size={26} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "About"
+            },
+            screen: About
         },
     },
     {
