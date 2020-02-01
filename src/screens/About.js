@@ -3,6 +3,7 @@ import { Linking, ScrollView, Text, View } from 'react-native';
 import { ListItem } from 'react-native-elements'
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Constants from 'expo-constants';
 
 import NavBar from '../components/NavBar';
 
@@ -59,12 +60,17 @@ const sgdinstitute = [
 
 export default class About extends React.PureComponent {
     render() {
+        const buildVersion = Constants.nativeBuildVersion;
+
         return (
             <View style={[t.flex1]}>
                 <NavBar title="About" />
                 <ScrollView>
-                    <Text style={[t.pX4, t.pY8]}>The Midwest Bisexual Lesbian Gay Transgender Asexual College Conference (MBLGTACC) is the larges, longest running queer college conference in the United States. Founded in 1993, MBLGTACC aims to connect, educate, and empower LGBTQIA+ students across the Midwest, and highlight the work being done by the queer and trans community that is often overlooked by those who think this type of work is only possible on the coasts.</Text>
+                    <Text style={[t.pX4, t.pY8]}>The Midwest Bisexual Lesbian Gay Transgender Asexual College Conference (MBLGTACC) is America's largest and oldest continuously-running conference for queer and trans+ college students. “MBLGTACC,” “Midwest Bisexual Lesbian Gay Transgender Asexual College Conference,” “Midwest Bisexual Lesbian Gay Transgender Ally College Conference,” and the MBLGTACC logo are servicemarks of the Midwest Institute for Sexuality and Gender Diversity, a non-profit 501(c)(3) organization. Our Tax ID is: 81-1788851.</Text>
+
+
                     <View>
+                        <Text style={[t.p4, t.bgGray200, t.border, t.borderGray400, t.textLg]}>MBLGTACC Social Links</Text>
                         {
                             mblgtacc.map((item, i) => (
                                 <ListItem
@@ -72,7 +78,6 @@ export default class About extends React.PureComponent {
                                     title={item.title}
                                     leftIcon={<MaterialCommunityIcons name={item.icon} size={28} />}
                                     onPress={() => Linking.openURL(item.link)}
-                                    topDivider={i === 0}
                                     bottomDivider
                                     chevron
                                 />
@@ -80,8 +85,8 @@ export default class About extends React.PureComponent {
                         }
                     </View>
 
-                    <Text style={[t.pX4, t.pY8]}>The Midwest Institute for Sexuality and Gender Diversity (the Institute) is a non-profit organization born out of MBLGTACC. We are an all volunteer team of mostly previous MBLGTACC student planners who assist the current student planning teams with big picture logistics and advising to help the conference transition smoothly each year as the host school changes. We are also looking to add additional programing for LGBTQIA+ students across the Midwest.</Text>
-                    <View style={[t.pB8]}>
+                    <View>
+                        <Text style={[t.p4, t.bgGray200, t.border, t.borderGray400, t.textLg]}>SGD Institute Social Links</Text>
                         {
                             sgdinstitute.map((item, i) => (
                                 <ListItem
@@ -89,12 +94,16 @@ export default class About extends React.PureComponent {
                                     title={item.title}
                                     leftIcon={<MaterialCommunityIcons name={item.icon} size={28} />}
                                     onPress={() => Linking.openURL(item.link)}
-                                    topDivider={i === 0}
                                     bottomDivider
                                     chevron
                                 />
                             ))
                         }
+                    </View>
+
+                    <View style={[t.pB8]}>
+                        <Text style={[t.p4, t.bgGray200, t.border, t.borderGray400, t.textLg]}>App Version</Text>
+                        <Text style={[t.p4, t.textLg]}>{buildVersion}</Text>
                     </View>
                 </ScrollView>
             </View>
