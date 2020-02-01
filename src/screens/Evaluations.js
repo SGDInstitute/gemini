@@ -77,14 +77,14 @@ export default class Evaluations extends React.Component {
         if (start.isAfter(now) && end.isAfter(now)) {
             return alert('This evaluation will open on ' + start.format('dddd MMMM D, h:mm A'));
         } else if (start.isBefore(now) && end.isAfter(now)) {
-            // if (typeof response === 'undefined' || response.value === null) {
-            this.props.navigation.navigate('CreateEvaluation', {
-                formId: evaluation.id,
-                form: JSON.stringify(evaluation),
-            });
-            // } else {
-            // return alert('Thank you for submitting this evaluation!');
-            // }
+            if (typeof response === 'undefined' || response.value === null) {
+                this.props.navigation.navigate('CreateEvaluation', {
+                    formId: evaluation.id,
+                    form: JSON.stringify(evaluation),
+                });
+            } else {
+                return alert('Thank you for submitting this evaluation!');
+            }
         } else if (start.isBefore(now) && end.isBefore(now)) {
             if (typeof response === 'undefined' || response.value === null) {
                 return alert('This evaluation closed on ' + end.format('dddd MMMM D, h:mm A'));

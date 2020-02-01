@@ -43,14 +43,12 @@ export default class Ticket extends React.Component {
         const { ticket, isChecked, onCheck } = this.props;
 
         let checked = isChecked;
-        let checkedColor = '#bfbfbf';
+        let checkedColor = '#009999';
 
         if (ticket.in_queue) {
-            checkedColor = 'blue';
             checked = true;
         }
         if (ticket.is_printed) {
-            checkedColor = 'green';
             checked = true;
         }
 

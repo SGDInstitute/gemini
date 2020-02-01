@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import Markdown from 'react-native-simple-markdown'
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -30,10 +31,26 @@ export default class Faq extends React.Component {
                 </View>
                 {this.state.isVisible === true &&
                     <View style={[t.borderT, t.borderGray400, t.p2]}>
-                        <Text>{content}</Text>
+                        <Markdown styles={markdownStyles}>{content}</Markdown>
                     </View>
                 }
             </View>
         );
+    }
+}
+
+const markdownStyles = {
+    heading1: {
+        fontSize: 24,
+        color: '#009999',
+    },
+    link: {
+        color: '#009999',
+    },
+    mailTo: {
+        color: '#009999',
+    },
+    text: {
+        lineHeight: 20
     }
 }
