@@ -7,6 +7,7 @@ import Schedule from "../screens/Schedule";
 import Contact from "../screens/Contact";
 import Checkin from "../screens/Checkin";
 import About from "../screens/About";
+import Logout from "../screens/Auth/Logout";
 
 import EvaluationsStack from "./EvaluationsStack";
 import MapsStack from "./MapsStack";
@@ -92,6 +93,16 @@ const AppNavigator = createDrawerNavigator(
                 drawerLabel: "About"
             },
             screen: About
+        },
+
+        Logout: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="logout-variant" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Logout"
+            },
+            screen: Logout
         },
     },
     {
