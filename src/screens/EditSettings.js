@@ -64,7 +64,6 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.name}
                                 onChangeText={name => this.setState({ name })}
-                                placeholder="Harry Potter"
                             />
                         </View>
                         <View style={styles.inputGroup}>
@@ -73,7 +72,6 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.pronouns}
                                 onChangeText={pronouns => this.setState({ pronouns })}
-                                placeholder="He/They"
                             />
                         </View>
                         <View style={styles.inputGroup}>
@@ -82,7 +80,6 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.sexuality}
                                 onChangeText={sexuality => this.setState({ sexuality })}
-                                placeholder="Queer"
                             />
                         </View>
                         <View style={styles.inputGroup}>
@@ -91,16 +88,14 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.gender}
                                 onChangeText={gender => this.setState({ gender })}
-                                placeholder="Queer"
                             />
                         </View>
                         <View style={styles.inputGroup}>
-                            <Text style={styles.label}>Race</Text>
+                            <Text style={styles.label}>Race and/or Ethnicity</Text>
                             <TextInput
                                 style={styles.input}
                                 value={this.state.race}
                                 onChangeText={race => this.setState({ race })}
-                                placeholder="Queer"
                             />
                         </View>
                         <View style={styles.inputGroup}>
@@ -109,7 +104,6 @@ export default class EditSettings extends React.Component {
                                 style={styles.input}
                                 value={this.state.college}
                                 onChangeText={college => this.setState({ college })}
-                                placeholder="Hogwarts"
                             />
                         </View>
                         <View>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AsyncStorage, Dimensions, ImageBackground, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View, Linking } from 'react-native';
 import Image from 'react-native-scalable-image';
+import { Notifications } from 'expo';
 
 import styles from "../styles";
 import { getAccessToken } from "../../utils/api";

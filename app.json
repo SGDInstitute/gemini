@@ -9,7 +9,7 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,6 +23,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "notification": {
+      "icon": "./assets/push-icon.png",
+      "color": "#009999",
+      "iosDisplayInForeground": true,
+      "androidMode": "default"
+    },
     "ios": {
       "supportsTablet": true
     },

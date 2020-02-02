@@ -6,29 +6,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Constants from 'expo-constants';
 
 import NavBar from '../components/NavBar';
-
-const policies = [
-    {
-        title: 'Code for Inclusion',
-        icon: 'all-inclusive',
-        link: 'https://apps.sgdinstitute.org/events/mblgtacc-2020/policies/inclusion'
-    },
-    {
-        title: 'Photo',
-        icon: 'camera',
-        link: 'https://apps.sgdinstitute.org/events/mblgtacc-2020/policies/photo'
-    },
-    {
-        title: 'Refund',
-        icon: 'credit-card-refund',
-        link: 'https://apps.sgdinstitute.org/events/mblgtacc-2020/policies/refund'
-    },
-    {
-        title: 'Privacy',
-        icon: 'fingerprint',
-        link: 'https://sgdinstitute.org/legal-privacy'
-    },
-];
+import Inclusion from '../components/Policies/Inclusion';
+import Photo from '../components/Policies/Photo';
+import Privacy from '../components/Policies/Privacy';
+import Refund from '../components/Policies/Refund';
 
 const mblgtacc = [
     {
@@ -92,6 +73,14 @@ const sgdinstitute = [
 ];
 
 export default class About extends React.PureComponent {
+    openLink(item) {
+        if (item.title === 'Facebook') {
+            Linking.openURL('fb://facewebmodal/f?href=' + item.link).catch((err) => Linking.openURL(item.link));
+        } else {
+            Linking.openURL(item.link)
+        }
+    }
+
     render() {
         const buildVersion = Constants.nativeBuildVersion;
 
@@ -101,21 +90,12 @@ export default class About extends React.PureComponent {
                 <ScrollView>
                     <Text style={[t.pX4, t.pY8]}>The Midwest Bisexual Lesbian Gay Transgender Asexual College Conference (MBLGTACC) is America's largest and oldest continuously-running conference for queer and trans+ college students. “MBLGTACC,” “Midwest Bisexual Lesbian Gay Transgender Asexual College Conference,” “Midwest Bisexual Lesbian Gay Transgender Ally College Conference,” and the MBLGTACC logo are servicemarks of the Midwest Institute for Sexuality and Gender Diversity, a non-profit 501(c)(3) organization.</Text>
 
-
                     <View>
                         <Text style={[t.p4, t.bgGray200, t.border, t.borderGray400, t.textLg]}>Policies</Text>
-                        {
-                            policies.map((item, i) => (
-                                <ListItem
-                                    key={i}
-                                    title={item.title}
-                                    leftIcon={<MaterialCommunityIcons name={item.icon} size={28} />}
-                                    onPress={() => Linking.openURL(item.link)}
-                                    bottomDivider
-                                    chevron
-                                />
-                            ))
-                        }
+                        <Inclusion />
+                        <Photo />
+                        <Refund />
+                        <Privacy />
                     </View>
 
                     <View>
@@ -126,7 +106,7 @@ export default class About extends React.PureComponent {
                                     key={i}
                                     title={item.title}
                                     leftIcon={<MaterialCommunityIcons name={item.icon} size={28} />}
-                                    onPress={() => Linking.openURL(item.link)}
+                                    onPress={() => this.openLink(item)}
                                     bottomDivider
                                     chevron
                                 />
@@ -142,7 +122,7 @@ export default class About extends React.PureComponent {
                                     key={i}
                                     title={item.title}
                                     leftIcon={<MaterialCommunityIcons name={item.icon} size={28} />}
-                                    onPress={() => Linking.openURL(item.link)}
+                                    onPress={() => this.openLink(item)}
                                     bottomDivider
                                     chevron
                                 />

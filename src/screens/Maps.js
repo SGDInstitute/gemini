@@ -41,7 +41,7 @@ export default class Maps extends React.Component {
 
     handleCenterPress = (marker) => {
         this.map.animateCamera({
-            center: marker.latlng
+            center: marker.coordinates
         });
     }
 

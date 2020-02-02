@@ -62,7 +62,8 @@ export default class Checkin extends React.Component {
                 { cancelable: false },
             );
         } else {
-            alert('Whoops looks like there was an issue. Please try again later. Error: ' + response.payload.message);
+            console.log(response);
+            alert('Whoops looks like there was an issue. Please try again later. Error: ' + response.payload);
         }
     }
 

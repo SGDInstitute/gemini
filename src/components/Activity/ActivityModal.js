@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, ScrollView, View } from 'react-native';
+import HTMLView from 'react-native-htmlview';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import dayjs from 'dayjs';
@@ -24,6 +25,7 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
             return <Text style={[t.textGray700, t.mTPx]} key={speaker.name}>{speaker.name}</Text>
         }
     });
+    const description = `<div>${activity.description}</div>`;
 
     return (
         <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
@@ -53,7 +55,8 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
                         </TouchableOpacity>
                     </View>
                     {speakers}
-                    {activity.description !== null && <Text style={{ lineHeight: 20, paddingBottom: 50 }}>{activity.description}</Text>}
+                    {activity.description !== null && <HTMLView style={[t.mT4]} value={description} stylesheet={htmlStyles} />}
+                    <View style={[t.mB12]}></View>
                 </ScrollView>
             </View>
         </View>
@@ -85,4 +88,21 @@ const styles = StyleSheet.create({
         height: 32,
         marginRight: 8
     },
+});
+
+const htmlStyles = StyleSheet.create({
+    a: {
+        fontWeight: '400',
+        color: '#009999',
+    },
+    div: {
+        lineHeight: 20,
+        fontSize: 15,
+        marginBottom: 15,
+    },
+    li: {
+        lineHeight: 20,
+        fontSize: 15,
+        marginBottom: 8,
+    }
 });

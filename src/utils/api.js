@@ -377,7 +377,8 @@ export const storeTicketsInQueue = async (tickets) => {
         const json = await response.json();
         return {
             type: 'failure',
-            payload: json.message
+            payload: json.message,
+            response: response,
         }
     }
 }

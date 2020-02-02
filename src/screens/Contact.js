@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage, Button, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { AsyncStorage, Button, KeyboardAvoidingView, RefreshControl, Platform, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
 import NavBar from '../components/NavBar';
@@ -18,11 +18,19 @@ export default class Contact extends React.Component {
         },
         errors: [],
         showSuccess: false,
+        refreshing: false,
     }
 
     componentDidMount = async () => {
         this.getFAQ();
         this.getUser();
+    }
+
+    onRefresh = async () => {
+        let faq = (await getContent('faq')).payload;
+        this.setState({ faq: faq });
+        let user = (await getUser('user')).payload;
+        this.setState({ user: user });
     }
 
     getFAQ = async () => {
@@ -99,7 +107,7 @@ export default class Contact extends React.Component {
 
     render() {
         const { name, pronouns, email } = this.state.user;
-        const { errors, showSuccess, form } = this.state;
+        const { errors, showSuccess, form, refreshing } = this.state;
 
         return (
             <View style={styles.flex1}>
@@ -108,7 +116,11 @@ export default class Contact extends React.Component {
                     behavior={Platform.OS === "ios" ? "padding" : "height"}
                     style={styles.flex1}
                 >
-                    <ScrollView>
+                    <ScrollView
+                        refreshControl={
+                            <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} />
+                        }
+                    >
                         <View style={t.p4}>
                             <View style={t.mB4}>
                                 <Text style={[t.textLg, t.mB2]}>FAQ</Text>

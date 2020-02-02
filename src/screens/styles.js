@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         padding: 8,
         textAlign: 'center',
-        height: 32,
     },
     btnSecondary: {
         backgroundColor: '#aeb3bf',

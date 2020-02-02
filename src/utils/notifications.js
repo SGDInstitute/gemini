@@ -1,4 +1,5 @@
 import { Notifications } from 'expo';
+import { AsyncStorage } from 'react-native';
 import * as Permissions from 'expo-permissions';
 
 import { USER_PUSH_URL } from '../../config/endpoints'
@@ -33,9 +34,7 @@ export default async function registerForPushNotifications(accessToken = null) {
             'Authorization': 'Bearer ' + accessToken
         },
         body: JSON.stringify({
-            token: {
-                value: token,
-            }
+            token: token,
         }),
     });
 }

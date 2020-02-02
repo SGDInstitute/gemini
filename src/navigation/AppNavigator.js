@@ -8,6 +8,7 @@ import Contact from "../screens/Contact";
 import Checkin from "../screens/Checkin";
 import About from "../screens/About";
 import Logout from "../screens/Auth/Logout";
+import VirtualNameBadge from "../screens/VirtualNameBadge";
 
 import EvaluationsStack from "./EvaluationsStack";
 import MapsStack from "./MapsStack";
@@ -55,26 +56,6 @@ const AppNavigator = createDrawerNavigator(
             screen: EvaluationsStack
         },
 
-        Contact: {
-            navigationOptions: {
-                drawerIcon: ({ tintColor }) => (
-                    <MaterialCommunityIcons name="clippy" size={28} style={{ color: tintColor }} />
-                ),
-                drawerLabel: "Contact & FAQ"
-            },
-            screen: Contact
-        },
-
-        Settings: {
-            navigationOptions: {
-                drawerIcon: ({ tintColor }) => (
-                    <MaterialCommunityIcons name="settings" size={28} style={{ color: tintColor }} />
-                ),
-                drawerLabel: "Settings"
-            },
-            screen: SettingsStack
-        },
-
         Checkin: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
@@ -85,6 +66,26 @@ const AppNavigator = createDrawerNavigator(
             screen: Checkin
         },
 
+        VirtualNameBadge: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="ticket-outline" size={24} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Virtual Name Badge"
+            },
+            screen: VirtualNameBadge
+        },
+
+        Contact: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="clippy" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Contact & FAQ"
+            },
+            screen: Contact
+        },
+
         About: {
             navigationOptions: {
                 drawerIcon: ({ tintColor }) => (
@@ -93,6 +94,16 @@ const AppNavigator = createDrawerNavigator(
                 drawerLabel: "About"
             },
             screen: About
+        },
+
+        Settings: {
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <MaterialCommunityIcons name="settings" size={28} style={{ color: tintColor }} />
+                ),
+                drawerLabel: "Settings"
+            },
+            screen: SettingsStack
         },
 
         Logout: {
