@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, Text, RefreshControl, AsyncStorage, View, Dimensions, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { t } from 'react-native-tailwindcss';
+import Constants from 'expo-constants';
 
 import NavBar from '../components/NavBar'
 import BuildingMarker from '../components/Maps/BuildingMarker';
@@ -11,7 +12,7 @@ import Location from '../components/Maps/Location';
 import { getLocations } from '../utils/api';
 import mapStyle from '../../assets/data/mapstyle.json';
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 export default class Maps extends React.Component {
     state = {
@@ -163,10 +164,11 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
+        backgroundColor: '#ffffff'
     },
     map: {
         position: 'absolute',
-        top: 80,
+        top: Constants.statusBarHeight,
         left: 0,
         right: 0,
         bottom: height / 2,
@@ -186,7 +188,6 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         padding: 8,
         textAlign: 'center',
-        height: 32,
         marginHorizontal: 8
     },
     btnSecondary: {
@@ -198,7 +199,6 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         padding: 8,
         textAlign: 'center',
-        height: 32,
         marginRight: 8
     }
 });

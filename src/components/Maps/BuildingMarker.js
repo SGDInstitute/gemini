@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Modal from 'react-native-modal';
 
 export default class BuildingMarker extends React.PureComponent {
   render() {

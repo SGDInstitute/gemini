@@ -31,11 +31,11 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
         <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
             <View style={{
                 backgroundColor: activityTypeBg,
-                height: 150,
+                minHeight: 150,
                 padding: 15,
                 justifyContent: 'flex-end',
             }}>
-                <TouchableOpacity onPress={onClose} style={[t.absolute, t.top0, t.right0, t.m4]}>
+                <TouchableOpacity onPress={onClose} style={[t.absolute, t.top0, t.right0, t.m4, t.z50]}>
                     <MaterialCommunityIcons name="close-circle" size={32} />
                 </TouchableOpacity>
                 <Text style={{ color: activityTypeText, fontSize: 24 }}>{activity.title}</Text>

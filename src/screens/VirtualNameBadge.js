@@ -2,9 +2,9 @@ import React from 'react';
 import { AsyncStorage, Dimensions, Text, View } from 'react-native';
 import Image from 'react-native-scalable-image';
 import { t } from 'react-native-tailwindcss';
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import NavBar from '../components/NavBar';
+import { getUser } from "../utils/api";
 
 export default class VirtualNameBadge extends React.PureComponent {
     state = {

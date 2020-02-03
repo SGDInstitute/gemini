@@ -1,17 +1,21 @@
 {
   "expo": {
-    "name": "Gemini",
-    "slug": "gemini",
+    "name": "MBLGTACC",
+    "description": "MBLGTACC's custom conference app. This allows for viewing the schedule, adding it to your personal schedule, viewing maps, submitting evaluations and more!",
+    "slug": "mblgtacc",
+    "backgroundColor": "#ffffff",
     "privacy": "public",
     "sdkVersion": "36.0.0",
+    "version": "1.0.1",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "0.1.0",
     "orientation": "portrait",
+    "primaryColor": "#009999",
     "icon": "./assets/icon.png",
+    "scheme": "mblgtacc",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
@@ -30,8 +34,16 @@
       "androidMode": "default"
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "org.sgdinstitute.mblgtacc",
+      "buildNumber": "1.0.1",
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyCP5-vnshYTiiq9T6JT69NdE9s7tvTjvSY"
+      }
     },
-    "description": "MBLGTACC's custom conference app. This allows for viewing the schedule, adding it to your personal schedule, viewing maps, submitting evaluations and more!"
+    "android": {
+      "package": "org.sgdinstitute.mblgtacc",
+      "versionCode": 1
+    }
   }
 }

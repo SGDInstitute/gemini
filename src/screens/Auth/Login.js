@@ -1,7 +1,6 @@
 import React from 'react';
 import { AsyncStorage, Dimensions, ImageBackground, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View, Linking } from 'react-native';
 import Image from 'react-native-scalable-image';
-import { Notifications } from 'expo';
 
 import styles from "../styles";
 import { getAccessToken } from "../../utils/api";
@@ -32,11 +31,11 @@ export default class Login extends React.Component {
         return (
             <KeyboardAvoidingView
                 behavior={Platform.OS === "ios" ? "padding" : "height"}
-                style={styles.flex1}
+                style={[styles.flex1]}
             >
                 <ImageBackground source={require('../../../assets/midwest-map.jpg')} style={[styles.wFull, styles.hFull, styles.cover, styles.bgMint]}>
-                    <View style={[styles.flex1, styles.justifyCenter]}>
-                        <Image source={require('../../../assets/mblgtacc-2020-light.png')} width={Dimensions.get('window').width} />
+                    <View style={[styles.flex1, styles.justifyCenter, t.itemsCenter]}>
+                        <Image source={require('../../../assets/mblgtacc-2020-light.png')} width={Dimensions.get('window').width} style={[t.mB4, t.mX12]} />
                         <View style={[styles.p4, styles.mX4, styles.rounded, styles.transparentBg]}>
                             <View style={styles.inputGroup}>
                                 <Text style={[styles.label, styles.textWhite]}>Email</Text>

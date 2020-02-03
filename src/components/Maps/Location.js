@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button } from 'react-native';
-import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Constants from 'expo-constants';
 
 import types from '../../../assets/data/types.json';
 
@@ -24,7 +22,7 @@ export default class Location extends React.PureComponent {
         const locationTypeBg = types[type].bgColor;
 
         return (
-            <View>
+            <View style={[t.borderB, t.borderGray200]}>
                 <View style={{
                     flex: 1,
                     flexDirection: 'row',

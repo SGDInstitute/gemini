@@ -1,4 +1,3 @@
-import React from "react";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
 import AppNavigator from './navigation/AppNavigator';

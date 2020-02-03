@@ -1,6 +1,5 @@
 import React from 'react';
 import { AsyncStorage, Text, TouchableOpacity, View } from 'react-native';
-import { Avatar } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import { NavigationEvents } from 'react-navigation';
 

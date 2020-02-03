@@ -1,13 +1,10 @@
-
-
 import React from 'react';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Text, TouchableOpacity, View, Alert } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import Constants from 'expo-constants';
 
-import Card from './Card';
 import TicketModal from './TicketModal';
 
 export default class Ticket extends React.Component {
@@ -18,6 +15,16 @@ export default class Ticket extends React.Component {
     toggleModal = () => {
         this.setState({ isModalVisible: !this.state.isModalVisible });
     };
+
+    handlePress = () => {
+        const { ticket } = this.props;
+
+        if (ticket.user.name === '' || ticket.user.name === null) {
+            Alert.alert('Whoops!', "Looks like this attendee is missing a name! Please edit the attendee first, and then select for printing.");
+        } else {
+            this.props.onCheck(ticket.id);
+        }
+    }
 
     renderModal = () => {
         const { ticket, onSave } = this.props;
@@ -40,7 +47,7 @@ export default class Ticket extends React.Component {
     }
 
     render() {
-        const { ticket, isChecked, onCheck } = this.props;
+        const { ticket, isChecked } = this.props;
 
         let checked = isChecked;
         let checkedColor = '#009999';
@@ -64,14 +71,14 @@ export default class Ticket extends React.Component {
         }
 
         return (
-            <View style={[t.p2, t.borderB, t.borderGray400]}>
+            <View style={[t.p4, t.borderB, t.borderGray200]}>
                 <View style={[t.flexRow, t.justifyBetween, t.itemsCenter]}>
                     <CheckBox
                         title={title}
                         checked={checked}
                         checkedColor={checkedColor}
                         containerStyle={{ backgroundColor: 'transparent', padding: 0, shadowOpacity: 0, borderColor: 'transparent' }}
-                        onPress={() => onCheck(ticket.id)}
+                        onPress={this.handlePress}
                     />
                     <TouchableOpacity><Button title="Edit" onPress={this.toggleModal} /></TouchableOpacity>
                 </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage, Button, KeyboardAvoidingView, ScrollView, TextInput, Text, TouchableOpacity, View, Platform } from 'react-native';
+import { AsyncStorage, Button, KeyboardAvoidingView, ScrollView, TextInput, Text, TouchableOpacity, View, Platform, Alert } from 'react-native';
 
 import BackNavBar from '../components/BackNavBar';
 import styles from './styles';
@@ -44,7 +44,7 @@ export default class EditSettings extends React.Component {
                 if (result.type === 'success') {
                     self.props.navigation.navigate('Settings');
                 } else {
-                    console.log(result);
+                    Alert.alert('Whoops!', 'Looks like something went wrong. Error: ' + result.payload);
                 }
             });
     }

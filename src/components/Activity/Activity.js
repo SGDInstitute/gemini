@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage, View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import dayjs from 'dayjs';
@@ -16,6 +16,10 @@ export default class Activity extends React.Component {
         isInPersonalSchedule: false,
     }
 
+    componentDidMount() {
+        this.setState({ isInPersonalSchedule: this.props.plusMinusCheck(this.props.activity.id) });
+    }
+
     handleOpen = () => {
         this.setState({ isOpen: true });
     }
@@ -25,7 +29,8 @@ export default class Activity extends React.Component {
     }
 
     handleAdd = () => {
-        this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule });
+        this.setState({ isInPersonalSchedule: !this.state.isInPersonalSchedule })
+
         const { activity, onAdd } = this.props;
 
         onAdd(activity.id);
@@ -97,14 +102,14 @@ export default class Activity extends React.Component {
 
         let plusMinusButton;
 
-        if (plusMinusCheck(id)) {
+        if (isInPersonalSchedule) {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="minus-circle-outline" size={28} /></TouchableOpacity>;
         } else {
             plusMinusButton = <TouchableOpacity onPress={this.handleAdd}><MaterialCommunityIcons name="plus-circle-outline" size={28} /></TouchableOpacity>;
         }
 
         return (
-            <View style={t.p4}>
+            <View style={[t.p4, t.borderB, t.borderGray200]}>
                 <View style={{
                     flex: 1,
                     flexDirection: 'row',

@@ -31,13 +31,12 @@ export default class ContentModal extends React.PureComponent {
                 <View style={[t.flex1, t.bgWhite, t.roundedLg, t.overflowHidden]}>
                     <View style={{
                         backgroundColor: '#009999',
-                        height: 75,
                         padding: 15,
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                         alignItems: 'center',
                     }}>
-                        <Text style={{ color: '#ffffff', fontSize: 24 }}>{this.props.title}</Text>
+                        <Text style={{ color: '#ffffff', fontSize: 24, width: '90%' }}>{this.props.title}</Text>
                         <TouchableOpacity onPress={this.toggleModal}>
                             <MaterialCommunityIcons name="close-circle" size={32} />
                         </TouchableOpacity>
@@ -53,17 +52,31 @@ export default class ContentModal extends React.PureComponent {
     }
 
     render() {
-        return (
-            <View>
-                <ListItem
-                    title={this.props.title}
-                    leftIcon={<MaterialCommunityIcons name={this.props.icon} size={28} />}
-                    onPress={this.toggleModal}
-                    bottomDivider
-                    chevron
-                />
-                {this.renderModal()}
-            </View>
-        );
+        if (this.props.icon) {
+            return (
+                <View>
+                    <ListItem
+                        title={this.props.title}
+                        leftIcon={<MaterialCommunityIcons name={this.props.icon} size={28} />}
+                        onPress={this.toggleModal}
+                        bottomDivider
+                        chevron
+                    />
+                    {this.renderModal()}
+                </View>
+            );
+        } else {
+            return (
+                <View>
+                    <ListItem
+                        title={this.props.title}
+                        onPress={this.toggleModal}
+                        bottomDivider
+                        chevron
+                    />
+                    {this.renderModal()}
+                </View>
+            );
+        }
     }
 }

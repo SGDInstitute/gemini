@@ -14,7 +14,7 @@ import styles from '../styles';
 import { scheduleByDate } from '../../utils/schedule';
 import { storeUserActivities, getActivities, getUserActivities } from '../../utils/api';
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 export default class Floor extends React.Component {
     constructor(props) {

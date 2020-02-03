@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import ContentModal from './ContentModal';
 
 export default class Faq extends React.Component {
     state = {
@@ -24,17 +25,9 @@ export default class Faq extends React.Component {
         }
 
         return (
-            <View style={[t.border, t.borderGray400, t.rounded, t.overflowHidden, t.mB1]}>
-                <View style={[t.bgGray100, t.p2, t.flexRow, t.justifyBetween, t.itemsCenter]}>
-                    <Text onPress={this.handlePress}>{title}</Text>
-                    {plusMinusButton}
-                </View>
-                {this.state.isVisible === true &&
-                    <View style={[t.borderT, t.borderGray400, t.p2]}>
-                        <HTMLView style={[t.mT4]} value={content} stylesheet={htmlStyles} />
-                    </View>
-                }
-            </View>
+            <ContentModal title={title}>
+                <HTMLView style={[t.mT4]} value={content} stylesheet={htmlStyles} />
+            </ContentModal>
         );
     }
 }

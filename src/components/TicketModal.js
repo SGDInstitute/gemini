@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollView, View } from 'react-native';
+import { Alert, Text, Button, KeyboardAvoidingView, TextInput, TouchableOpacity, ScrollView, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -38,15 +38,22 @@ export default class TicketModal extends React.PureComponent {
     handleSubmit = () => {
         const { ticket, onSave, onClose } = this.props;
 
-        updateTicket(ticket.hash, this.state)
-            .then((result) => {
-                if (result.type === 'success') {
-                    onClose();
-                    onSave();
-                } else {
-                    alert('Whoops looks like there was an issue. Please try again later. Error: ' + payload.message);
-                }
-            });
+        if (this.state.name === '' || this.state.name === null) {
+            Alert.alert('Whoops!', 'The attendee name is required.');
+        } else if (this.state.email === '' || this.state.email === null) {
+            Alert.alert('Whoops!', 'The attendee email is required.');
+        } else {
+            updateTicket(ticket.hash, this.state)
+                .then((result) => {
+                    if (result.type === 'success') {
+                        onClose();
+                        onSave();
+                    } else {
+                        Alert.alert('Whoops!', 'Looks like there was an issue. Please try again later. Error: ' + result.payload.message);
+                    }
+                });
+        }
+
     }
 
     render() {
@@ -77,7 +84,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.name}
                                     onChangeText={name => this.setState({ name })}
-                                    placeholder="Harry Potter"
                                 />
                             </View>
                             <View style={[styles.inputGroup]}>
@@ -86,7 +92,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.email}
                                     onChangeText={email => this.setState({ email })}
-                                    placeholder="hpotter@hogwarts.edu"
                                 />
                             </View>
                             <View style={styles.inputGroup}>
@@ -95,7 +100,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.pronouns}
                                     onChangeText={pronouns => this.setState({ pronouns })}
-                                    placeholder="He/They"
                                 />
                             </View>
                             <View style={styles.inputGroup}>
@@ -104,7 +108,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.sexuality}
                                     onChangeText={sexuality => this.setState({ sexuality })}
-                                    placeholder="Queer"
                                 />
                             </View>
                             <View style={styles.inputGroup}>
@@ -113,7 +116,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.gender}
                                     onChangeText={gender => this.setState({ gender })}
-                                    placeholder="Queer"
                                 />
                             </View>
                             <View style={styles.inputGroup}>
@@ -122,7 +124,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.race}
                                     onChangeText={race => this.setState({ race })}
-                                    placeholder="Queer"
                                 />
                             </View>
                             <View style={styles.inputGroup}>
@@ -131,7 +132,6 @@ export default class TicketModal extends React.PureComponent {
                                     style={styles.input}
                                     value={this.state.college}
                                     onChangeText={college => this.setState({ college })}
-                                    placeholder="Hogwarts"
                                 />
                             </View>
                             <View>

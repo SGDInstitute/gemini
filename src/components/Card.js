@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 
 export default class Card extends React.PureComponent {

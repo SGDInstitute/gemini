@@ -3,9 +3,9 @@ import { AsyncStorage, RefreshControl, Text, TouchableOpacity, ScrollView, View 
 import { NavigationEvents } from 'react-navigation';
 import { t } from 'react-native-tailwindcss';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { ListItem } from 'react-native-elements'
 
 import NavBar from '../components/NavBar';
-import Card from '../components/Card';
 
 import { getEvaluations } from '../utils/api';
 import styles from "./styles";
@@ -99,24 +99,34 @@ export default class Evaluations extends React.Component {
 
         return evaluations.map((form) => {
             return (
-                <Card key={form.id}>
-                    <View style={[t.flexRow, t.itemsCenter]}>
-                        <TouchableOpacity
-                            style={{ width: '90%', }}
-                            onPress={() => this.props.navigation.navigate('CreateEvaluation', {
-                                formId: form.id,
-                                form: JSON.stringify(form),
-                            })}
-                            onPress={() => this.handlePress(form)}
-                        >
-                            <Text style={[t.textLg]}>{form.name}</Text>
-                            {this.renderTimes(form)}
-                        </TouchableOpacity>
-                        <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            {this.renderButton(form)}
-                        </View>
-                    </View>
-                </Card>
+                <ListItem key={form.id}
+                    title={form.name}
+                    subtitle={this.renderTimes(form)}
+                    onPress={() => this.props.navigation.navigate('CreateEvaluation', {
+                        formId: form.id,
+                        form: JSON.stringify(form),
+                    })}
+                    rightIcon={this.renderButton(form)}
+                    bottomDivider
+                />
+                // <Card key={form.id}>
+                //     <View style={[t.flexRow, t.itemsCenter]}>
+                //         <TouchableOpacity
+                //             style={{ width: '90%', }}
+                //             onPress={() => this.props.navigation.navigate('CreateEvaluation', {
+                //                 formId: form.id,
+                //                 form: JSON.stringify(form),
+                //             })}
+                //             onPress={() => this.handlePress(form)}
+                //         >
+                //             <Text style={[t.textLg]}>{form.name}</Text>
+                //             {this.renderTimes(form)}
+                //         </TouchableOpacity>
+                //         <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                //             {this.renderButton(form)}
+                //         </View>
+                //     </View>
+                // </Card>
             );
         });
     }
@@ -150,7 +160,7 @@ export default class Evaluations extends React.Component {
         if (start.isAfter(now) && end.isAfter(now)) {
             return complete || <TouchableOpacity onPress={() => this.handlePress(evaluation)}><MaterialCommunityIcons name="cancel" size={28} /></TouchableOpacity>;
         } else if (start.isBefore(now) && end.isAfter(now)) {
-            return complete || <TouchableOpacity onPress={() => this.handlePress(evaluation)}><MaterialCommunityIcons name="chevron-right" size={32} /></TouchableOpacity>;
+            return complete || <TouchableOpacity onPress={() => this.handlePress(evaluation)}><MaterialCommunityIcons style={[t.textGray400]} name="chevron-right" size={28} /></TouchableOpacity>;
         } else if (start.isBefore(now) && end.isBefore(now)) {
             return complete || <TouchableOpacity onPress={() => this.handlePress(evaluation)}><MaterialCommunityIcons name="cancel" size={28} /></TouchableOpacity>;
         }
@@ -166,7 +176,7 @@ export default class Evaluations extends React.Component {
                 />
                 <NavBar title="Evaluations" />
                 <ScrollView
-                    contentContainerStyle={[styles.pY8]}
+                    contentContainerStyle={[styles.pB8]}
                     refreshControl={
                         <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} />
                     }>
