@@ -39,9 +39,9 @@ export default class TicketModal extends React.PureComponent {
         const { ticket, onSave, onClose } = this.props;
 
         if (this.state.name === '' || this.state.name === null) {
-            Alert.alert('Whoops!', 'The attendee name is required.');
+            Alert.alert('Ope!', 'The attendee name is required.');
         } else if (this.state.email === '' || this.state.email === null) {
-            Alert.alert('Whoops!', 'The attendee email is required.');
+            Alert.alert('Ope!', 'The attendee email is required.');
         } else {
             updateTicket(ticket.hash, this.state)
                 .then((result) => {
@@ -49,7 +49,7 @@ export default class TicketModal extends React.PureComponent {
                         onClose();
                         onSave();
                     } else {
-                        Alert.alert('Whoops!', 'Looks like there was an issue. Please try again later. Error: ' + result.payload.message);
+                        Alert.alert('Ope!', 'Looks like there was an issue. Please try again later. Error: ' + result.payload.message);
                     }
                 });
         }

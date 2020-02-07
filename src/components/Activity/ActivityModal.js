@@ -40,7 +40,7 @@ export default function ActivityModal({ activity, onClose, onAdd, plusMinusCheck
                 </TouchableOpacity>
                 <Text style={{ color: activityTypeText, fontSize: 24 }}>{activity.title}</Text>
             </View>
-            <View style={[t.p4, t.justifyBetween, t.flexRow, t.bgGray200]}>
+            <View style={[t.p4, t.justifyBetween, t.flexRow, t.bgGray200, t.flexWrap]}>
                 <Text>
                     <Text>{formattedStart}</Text> - <Text>{formattedEnd}</Text>
                 </Text>

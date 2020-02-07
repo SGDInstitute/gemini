@@ -44,7 +44,7 @@ export default class EditSettings extends React.Component {
                 if (result.type === 'success') {
                     self.props.navigation.navigate('Settings');
                 } else {
-                    Alert.alert('Whoops!', 'Looks like something went wrong. Error: ' + result.payload);
+                    Alert.alert('Ope!', 'Looks like something went wrong. Error: ' + result.payload);
                 }
             });
     }

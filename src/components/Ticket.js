@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, TouchableOpacity, View, Alert } from 'react-native';
+import { Button, Text, TouchableOpacity, View, Alert, Linking } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
@@ -17,10 +17,22 @@ export default class Ticket extends React.Component {
     };
 
     handlePress = () => {
-        const { ticket } = this.props;
+        const { ticket, unpaid } = this.props;
 
-        if (ticket.user.name === '' || ticket.user.name === null) {
-            Alert.alert('Whoops!', "Looks like this attendee is missing a name! Please edit the attendee first, and then select for printing.");
+        if (unpaid) {
+            Alert.alert(
+                'Ope!',
+                'It looks like your order hasn’t been paid. Please pay before checking in by tapping on the “Pay Now” button below.',
+                [
+                    { text: "Pay Now", onPress: () => Linking.openURL('https://apps.sgdinstitute.org/orders/' + ticket.order) },
+                    {
+                        text: 'Cancel',
+                        style: 'cancel',
+                    },
+                ]
+            );
+        } else if (ticket.user.name === '' || ticket.user.name === null) {
+            Alert.alert('Ope!', "Looks like this attendee is missing a name! Please edit the attendee first, and then select for printing.");
         } else {
             this.props.onCheck(ticket.id);
         }

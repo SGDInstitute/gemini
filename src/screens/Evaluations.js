@@ -102,46 +102,12 @@ export default class Evaluations extends React.Component {
                 <ListItem key={form.id}
                     title={form.name}
                     subtitle={this.renderTimes(form)}
-                    onPress={() => this.props.navigation.navigate('CreateEvaluation', {
-                        formId: form.id,
-                        form: JSON.stringify(form),
-                    })}
+                    onPress={() => this.handlePress(form)}
                     rightIcon={this.renderButton(form)}
                     bottomDivider
                 />
-                // <Card key={form.id}>
-                //     <View style={[t.flexRow, t.itemsCenter]}>
-                //         <TouchableOpacity
-                //             style={{ width: '90%', }}
-                //             onPress={() => this.props.navigation.navigate('CreateEvaluation', {
-                //                 formId: form.id,
-                //                 form: JSON.stringify(form),
-                //             })}
-                //             onPress={() => this.handlePress(form)}
-                //         >
-                //             <Text style={[t.textLg]}>{form.name}</Text>
-                //             {this.renderTimes(form)}
-                //         </TouchableOpacity>
-                //         <View style={{ width: '10%', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                //             {this.renderButton(form)}
-                //         </View>
-                //     </View>
-                // </Card>
             );
         });
-    }
-
-    renderTimes(evaluation) {
-        const start = dayjs(evaluation.start);
-        const end = dayjs(evaluation.end);
-        const now = dayjs();
-        if (start.isAfter(now) && end.isAfter(now)) {
-            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Opens on: {start.format('ddd MMM D, h:mm A')}</Text>;
-        } else if (start.isBefore(now) && end.isAfter(now)) {
-            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Open until: {end.format('ddd MMM D, h:mm A')}</Text>;
-        } else if (start.isBefore(now) && end.isBefore(now)) {
-            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Closed on {end.format('ddd MMM D, h:mm A')}</Text>;
-        }
     }
 
     renderButton(evaluation) {
@@ -165,6 +131,20 @@ export default class Evaluations extends React.Component {
             return complete || <TouchableOpacity onPress={() => this.handlePress(evaluation)}><MaterialCommunityIcons name="cancel" size={28} /></TouchableOpacity>;
         }
     }
+
+    renderTimes(evaluation) {
+        const start = dayjs(evaluation.start);
+        const end = dayjs(evaluation.end);
+        const now = dayjs();
+        if (start.isAfter(now) && end.isAfter(now)) {
+            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Opens on: {start.format('ddd MMM D, h:mm A')}</Text>;
+        } else if (start.isBefore(now) && end.isAfter(now)) {
+            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Open until: {end.format('ddd MMM D, h:mm A')}</Text>;
+        } else if (start.isBefore(now) && end.isBefore(now)) {
+            return <Text style={[t.textSm, t.italic, t.mT1, t.textGray700]}>Closed on {end.format('ddd MMM D, h:mm A')}</Text>;
+        }
+    }
+
 
     render() {
         const { refreshing } = this.state;

@@ -13,7 +13,7 @@ export default class ScheduleList extends React.Component {
     }
 
     renderEmpty = () => {
-        return <View style={[t.flex1, t.itemsCenter, t.mT8, t.mX8]}><Text style={[t.textXl, t.textCenter]}>No items in the schedule, refresh or add some.</Text></View>
+        return <View style={[t.flex1, t.itemsCenter, t.mT8, t.mX8]}><Text style={[t.textXl, t.textCenter]}>Nothing scheduled.</Text></View>
     }
 
     renderHeader = ({ section: { dayOfWeek } }) => (

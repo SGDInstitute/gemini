@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     input: {
-        height: 34,
+        height: 48,
         borderRadius: 4,
         borderColor: '#ccc',
         backgroundColor: '#fff',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     textarea: {
-        height: 100,
+        height: 120,
         borderRadius: 4,
         borderColor: '#ccc',
         backgroundColor: '#fff',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage, Button, ScrollView, Text, TouchableOpacity, View, RefreshControl, SectionList, Alert } from 'react-native';
+import { AsyncStorage, Button, ScrollView, Text, TouchableOpacity, View, RefreshControl, SectionList, Alert, Linking } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import Modal from "react-native-modal";
 import Constants from 'expo-constants';
@@ -114,11 +114,14 @@ export default class Checkin extends React.Component {
     renderOrder = ({ item }) => {
         return (
             <View style={[t.mB4]}>
-                <Text style={[t.bgGray200, t.p4, t.textLg, t.border, t.borderGray400]}>Order: #{item.id}</Text>
+                <View style={[t.bgGray200, t.p4, t.border, t.borderGray400, t.flexRow]}>
+                    {item.confirmation_number === null && <Text style={[t.fontBold, t.textRed500, t.textLg]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/orders/' + item.id)}>Unpaid - </Text>}
+                    <Text style={[t.mR4, t.textLg]}>Order: #{item.id}</Text>
+                </View>
                 <SectionList
                     sections={this.groupTicketsByState(item.tickets)}
-                    keyExtractor={(item) => 'ticket' + item.id}
-                    renderItem={this.renderTicket}
+                    keyExtractor={(ticket) => 'ticket' + ticket.id}
+                    renderItem={item.confirmation_number === null ? this.renderUnpaidTicket : this.renderTicket}
                     renderSectionHeader={({ section: { title, data } }) => {
                         if (data.length > 0) {
                             return <Text style={[t.p4, t.border, t.borderGray400, t.fontMedium]}>{title}</Text>;
@@ -138,6 +141,11 @@ export default class Checkin extends React.Component {
     renderTicket = ({ item }) => {
         const isChecked = this.state.print.includes(item.id);
         return <Ticket onCheck={this.handleCheck} onSave={this.refreshOrders} ticket={item} isChecked={isChecked} />;
+    }
+
+    renderUnpaidTicket = ({ item }) => {
+        const isChecked = this.state.print.includes(item.id);
+        return <Ticket onSave={this.refreshOrders} ticket={item} isChecked={isChecked} unpaid />;
     }
 
     render() {

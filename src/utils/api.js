@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, ORDERS_URL, QUEUE_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL, TICKETS_UPDATE_URL, LOCATIONS_URL } from '../../config/endpoints'
+import { ACTIVITIES_URL, BULLETINS_URL, LOGIN_URL, PASSWORD_RESET_URL, REGISTER_URL, ORDERS_URL, QUEUE_URL, EVENT_ID, USER_URL, USER_ACTIVITIES_URL, CONTENT_URL, TICKETS_URL, EVALUATIONS_URL, GEMINI_URL, TICKETS_UPDATE_URL, LOCATIONS_URL } from '../../config/endpoints'
 import { OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRECT } from '../../config/settings'
 
 export const getUser = async () => {
@@ -264,6 +264,30 @@ export const getUserActivities = async () => {
     }
 };
 
+export const storeUser = async (data) => {
+    const response = await fetch(REGISTER_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    const json = await response.json();
+
+    if (json.user) {
+        return await getAccessToken(data.email, data.password);
+    } else {
+        let errors = Object.keys(json.errors).flatMap(x => { return json.errors[x]; });
+        return {
+            type: 'failure',
+            payload: json.message,
+            errors: errors,
+        }
+    }
+};
+
 export const storeUserActivities = async (id) => {
     const accessToken = await AsyncStorage.getItem('accessToken');
 
@@ -435,6 +459,33 @@ export const updateTicket = async (hash, data) => {
         return {
             type: 'failure',
             payload: json
+        }
+    }
+};
+
+export const passwordReset = async (email) => {
+    const response = await fetch(PASSWORD_RESET_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify(email),
+    });
+
+    const json = await response.json();
+
+    if (json.errors) {
+        let errors = Object.keys(json.errors).flatMap(x => { return json.errors[x]; });
+        return {
+            type: 'failure',
+            payload: json.status,
+            errors: errors,
+        }
+    } else {
+        return {
+            type: 'success',
+            payload: json.status
         }
     }
 };

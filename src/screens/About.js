@@ -74,11 +74,7 @@ const sgdinstitute = [
 
 export default class About extends React.PureComponent {
     openLink(item) {
-        if (item.title === 'Facebook') {
-            Linking.openURL('fb://facewebmodal/f?href=' + item.link).catch((err) => Linking.openURL(item.link));
-        } else {
-            Linking.openURL(item.link)
-        }
+        Linking.openURL(item.link)
     }
 
     render() {

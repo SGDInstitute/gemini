@@ -64,11 +64,11 @@ export default class Login extends React.Component {
                                 <Text style={styles.btnYellow}>Sign In</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/register')}>
+                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => this.props.navigation.navigate('Register')}>
                                 <Text style={[t.textWhite, t.textLg, t.textCenter]}>Create an Account</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => Linking.openURL('https://apps.sgdinstitute.org/password/reset')}>
+                            <TouchableOpacity style={[styles.pX8, t.mT8]} onPress={() => this.props.navigation.navigate('ForgotPassword')}>
                                 <Text style={[t.textWhite, t.textLg, t.textCenter]}>Forgot Password?</Text>
                             </TouchableOpacity>
                         </View>
