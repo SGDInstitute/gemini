@@ -1,15 +1,49 @@
 import React from 'react';
-import { Button, Text, TouchableOpacity, View, Alert, Linking } from 'react-native';
+import { AsyncStorage, Button, Text, TouchableOpacity, View, Alert, Linking } from 'react-native';
 import { CheckBox } from 'react-native-elements'
 import Modal from "react-native-modal";
 import { t } from 'react-native-tailwindcss';
 import Constants from 'expo-constants';
+
+import { getOrders, getUser } from "../utils/api";
 
 import TicketModal from './TicketModal';
 
 export default class Ticket extends React.Component {
     state = {
         isModalVisible: false,
+        user: [],
+        order: [],
+    }
+
+    componentDidMount() {
+        this.getUser();
+        this.getOrder();
+    }
+
+    getUser = async () => {
+        const user = await AsyncStorage.getItem('user');
+
+        if (user) {
+            this.setState({ user: JSON.parse(user) });
+        } else {
+            let user = (await getUser()).payload;
+            this.setState({ user: user });
+        }
+    }
+
+    getOrder = async () => {
+        let orders = await AsyncStorage.getItem('orders');
+
+
+        if (orders) {
+            orders = JSON.parse(orders);
+        } else {
+            orders = (await getOrders('orders')).payload;
+        }
+
+        const order = orders.find(x => x.id === this.props.ticket.order);
+        this.setState({ order: order });
     }
 
     toggleModal = () => {
@@ -35,6 +69,16 @@ export default class Ticket extends React.Component {
             Alert.alert('Ope!', "Looks like this attendee is missing a name! Please edit the attendee first, and then select for printing.");
         } else {
             this.props.onCheck(ticket.id);
+        }
+    }
+
+    renderEdit = () => {
+        if (this.props.ticket.user.id === this.state.user.id) {
+            return <TouchableOpacity><Button title="Edit" onPress={this.toggleModal} /></TouchableOpacity>;
+        } else if (this.state.order.owner_id === this.state.user.id) {
+            return <TouchableOpacity><Button title="Edit" onPress={this.toggleModal} /></TouchableOpacity>;
+        } else {
+            return null;
         }
     }
 
@@ -92,7 +136,7 @@ export default class Ticket extends React.Component {
                         containerStyle={{ backgroundColor: 'transparent', padding: 0, shadowOpacity: 0, borderColor: 'transparent' }}
                         onPress={this.handlePress}
                     />
-                    <TouchableOpacity><Button title="Edit" onPress={this.toggleModal} /></TouchableOpacity>
+                    {this.renderEdit()}
                 </View>
                 {this.renderModal()}
             </View>

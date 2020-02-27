@@ -37,9 +37,11 @@ export default class VirtualNameBadge extends React.PureComponent {
                         width={Dimensions.get('window').width}
                         source={require('../../assets/name-badge-background.png')}
                     />
-                    <Text style={[t.text2Xl, t.textCenter, t.mT8, t.fontBold]}>{user.name}</Text>
-                    <Text style={[t.textXl, t.textCenter, t.mB4, t.mT2]}>{user.pronouns}</Text>
-                    <Text style={[t.textCenter, t.textXl]}>{user.college}</Text>
+                    <View style={[t.pX4]}>
+                        <Text style={[t.text3xl, t.textCenter, t.mT8, t.fontBold]}>{user.name}</Text>
+                        <Text style={[t.text2xl, t.textCenter, t.mB4, t.mT2]}>{user.pronouns}</Text>
+                        <Text style={[t.textCenter, t.text2xl]}>{user.college}</Text>
+                    </View>
                 </View>
             </View>
         );

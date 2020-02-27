@@ -6,7 +6,7 @@
     "backgroundColor": "#ffffff",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "platforms": [
       "ios",
       "android",
@@ -35,7 +35,7 @@
     },
     "ios": {
       "bundleIdentifier": "org.sgdinstitute.mblgtacc",
-      "buildNumber": "1.0.6",
+      "buildNumber": "1.2.0",
       "supportsTablet": true,
       "config": {
         "googleMapsApiKey": "AIzaSyCP5-vnshYTiiq9T6JT69NdE9s7tvTjvSY"
@@ -45,10 +45,10 @@
       "package": "org.sgdinstitute.mblgtacc",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyD-OcfIQoHJDb-rOSbvm1B1uCbw-XTVEZM"
+          "apiKey": "AIzaSyDG-EYVwkSiRHIWlo2vM-eHBCX3p0YkgYk"
         }
       },
-      "versionCode": 6
+      "versionCode": 4
     }
   }
 }
